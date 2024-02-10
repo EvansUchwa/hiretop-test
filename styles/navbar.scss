@@ -1,0 +1,46 @@
+.navbar2{
+    margin-left: auto;
+    width: calc(100% - $sidebarWidth);
+    padding: 15px 10px;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    align-items: center;
+    .n2-toggler{
+        span{
+            font-size: 30px;
+            cursor: pointer;
+        }
+    }
+    .n2-searchbar{
+        margin-left: 15px;
+        position: relative;
+        width: 30%;
+        // height: 30px;
+        display: flex;
+        border-radius: 30px;
+        overflow: hidden;
+        input{
+            border: 0 !important;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: $primary-color, $alpha: 0.1);
+        }
+        span{
+            color: $primary-color;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            font-size: 25px;
+        }
+    }
+    .n2-actionsIcons{
+    margin-left: auto;
+    gap: 0 10px;
+    span{
+        font-size: 30px;
+    }
+    }
+}

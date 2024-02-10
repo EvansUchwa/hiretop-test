@@ -1,0 +1,77 @@
+
+@import './variables.scss';
+
+@import './auth.scss';
+@import './job.scss';
+@import './talent.scss';
+
+
+
+@import './navbar.scss';
+@import './sidebar.scss';
+@import './form.scss';
+
+
+// @import './variables.scss';
+
+
+body{
+    // background-color: $tertiary-color;
+}
+
+img{
+    object-fit: cover;
+}
+button{
+    padding: 16px 25px;
+    border-radius: 50px;
+    background-image: $gradient2;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    font-size: 20px;
+    &.btnDisabled,&:disabled{
+        background-color: #ededed;
+        background-image: initial;
+        color: grey;
+        // cursor:none;
+    }
+}
+.dashboardPageWrapper{
+    .dpw-content{
+        width: calc(100% - $sidebarWidth);
+        margin-left: auto;
+        // padding: 25px 0;
+        h1{
+            margin: 25px auto;
+            color: $primary-color;
+            text-align: center;
+        }
+    }
+}
+ul,li{
+    // padding: 0;
+    // margin: 0;
+    margin-left: 10px;
+}
+
+.sectionSpinner{
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.dontHaveDataCreateOne{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px 0;
+}

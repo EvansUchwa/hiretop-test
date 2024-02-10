@@ -1,0 +1,91 @@
+.talentCard{
+    width: 250px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px 0;
+    text-align: center;
+     border: solid 1px #dedede;
+    img{
+        width: 90px;
+        height: 90px;
+        border-radius: 100%;
+    }
+
+    section{
+        display: flex;
+        gap: 0 20px;
+        a{
+            background: $gradient2;
+            font-size: 25px;
+            color: white;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            svg{
+            
+            }
+        }
+    }
+}
+
+
+.talentProfil{
+    .tpBanner{
+        height: 30vh;
+        width: 100%;
+        background-image: repeating-radial-gradient(circle at center center, transparent 0px, transparent 6px,rgba(255,255,255, 0.05) 6px, rgba(255,255,255, 0.05) 13px,transparent 13px, transparent 16px,rgba(255,255,255, 0.05) 16px, rgba(255,255,255, 0.05) 29px,transparent 29px, transparent 40px,rgba(255,255,255, 0.05) 40px, rgba(255,255,255, 0.05) 50px),repeating-radial-gradient(circle at center center, rgb(138,35,135) 0px, rgb(138,35,135) 13px,rgb(138,35,135) 13px, rgb(138,35,135) 14px,rgb(138,35,135) 14px, rgb(138,35,135) 15px,rgb(138,35,135) 15px, rgb(138,35,135) 25px,rgb(138,35,135) 25px, rgb(138,35,135) 37px,rgb(138,35,135) 37px, rgb(138,35,135) 42px); background-size: 53px 53px;
+    }
+    .tpBannerOverlay{
+        background-color: white;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 40px 20px;
+        border-radius: 30px;
+        width: 85%;
+        margin: -20vh auto auto auto;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        z-index: 1111111111;
+        .tbo-image{
+            // background-color: grey;
+            width: 25%;
+            overflow: hidden;
+            position: relative;
+            border-radius: 50%;
+            img{
+                width: 100%;
+                height: 100%;
+                display: block; 
+                aspect-ratio: 1/1;
+            }
+        }
+        .tbo-data{
+            width: 60%;
+            b{
+                margin-bottom: 10px;
+            }
+            p{
+                display: flex;
+                flex-direction: column;
+                gap: 15px 0;
+            }
+        }
+    }
+}
+
+.talentList{
+    width: 90%;
+    margin: auto;
+    .tl-list{
+
+
+    }
+}

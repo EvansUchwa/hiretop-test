@@ -1,0 +1,54 @@
+.sidebar{
+    position: fixed;
+    top: 0;
+    height: 100%;
+    padding: 5px 0 25px 0;
+    // background-color: $tertiary-color;
+    background-image: $gradient3;
+    width: $sidebarWidth;
+    &>div{
+        width: 90%;
+        margin: 25px auto;
+    }
+    .sidebar-logo{
+        text-align: center;
+        b{
+            color: white;
+            font-size: 40px;
+            text-align: center;
+        }
+        padding-bottom: 25px;
+        border-bottom: solid 4px white;
+        border-radius: 5px;
+    }
+    .sidebar-links{
+        gap: 15px 0;
+        section{
+            display: flex;
+            align-items: center;
+            gap: 0 8px;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 20px;
+            transition: all .5s;
+            color: white;
+            span{
+                font-size: 20px;
+
+            }
+            &:hover{
+                background-color: white;
+                // span{
+                    color: $primary-color;
+                // }
+            }
+        }
+    }
+    .sidebar-logout{
+        cursor: pointer;
+        margin-top: auto;
+        align-items: center;
+        gap: 0 5px;
+        padding-left: 15px;
+    }
+}

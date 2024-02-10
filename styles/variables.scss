@@ -1,5 +1,16 @@
-$primary-color: #64ff00;
- 
-:export {
-  primaryColor: $primary-color;
-}
+// $primary-color: #cd4a7c;
+// $secondary-color: #fd9b82;
+// $tertiary-color: #303641;
+
+$primary-color: #8a2387;
+$secondary-color: #e94057;
+$tertiary-color: #f27121;
+
+
+$gradient1:  linear-gradient(to right, $primary-color, $secondary-color, $tertiary-color);
+$gradient2:  linear-gradient(to left, $primary-color, $secondary-color, $tertiary-color);
+$gradient3:  linear-gradient(to bottom, $primary-color, $secondary-color);
+
+
+
+$sidebarWidth: 300px;

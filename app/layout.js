@@ -1,5 +1,11 @@
 import { Inter } from "next/font/google";
-import "./globals.css";
+
+import "../styles/index.scss";
+import "../styles/globals.css";
+
+import SessionWrapper from "@/components/sessionWrapper";
+import TranslateWrapper from "@/components/translateWrapper";
+import GenericWrapper from "@/components/genericWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +17,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <TranslateWrapper>
+          <GenericWrapper>
+            {/* <SessionWrapper > */}
+            {children}
+            {/* </SessionWrapper> */}
+          </GenericWrapper>
+        </TranslateWrapper>
+      </body>
     </html>
   );
 }

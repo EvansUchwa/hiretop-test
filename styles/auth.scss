@@ -1,0 +1,87 @@
+.authWrapper{
+    display: flex;
+    height: 100vh;
+    &>section{
+        &:nth-child(1){
+            background-image: $gradient1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 30px;
+        }
+        width: 50%;
+    }
+
+h2{
+    text-align: center;
+    margin-bottom: 25px;
+}
+    .registerOrLogin{
+        width: 80%;
+        margin: auto;
+        padding: 50px 0;
+        .registerOrLogin-othersOptions{
+            margin: 25px auto;
+            text-align: center;
+            p{
+                margin-top: 15px;
+                color: $secondary-color;
+            }
+        }
+    }
+
+}
+
+.finaliseAccount{
+    width: 90%;
+    min-height: 100vh;
+    margin: auto;
+    padding: 50px 0;
+    gap: 25px 0;
+    align-items: center;
+
+    .fa-titleAndLogo{
+        justify-content: center;
+        align-items: center;
+        gap: 10px 0;
+        text-align: center;
+    }
+    .fa-chooseRole{
+        text-align: center;
+        h3{
+            margin-bottom: 15px;
+        }
+        section{
+            gap: 0 15px;
+        }
+    }
+}
+
+.societyFinaliseAccount{
+    padding: 50px 0;
+    width: 60%;
+    margin: auto;
+}
+
+.talentFinaliseAccount{
+    width: 70%;
+    margin: auto;
+    .tfa-navigator{
+        margin: 25px auto;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.emailValidation{
+    padding: 50px 0;
+    margin: auto;
+    width: 90%;
+    text-align: center;
+    div{
+        display: flex;
+        flex-direction: column;
+        gap: 10px 0;
+    }
+}

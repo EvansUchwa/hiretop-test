@@ -1,0 +1,96 @@
+.createOrUpdateJob{
+    width: 80%;
+    margin: auto;
+}
+
+
+.jobList{
+    width: 80%;
+    margin: auto;
+}
+.jobCard{
+    width: 100%;
+    border: solid 1px #ededed;
+    padding: 20px;
+    justify-content: space-between;
+    border-radius: 8px;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: all .5s;
+
+    &:hover{
+        background-color: $primary-color;
+        color: white;
+    }
+    img{
+        width: 10%;
+        border-radius: 20px;
+        border: solid 5px $primary-color;
+        background-color: $secondary-color;
+    }
+    .jc-infos{
+        min-width: 70%;
+        b{
+            display: inline-block;
+            margin: 6px 0;
+        }
+        div{
+            gap: 10px;
+            span{
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+                gap: 0 5px;
+            }
+        }
+    }
+    .js-actionAndDate{
+        text-align: center;
+        gap: 5px 0;
+        button{
+            padding: 6px 10px;
+        }
+    }
+}
+
+
+.jobDetails{
+    width: 90%;
+    margin: auto;
+    h2{
+        font-size: 30px;
+        color: $primary-color;
+        margin-bottom: 15px;
+    }
+    .jd-header{
+        padding: 50px 25px;
+        border-radius: 20px;
+        background-color: $primary-color;
+        color: white;
+        h1{
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+        b{
+            font-size: 20px;
+        }
+    }
+    .jd-aditionalInfos1{
+        margin: 25px 0;
+        gap: 15px 0;
+       li{
+        font-size: 18px;
+       }
+    }
+    .jd-aditionalInfos2{
+        gap: 10px 0;
+        p{
+            display: flex;
+            align-items: center;
+            gap: 0 5px;
+            b{
+                font-size: 18px;
+            }
+        }
+    }
+}

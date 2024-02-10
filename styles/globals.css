@@ -1,0 +1,42 @@
+:root {
+ 
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+ 
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input,textarea{
+  padding: 15px;
+  /* border: 0; */
+  font-size: 18px;
+  &:focus{
+    outline: 0;
+  }
+}
+
+.flex{
+  display: flex;
+}
+.f-wrap{
+  flex-wrap: wrap;
+}
+.f-column{
+  flex-direction: column;
+}

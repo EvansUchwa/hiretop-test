@@ -1,96 +1,41 @@
+import { genderEnums } from "@/utils/back/enums";
 import mongoose, { Schema } from "mongoose";
+
+
+const talentUserStringConfig = {
+    type: String,
+    required: function () {
+        return this.role === 'talent';
+    },
+    default: null,
+};
+
+const talentUserNumberConfig = {
+    type: Number,
+    required: function () {
+        return this.role === 'talent';
+    },
+    default: null,
+};
+
+const talentUserArrayConfig = {
+    type: Array,
+    required: function () {
+        return this.role === 'talent';
+    },
+    default: null,
+};
+
 
 const UserSchema = new Schema({
     role: { type: String, default: null },
-    identifier: { type: String, require: true },
+    identifier: { type: String, required: true },
     profilPic: { type: Object, default: null },
     email: { type: String, required: true },
     phone: { type: String, default: null },
-    country: { type: String, required: true },
+    country: { type: String, default: true },
     address: { type: String, default: null },
     password: { type: String, required: true },
-
-    gender: {
-        type: String, required: function () {
-            if (this.role == 'talent') {
-                return true;
-            }
-            return false;
-        }, default: null
-    },
-    firstname: {
-        type: String, required: function () {
-            if (this.role == 'talent') {
-                return true;
-            }
-            return false;
-        }, default: null
-    },
-    lastname: {
-        type: String, required: function () {
-            if (this.role == 'talent') {
-                return true;
-            }
-            return false;
-        }, default: null
-    },
-    degree: {
-        type: String, required: function () {
-            if (this.role == 'talent') {
-                return true;
-            }
-            return false;
-        }, default: null
-    },
-    formations: {
-        type: Array, required: function () {
-            if (this.role == 'talent') {
-                return true;
-            }
-            return false;
-        }, default: null
-    },
-    skills: {
-        type: Array, required: function () {
-            if (this.role == 'talent') {
-                return true;
-            }
-            return false;
-        }, default: null
-    },
-    jobExperiences: {
-        type: Array, required: function () {
-            if (this.role == 'talent') {
-                return true;
-            }
-            return false;
-        }, default: null
-    },
-    expYears: {
-        type: String, required: function () {
-            if (this.role == 'talent') {
-                return true;
-            }
-            return false;
-        }, default: null
-    },
-    langages: {
-        type: Array, required: function () {
-            if (this.role == 'talent') {
-                return true;
-            }
-            return false;
-        }, default: null
-    },
-    jobLevel: {
-        type: String, required: function () {
-            if (this.role == 'talent') {
-                return true;
-            }
-            return false;
-        }, default: null
-    },
-
 
     societyName: {
         type: String, required: function () {
@@ -101,14 +46,45 @@ const UserSchema = new Schema({
         }, default: null
     },
 
-    workSector: { type: String, required: true },
-    description: { type: String, required: true },
 
-    validatedByAdmin: { type: Boolean, default: false },
+    profession: talentUserStringConfig,
+    gender: talentUserStringConfig,
+    firstname: talentUserStringConfig,
+    lastname: talentUserStringConfig,
+    age: talentUserNumberConfig,
+    lastDegree: talentUserStringConfig,
+    formations: talentUserArrayConfig,
+    skills: talentUserArrayConfig,
+    experiences: talentUserArrayConfig,
+    expYears: talentUserStringConfig,
+    langages: talentUserArrayConfig,
+    desiredSalary: talentUserNumberConfig,
+    preferredLocations: talentUserArrayConfig,
+    linkedinUrl: talentUserStringConfig,
+
+
+    workSector: {
+        type: Array, required: function () {
+            if (this.role)
+                return true;
+            return false;
+        }
+    },
+    description: {
+        type: String, required: function () {
+            if (this.role)
+                return true;
+            return false;
+        }
+    },
+
+    validatedByAdmin: { type: Boolean, default: true },
     emailToken: { type: String, required: true },
     emailVerified: { type: Boolean, default: false },
     chatId: { type: String, default: null },
-    resetPasswordToken: { type: String }
+    resetPasswordToken: { type: String },
+    views: { type: Array, default: [] },
+
 }, { timestamps: true })
 
 export default mongoose.models.user || mongoose.model('user', UserSchema);

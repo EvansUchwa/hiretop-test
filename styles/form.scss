@@ -1,0 +1,240 @@
+input,textarea{
+    border: 0;
+    border-bottom: solid 2px #b5b3b3;
+    // border-radius: 8px;
+}
+
+.input-error-msg{
+    padding: 10px 0;
+    color: red;
+    font-weight: bolder;
+}
+
+.formBtn{
+    width: 80%;
+    margin: auto;
+    button{
+        width: 100%;
+    }
+}
+form{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px 0;
+    
+    sup{
+        font-size: 14px;
+        color: $tertiary-color;
+    }
+    .formField{
+
+        input,textarea{
+            width: 100%;
+            &:focus{
+                border-color: $primary-color;
+                color: $primary-color;
+            }
+        }
+        display: flex;
+        flex-direction: column;
+        label{
+            font-weight: bold;
+            font-size: 18px;
+        }
+        &>label:nth-child(1){
+            margin-bottom: 10px;
+        }
+        &.formFiedTextArea{
+
+        }
+        &.formFiedMultipletext{
+            article{
+                background-color: rgba($color: $primary-color, $alpha: 0.5);
+                padding: 10px;
+                b{
+                    color: black;
+                }
+                p{
+                    margin: 5px 0;
+                }
+            }
+            button{
+                padding: 8px 16px;
+                font-size: 12px;
+                background-image: initial;
+                background-color: $primary-color;
+                color: white;
+            }
+            div{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 10px;
+                span{
+                    background-color: $secondary-color;
+                    color: white;
+                    padding: 4px 12px;
+                    border-radius: 10px;
+                }
+                
+            }
+        }
+        &.radioField{
+            input{
+                display: none;
+                &:checked{
+                    &+label span{
+                        background-color: $primary-color;
+                    }
+                }
+                &+label{
+                    align-items: center;
+                    gap: 0 5px;
+                    cursor: pointer;
+                    span{
+                        background-color: #b5b3b3;
+                        border-radius: 100%;
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                    }
+                    b{
+                       
+                    }
+                }
+            }
+            &>div{
+                gap:10px;
+            }
+        }
+        &.checkboxField{
+            div{
+                flex-wrap: wrap;
+            }
+            input{
+                display: none;
+                &:checked{
+                    &+label span{
+                        background-color: $primary-color;
+                    }
+                }
+                &+label{
+                    cursor: pointer;
+                    // width: 45%;
+                    align-items: center;
+                    gap: 0 5px;
+                    span{
+                        background-color: #b5b3b3;
+                        border-radius: 5px;
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                    }
+                    b{
+                       
+                    }
+                }
+            }
+            &>div{
+                gap:20px;
+            }
+        }
+        &.docFileField{
+            width: 100%;
+            section{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                input{
+                    display: none;
+                    
+                    &+label{
+                        border: solid 1px grey;
+                        width: 100% !important;
+                        padding: 10px;
+                        border-radius: 8px;
+                        display: flex;
+                        align-items: center;
+                        gap:  0 10px;
+                        &.fileSelected{
+                            span{
+                                background-color: $secondary-color;
+                            color: white;
+                            }
+                        }
+                        span{
+                            background-color: #ededed;
+                            border-radius: 8px;
+                            padding: 10px 15px;
+                            display: inline-block;
+                            cursor: pointer;
+                        }
+                        p{
+                            font-size: 18px;
+                            font-weight: bold;
+                            color: $secondary-color;
+                            width: 70%;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+        }
+        &.selectField{
+            cursor: pointer;
+            &>span{
+                border: solid 1px grey;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 18px;
+            }
+
+            &>section{
+                
+            position: relative; 
+
+                top: 100%;
+                div{
+                    z-index: 1000000000;
+                    width: 100%;
+                    max-height: 300px;
+                    overflow-y: auto;
+                    // position: absolute;
+                    background-color: #ededed;
+                    span{
+                        cursor: pointer;
+                        padding: 10px;
+                        &:hover{
+                            background-color: $primary-color;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .pf-pwdHider{
+        position: relative;
+        input{
+            width: 100%;
+        }
+        span{
+            cursor: pointer;
+            z-index: 12;
+            background-color: white;
+            border-radius: 5px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 2px;
+            padding: 10px;
+            font-size: 20px;
+        }
+    }
+}
