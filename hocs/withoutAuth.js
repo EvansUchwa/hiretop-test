@@ -1,4 +1,5 @@
 'use client';
+import { FullPageSpinner } from "@/uikits/others";
 import { useAuth } from "../contexts/authContext";
 import { redirect } from 'next/navigation'
 
@@ -9,7 +10,7 @@ export const withoutAuth = (WrappedComponent) => {
         // const { backUrl } = router.query;
 
         if (userLoading)
-            return 'Chargement..........';
+            return <FullPageSpinner />;
 
         if (user) {
             return redirect('/dashboard');

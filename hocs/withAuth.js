@@ -5,6 +5,7 @@ import { useAuth } from "../contexts/authContext";
 import { redirect, usePathname } from 'next/navigation'
 import Sidebar from "@/uikits/sidebar";
 import FinaliseAccount from "@/components/finaliseAccount";
+import { FullPageSpinner } from "@/uikits/others";
 // import Page404 from "../pageComponents/404";
 
 export const withAuth = (WrappedComponent, specificRole = false) => {
@@ -14,7 +15,7 @@ export const withAuth = (WrappedComponent, specificRole = false) => {
         const pathname = usePathname()
 
         if (userLoading)
-            return 'Chargement';
+            return <FullPageSpinner />;
 
         if (!user) {
             return redirect('/login');

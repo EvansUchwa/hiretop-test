@@ -7,7 +7,7 @@ export function InputRadioWithFormik({ name, label, options, optionsL, rqrd }) {
     return (
         <div className='formField radioField'>
             <label htmlFor="">{label}
-                {rqrd && <sup>Champs Obligatoire</sup>}
+                {rqrd && <sup>*</sup>}
             </label>
             <div className='flex'>
                 {
@@ -41,7 +41,7 @@ export function InputCheckboxWithFormik({ name, label, options, optionsL, rqrd }
     return (
         <div className='formField checkboxField'>
             <label htmlFor="">{label}
-                {rqrd && <sup>Champs Obligatoire</sup>}
+                {rqrd && <sup>*</sup>}
             </label>
             <div className='flex'>
                 {

@@ -88,3 +88,66 @@ export function checkUrl(chaine) {
         return chaine;
     }
 }
+
+
+export function getQueryParams(params) {
+    const queryParams = new URLSearchParams(
+        Object.entries(params)
+            .filter(([key, value]) => value !== '') // Ne pas inclure les valeurs vides
+    )
+    return queryParams;
+}
+
+export function filterJobsByZA(data, key, setData) {
+    // Trier les offres d'emploi par ordre alphabétique inverse du nom de l'emploi (Z à A)
+    const sortedJobs = data.sort((a, b) => {
+        const jobNameA = a[key].toLowerCase();
+        const jobNameB = b[key].toLowerCase();
+        return jobNameB.localeCompare(jobNameA);
+    });
+
+    setData(sortedJobs);
+}
+export function filterJobsByAZ(data, key, setData) {
+    // Trier les offres d'emploi par ordre alphabétique du nom de l'emploi (A à Z)
+    const sortedJobs = data.sort((a, b) => {
+        const jobNameA = a[key].toLowerCase();
+        const jobNameB = b[key].toLowerCase();
+        return jobNameA.localeCompare(jobNameB);
+    });
+
+    setData(sortedJobs);
+}
+
+export function filterJobsByCreatedAtRecent(jobs, setData) {
+    const sortedData = jobs.sort((a, b) => {
+        return new Date(b.createdAt) - new Date(a.createdAt);
+    });
+    setData(sortedData);
+}
+export function filterJobsByCreatedAtOldest(jobs, setData) {
+    const sortedData = jobs.sort((a, b) => {
+        return new Date(a.createdAt) - new Date(b.createdAt);
+    });
+    setData(sortedData);
+}
+
+export function filterJobsByMostViews(jobs, setData) {
+    // Trier les offres d'emploi par nombre de vues (du plus grand au plus petit)
+    const sortedData = jobs.sort((a, b) => {
+        const viewsA = a.views.length; // Nombre de vues de l'offre d'emploi a
+        const viewsB = b.views.length; // Nombre de vues de l'offre d'emploi b
+        return viewsB - viewsA;
+    });
+    setData(sortedData);
+}
+
+export function filterJobsByLeastViews(jobs, setData) {
+    // Trier les offres d'emploi par nombre de vues (du plus grand au plus petit)
+    const sortedData = jobs.sort((a, b) => {
+        const viewsA = a.views.length; // Nombre de vues de l'offre d'emploi a
+        const viewsB = b.views.length; // Nombre de vues de l'offre d'emploi b
+        return viewsA - viewsB;
+    });
+    setData(sortedData);
+}

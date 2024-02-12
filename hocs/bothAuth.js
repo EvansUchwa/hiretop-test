@@ -1,5 +1,6 @@
 import { useAuth } from "@/contexts/authContext";
 import { AuthedHocWrapper } from "./withAuth";
+import { FullPageSpinner } from "@/uikits/others";
 
 
 export const bothAuth = (WrappedComponent) => {
@@ -7,7 +8,7 @@ export const bothAuth = (WrappedComponent) => {
         const { user, userLoading } = useAuth();
 
         if (userLoading)
-            return 'Chargement';
+            return <FullPageSpinner />;
 
         if (user) {
             return <AuthedHocWrapper>

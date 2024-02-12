@@ -7,7 +7,6 @@ const talentUserStringConfig = {
     required: function () {
         return this.role === 'talent';
     },
-    default: null,
 };
 
 const talentUserNumberConfig = {
@@ -15,7 +14,6 @@ const talentUserNumberConfig = {
     required: function () {
         return this.role === 'talent';
     },
-    default: null,
 };
 
 const talentUserArrayConfig = {
@@ -23,7 +21,6 @@ const talentUserArrayConfig = {
     required: function () {
         return this.role === 'talent';
     },
-    default: null,
 };
 
 

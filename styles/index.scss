@@ -10,6 +10,8 @@
 @import './navbar.scss';
 @import './sidebar.scss';
 @import './form.scss';
+@import './modal.scss';
+
 
 
 // @import './variables.scss';
@@ -38,6 +40,8 @@ button{
     }
 }
 .dashboardPageWrapper{
+    min-height: 100vh;
+    background-color: #f3f4f6;
     .dpw-content{
         width: calc(100% - $sidebarWidth);
         margin-left: auto;
@@ -62,9 +66,24 @@ ul,li{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: $secondary-color;
+    svg{
+        font-size: 50px;
+    }
     img{
         width: 150px;
         height: 150px;
+    }
+}
+.fullPageSpinner{
+    height: 100vh;
+    width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    svg{
+        font-size: 80px;
+        color: $primary-color;
     }
 }
 
@@ -74,4 +93,18 @@ ul,li{
     flex-direction: column;
     justify-content: center;
     gap: 15px 0;
+}
+
+.dataNotFoundBackToHome{
+    width: 80%;
+    margin: 25px auto;
+    text-align: center;
+    button{
+        margin: 15px auto;
+    }
+}
+
+select{
+    padding: 15px 20px;
+    border-radius: 8px;
 }

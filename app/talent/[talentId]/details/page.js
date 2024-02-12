@@ -1,8 +1,11 @@
 'use client';
+import { DataNotFoundBackToHome } from '@/components/other';
+import { TalentExpOrFormationCard } from '@/components/talent/card';
 import { useLang } from '@/contexts/langContext';
 import { bothAuth } from '@/hocs/bothAuth';
 import { useTalentDetails } from '@/hooks/useTalent'
-import { PhEnvelope, PhLinkedinLogo } from '@/uikits/icon';
+import { MaterialSymbolsLocationOn, PhEnvelope, PhLinkedinLogo } from '@/uikits/icon';
+import { SectionSpinner } from '@/uikits/others';
 import { checkUrl } from '@/utils/front/others';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
@@ -13,12 +16,11 @@ function TalentDetails() {
     const { talent, talentLoading } = useTalentDetails(talentId);
     const { langData } = useLang();
 
-
     if (talentLoading)
-        return 'Chargement du talent';
+        return <SectionSpinner />;
 
     if (!talent)
-        return 'pas de talent'
+        return <DataNotFoundBackToHome />
     return (
         <div className='talentProfil'>
             {/* <h1>Detail d'un talent</h1> */}
@@ -26,62 +28,102 @@ function TalentDetails() {
 
             </div>
             <div className="tpBannerOverlay">
-                <section className='tbo-image'>
+                <section className='tbo-image flex f-column'>
                     <img src={checkUrl(talent.profilPic.url)} alt={"user " + talent._id} />
+                    <p>
+                        <MaterialSymbolsLocationOn />
+                        <span>  {langData.form.fields.countryOptions[talent.country] + ',' + talent.address}</span>
+                    </p>
+                    <p>
+                        <span>  {langData.form.fields.genderOptions[talent.gender] + ',' + talent.age + ' ans'}</span>
+                    </p>
+
                 </section>
-                <section className='tbo-data'>
+                <section className='tbo-data flex f-column'>
                     <h1>{talent.firstname + ' ' + talent.lastname}</h1>
-                    <div>
-                        <a href="">
+                    <div className='tbod-top flex'>
+                        <a href={talent.linkedinUrl} target='_blank'>
                             <PhLinkedinLogo />
                         </a>
-                        <a href="">
+                        <a href={'mailto:' + talent.email} target='_blank'>
                             <PhEnvelope />
                         </a>
-                        <Link href={''}>Message</Link>
+
+                        <button>Message</button>
+
                     </div>
-                    <div>
+                    <div className='tbod-middle flex'>
                         <p>
                             <b>Title</b>
-                            <span>.............</span>
+                            <span>{talent.profession}</span>
                         </p>
                         <p>
                             <b>Level</b>
                             <span>{talent.expYears}</span>
                         </p>
                     </div>
-                    <div>
+                    <div className='tbod-bottom'>
                         <b>Skill</b>
-                        {
-                            talent.skills.map((item, i) => <span key={'skil nb' + i}>Skille 1</span>)
-                        }
+                        <div className='flex'>
+                            {
+                                talent.skills.map((item, i) => <span key={'skil nb' + i}>Skille 1</span>)
+                            }
+                        </div>
                     </div>
                 </section>
             </div>
-            <div className="tpOtherDatas">
+            <div className="tpOtherDatas flex f-column">
                 <section>
-                    <h3>Bio</h3>
+                    <h2>Bio</h2>
                     <p>
                         {talent.description}
                     </p>
                 </section>
                 <section>
-                    <h3>Formations</h3>
+                    <h2>Formations</h2>
                     {
-                        talent.formations.map((item, i) => <span key={'formations nb' + i}>Skille 1</span>)
+                        talent.formations.map((item, i) => <TalentExpOrFormationCard key={'talent formation  nb' + i}
+                            data={item}
+                        />)
                     }
                 </section>
                 <section>
-                    <h3>Exp</h3>
+                    <h2>Exp</h2>
                     {
-                        talent.experiences.map((item, i) => <span key={'exp nb' + i}>Exp 1</span>)
+                        talent.experiences.map((item, i) => <TalentExpOrFormationCard key={'talent exp  nb' + i}
+                            data={item}
+                        />)
                     }
+                </section>
+                <section>
+                    <h2>Autres Informations</h2>
+                    <p>
+                        <b>Langues: </b>
+                        {
+                            talent.langages.map((item, i) => <span key={'lang exp  nb' + i}>
+                                {item}
+                            </span>)
+                        }
+                    </p>
+                    <p>
+                        <b>Salaire approximatif souhaiter: </b>
+                        {
+                            talent.desiredSalary + '$'
+                        }
+                    </p>
+                    {/* <p>
+                        <b>Langues: </b>
+                        {
+                            talent.langages.map((item, i) => <span className=''
+                                key={'exp nb' + i}>
+                                {item}
+                            </span>)
+                        }
+                    </p> */}
                 </section>
 
             </div>
-            {
-                talent.firstname
-            }
+
         </div>
     )
 }

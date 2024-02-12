@@ -9,7 +9,7 @@ function PasswordFieldWithFormik({ label, placeholder, name, rqrd }) {
         <div className='formField passwordField'>
             <label htmlFor="">
                 {label}
-                {rqrd && <sup>Champs Obligatoire</sup>}
+                {rqrd && <sup>*</sup>}
             </label>
             <section className='pf-pwdHider'>
                 <Field type={type} name={name}

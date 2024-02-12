@@ -10,8 +10,8 @@ const nextConfig = {
         smtpEmail: "johnsonevans686@gmail.com",
         smtpPassword: "nCgjwRyDQVLTm6xU",
         jwtSecret: "dev-this-app-for-talent-virtuel-test",
-        profilPicFolderPath: "storage/profilPics",
-        resumeFolderPath: "storage/resumesFile"
+        profilPicFolderPath: "public/storage/profilPics/",
+        resumeFolderPath: "public/storage/resumes/"
     },
 };
 

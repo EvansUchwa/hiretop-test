@@ -3,11 +3,12 @@ import { withAuth } from '@/hocs/withAuth';
 import { useTalents } from '@/hooks/useTalent'
 import React from 'react'
 import TalentCard from '@/components/talent/card';
+import { SectionSpinner } from '@/uikits/others';
 
 function talentList() {
     const { talents, talentsLoading } = useTalents();
     if (talentsLoading)
-        return 'Chargement';
+        return <SectionSpinner />;
     return (
         <div className='talentList'>
             <h1>Talent</h1>

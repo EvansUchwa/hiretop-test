@@ -31,4 +31,16 @@ function TalentCard({ talent }) {
     )
 }
 
+export function TalentExpOrFormationCard({ data }) {
+    const { start, end, desc, title } = data;
+    return (
+        <article className='formationOrExpCard'>
+            <b>Du {start} au {end} :</b>
+            <p>
+                {desc}
+            </p>
+        </article>
+    )
+}
+
 export default TalentCard

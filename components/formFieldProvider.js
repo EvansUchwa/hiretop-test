@@ -7,6 +7,20 @@ import { SelectWithFormik } from '@/uikits/form/select';
 import { TextFieldWithFormik } from '@/uikits/form/text';
 import React from 'react'
 
+function dispatchCheckboxOptionsL(name, formLangs) {
+    let key;
+    if (['workSector', 'talentWorkSector'].includes(name)) {
+        key = 'workSectorOptions';
+    }
+    else if (name == 'langages') {
+        key = 'requiredLangOptions'
+    }
+    else {
+        key = name + 'Options'
+    }
+    return formLangs[key];
+}
+
 function dispatchSelectOptionsL(name, formLangs) {
     let key;
     if (name == 'jobSector') {
@@ -14,7 +28,10 @@ function dispatchSelectOptionsL(name, formLangs) {
     }
     else if (name == 'lastDegree') {
         key = 'requiredDegreeOptions'
-    } else {
+    } else if (name == 'expYears') {
+        key = 'requiredExpYearOptions'
+    }
+    else {
         key = name + 'Options'
     }
     return formLangs[key];
@@ -80,7 +97,7 @@ function FormFieldProvider(props) {
             options={options}
             name={name}
             label={formLangs[name].label}
-            optionsL={formLangs[['workSector', 'talentWorkSector',].includes(name) ? 'workSectorOptions' : name + 'Options']}
+            optionsL={dispatchCheckboxOptionsL(name, formLangs)}
             rqrd={rqrd}
         />
     }

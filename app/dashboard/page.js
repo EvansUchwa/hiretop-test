@@ -15,9 +15,9 @@ function Dashboard() {
     return (
         <div>
             <div className="dashboard">
-                <p>
+                {/* <p>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident asperiores facilis ad eaque exercitationem cumque dolorum enim excepturi, aliquid quasi quos veritatis! Totam fuga quisquam quas autem velit ducimus vero!
-                </p>
+                </p> */}
             </div>
         </div>
     )

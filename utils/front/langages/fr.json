@@ -50,9 +50,9 @@
         "experiences": {"label": "Vos experiences pro","ph": ""},
         "expYears": {"label": "Niveau d'esperience","ph": ""},
         "langages": {"label": "Langues que vous parlez","ph": ""},
-        "desiredSalary": {"label": "Salaire souhaiter","ph": ""},
+        "desiredSalary": {"label": "Salaire approximatif souhaiter","ph": "Salaire en $"},
         "preferredLocations": {"label": "Localisation prefere","ph": ""},
-        "linkedinUrl": {"label": "Lien de votre profil Linkedin","ph": ""},
+        "linkedinUrl": {"label": "Lien de votre profil Linkedin","ph": "Lien de votre profile Linkedin"},
 
         "gender": {"label": "Votre sexe","ph": "Votre sexe"},
         "address": {"label": "Votre adresse","ph": "Votre adresse"},
@@ -60,7 +60,7 @@
         "country": {"label": "Votre pays","ph": "Votre pays"},
         "societyName": {"label": "Le nom de votre entreprise","ph": "Le nom de votre entreprise"},
 
-        "profilPic": {"label": "Logo de votre entreprise","ph": "Logo de votre entreprise"},
+        "profilPic": {"label": "Photo de profil","ph": "Logo de votre entreprise"},
         "resume": {"label": "Votre Cv","ph": ""},
 
         "workSector": {"label": "Domaine dans lequel vous intervenez"},
@@ -88,12 +88,13 @@
 
 
         "selectLabels":{
-          "country": "Choisissez votre pays",
-          "requiredDegree": "Choisissez le niveau d'etude requis",
-          "requiredExpYear": "Choisissez le nombre d'anne d'experience requis",
-          "jobType": "Choisissez le type de contrat",
-          "jobSector": "Choisissez le domaine dans lequel vous intervenez",
-          "lastDegree": "Choisissez votre dernier diplome"
+          "country": "Pays",
+          "requiredDegree": "Niveau d'etude requis",
+          "requiredExpYear": "Niveau d'experience",
+          "jobType": "Type de contrat",
+          "jobSector": "Categorie",
+          "lastDegree": "Diplome",
+          "expYears": "Niveau d'experience"
         },
         "genderOptions": {
           "male": "Homme",
@@ -401,7 +402,8 @@
       "home": "Accueil",
       "dashboard": "Tableau de bord",
       "addJob": "Ajouter une offre",
-      "jobList": "Liste de vos offres",
+      "createdJobList": "Vos offres publier",
+      "allJobList": "Toutes les offres",
       "societyList": "Liste des entreprise",
       "searchJob": "Chercher une offre",
       "account": "Mon compte",

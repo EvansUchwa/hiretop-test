@@ -6,7 +6,7 @@ export function TextAreaWithFormik(props) {
     const { name, ph, label, type, rqrd, ...rest } = props;
     return <div className={' formField  formFiedTextArea '}>
         <label htmlFor="">{label}
-            {rqrd && <sup>Champs Obligatoire</sup>}
+            {rqrd && <sup>*</sup>}
         </label>
         <section className="">
             <Field as="textarea"
@@ -35,7 +35,7 @@ export function MultipleTextWithFormik(props) {
     }
     return <div className={' formField  formFiedMultipletext '}>
         <label htmlFor="">{label}
-            {rqrd && <sup>Champs Obligatoire</sup>}
+            {rqrd && <sup>*</sup>}
         </label>
         {
             value && <div>
@@ -109,7 +109,7 @@ export function MultipleTextBlockWithFormik(props) {
     }
     return <div className={' formField  formFiedMultipletext '}>
         <label htmlFor="">{label}
-            {rqrd && <sup>Champs Obligatoire</sup>}
+            {rqrd && <sup>*</sup>}
         </label>
         {
             value && <div>

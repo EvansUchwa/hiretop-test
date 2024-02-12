@@ -13,7 +13,7 @@ export const PUT = simpleMiddleware(async (req) => {
     try {
         const formData = await req.formData();
 
-        const title = formData.get("title");
+        const profession = formData.get("profession");
 
         const firstname = formData.get("firstname");
         const lastname = formData.get("lastname");
@@ -26,11 +26,10 @@ export const PUT = simpleMiddleware(async (req) => {
         const formations = JSON.parse(formData.get("formations"));
         const experiences = JSON.parse(formData.get("experiences"));
         const preferredLocations = JSON.parse(formData.get("preferredLocations"));
+        const langages = JSON.parse(formData.get("langages"));
 
 
         const country = formData.get("country");
-
-
         const expYears = formData.get("expYears");
 
 
@@ -58,13 +57,13 @@ export const PUT = simpleMiddleware(async (req) => {
         let resumeObj = await fileUploadManager(resume, origin, folderPath2);
 
         const user = await User.findByIdAndUpdate(userConnectedId, {
-            role, title, workSector, firstname, lastname, country, address, phone,
+            role, profession, workSector, firstname, lastname, country, address, phone,
             description, age, gender,
             profilPic: profilPicObj,
             resume: resumeObj,
             formations, experiences, skills,
             preferredLocations, desiredSalary, linkedinUrl,
-            lastDegree, expYears
+            lastDegree, expYears, langages
         });
 
         var token = await new SignJWT({ userId: user._id, userRole: user.role })

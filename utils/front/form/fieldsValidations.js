@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
-import { countrysOptions, wsOptions } from './fields';
+import { countrysEnum } from '@/utils/back/enums';
+import { categorieEnum } from '@/utils/back/enums';
 const email = Yup.string().email('Email').required("Champs requis");
 const phone = Yup.string().required("Champs requis");
 const address = Yup.string().required("Champs requis");
@@ -11,9 +12,14 @@ const gender = Yup.string().required("Champs requis");
 
 const age = Yup.number().required("Champs requis");
 
-const desiredSalary = Yup.number().required("Champs requis");
+const desiredSalary = Yup.number().min(100, 'Minimum 100 dollars').required("Champs requis");
 const preferredLocations = Yup.array().min(1, 'Minimum 1 valeur').required("Champs requis");
-const linkedinUrl = Yup.string().required("Champs requis");
+
+
+const linkedinUrl = Yup.string().matches(
+    /^(https?:\/\/)?(www\.)?linkedin\.com\/(mwlite\/)?(in|pub|company)\/[a-zA-Z0-9_-]+\/?$/,
+    'Lien LinkedIn invalide'
+).required("Champs requis");
 
 // const lastname = Yup.string().required("Champs requis");
 
@@ -45,17 +51,21 @@ const experiences = Yup.array().min(1, 'Minimum 1 valeur').notRequired();
 const formations = Yup.array().min(1, 'Minimum 1 valeur').notRequired();
 const skills = Yup.array().min(1, 'Minimum 1 valeur').notRequired();
 
+const profession = Yup.string().required("Champs requis");
+const expYears = Yup.string().required("Champs requis");
+const langages = Yup.array().min(1, 'Minimum 1 secteur').required("Champs requis");
+
 const jobDescription = description;
 
 function countryIsValid(postalCode) {
-    const filter = countrysOptions.filter(item => item == postalCode)
+    const filter = countrysEnum.filter(item => item == postalCode)
     if (filter && filter.length > 0)
         return true;
     return false;
 }
 
 function workSectorIsValid(postalCode) {
-    const filter = wsOptions.filter(item => item == postalCode)
+    const filter = categorieEnum.filter(item => item == postalCode)
     if (filter && filter.length > 0)
         return true;
     return false;
@@ -86,12 +96,13 @@ export const societyfinaliseAccountValidation = Yup.object().shape({
     phone, address, societyName, profilPic, country, workSector, description
 });
 
+
 export const talentGeneralValidation = Yup.object().shape({
-    phone, address, firstname, lastname, age, country, workSector, gender
+    phone, address, firstname, lastname, age, country, workSector, gender, profession
 });
 
 export const talentSkillFormationAndExpValidation = Yup.object().shape({
-    skills, formations, experiences
+    skills, formations, experiences, expYears
 });
 
 export const talentFileValidation = Yup.object().shape({
@@ -100,7 +111,7 @@ export const talentFileValidation = Yup.object().shape({
 
 
 export const talentOtherDataValidation = Yup.object().shape({
-    desiredSalary, preferredLocations, linkedinUrl, description
+    desiredSalary, preferredLocations, linkedinUrl, description, langages
 });
 
 export const jobValidation = Yup.object().shape({

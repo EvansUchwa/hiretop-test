@@ -36,18 +36,22 @@ const theschema = new Schema({
 
     requiredDegree: { type: String, required: null, enum: degreeEnum },
     requiredExpYear: { type: String, required: null, enum: expYearsEnum },
-    requiredLang: { type: Array, required: null },
+    requiredLang: { type: Array, required: langEnum },
 
 
     jobDescription: { type: String, required: true },
+
+    country: { type: String, required: false },
     location: { type: String, required: false },
+
     tasks: { type: Array, required: false },
     advantages: { type: Array, required: true },
 
     salary: { type: Number, default: null },
     remoteAccepted: { type: String, default: null },
 
-    applyLimitDate: { type: String, required: null }
+    applyLimitDate: { type: String, required: null },
+    views: { type: Array, default: [] },
 }, { timestamps: true });
 
 

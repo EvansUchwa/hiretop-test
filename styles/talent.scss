@@ -14,7 +14,12 @@
         height: 90px;
         border-radius: 100%;
     }
-
+p{
+    overflow: hidden;
+    width: 90%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
     section{
         display: flex;
         gap: 0 20px;
@@ -45,7 +50,7 @@
     }
     .tpBannerOverlay{
         background-color: white;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         padding: 40px 20px;
         border-radius: 30px;
         width: 85%;
@@ -55,30 +60,98 @@
         gap: 50px;
         z-index: 1111111111;
         .tbo-image{
-            // background-color: grey;
+            // background-color: 
+            align-items: center;
+            justify-content: center;
             width: 25%;
-            overflow: hidden;
-            position: relative;
-            border-radius: 50%;
+            gap: 20px 0;
             img{
-                width: 100%;
-                height: 100%;
-                display: block; 
-                aspect-ratio: 1/1;
+                width: 200px;
+                height: 200px;
+                border-radius: 100%;
+                // display: block; 
+                // aspect-ratio: 1/1;
+            }
+            p{
+                text-align: center;
+               
+                svg{
+                    color: $secondary-color;
+                }
             }
         }
         .tbo-data{
             width: 60%;
+            gap: 25px 0;
             b{
+                display: inline-block;
                 margin-bottom: 10px;
+                font-size: 14px;
+                color: grey;
             }
+           
             p{
                 display: flex;
                 flex-direction: column;
-                gap: 15px 0;
+                gap: 0 0;
+            }
+            .tbod-top{
+                gap:  0 15px;
+                align-items: center;
+                a{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    border: solid 2px $primary-color;
+                    color: $primary-color;
+                    border-radius: 50px;
+                }
+            }
+            .tbod-middle{
+                gap: 0 55px;
+                span{
+                    font-size: 25px;
+                }
+            }
+            .tbod-bottom{
+                b{
+                    margin-bottom: 15px;
+                }
+                span{
+                    border-radius: 20px;
+                    padding: 8px 16px;
+                    background-color: rgba($color: $primary-color, $alpha: 0.1);
+                }
             }
         }
     }
+    .tpOtherDatas{
+        gap: 25px 0;
+        width: 85%;
+        margin: 50px auto;
+        h2{
+            color: $primary-color;
+            margin-bottom: 25px;
+        }
+        section{
+            &>p{
+                margin-bottom: 15px;
+                span{
+                    padding: 5px;
+                    background-color: $secondary-color;
+                    color: white;
+                    border-radius: 10px;
+                    margin: 5px;
+                }
+            }
+        }
+    }
+    
+}
+.formationOrExpCard{
+    margin: 10px 0;
 }
 
 .talentList{

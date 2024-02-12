@@ -7,15 +7,15 @@ const theschema = new Schema({
     job: {
         type: mongoose.Schema.Types.ObjectId, ref: 'job', required: true
     },
-    resume: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'resumeFile', required: true
-    },
-    message: {
+    applyerMessage: {
         type: String, required: true,
     },
-    portfolio: {
+    isValidate: {
+        type: Boolean, default: false,
+    },
+    isValidateMessage: {
         type: String, default: null,
-    }
+    },
 }, { timestamps: true })
 
 export default mongoose.models.jobApply || mongoose.model('jobApply',

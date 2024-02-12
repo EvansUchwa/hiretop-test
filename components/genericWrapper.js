@@ -1,12 +1,20 @@
 import { AuthProvider } from '@/contexts/authContext'
+import { ModalProvider } from '@/contexts/modalContext'
+import { SearchParamsProvider } from '@/contexts/searchParamContext'
+import Modal from '@/uikits/modal'
 import { Toaster, toast } from 'sonner'
 
 function GenericWrapper({ children }) {
     return (
-        <AuthProvider>
-            {children}
-            <Toaster />
-        </AuthProvider>
+        <SearchParamsProvider>
+            <ModalProvider>
+                <AuthProvider>
+                    {children}
+                    <Modal />
+                    <Toaster />
+                </AuthProvider>
+            </ModalProvider>
+        </SearchParamsProvider>
     )
 }
 

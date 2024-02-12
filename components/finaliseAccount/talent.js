@@ -10,6 +10,7 @@ import { useLang } from '@/contexts/langContext';
 import { talentFileValidation, talentGeneralValidation, talentOtherDataValidation, talentSkillFormationAndExpValidation } from '@/utils/front/form/fieldsValidations';
 import { errorAlert, successAlert } from '@/utils/front/others';
 import { finaliseTalentUserAccount } from '@/services/front/acoount';
+import { SvgSpinnersBarsFade } from '@/uikits/icon';
 
 export function TalentFinaliseManager({ updateLogin }) {
     const [stepIndex, setSI] = useState(0);
@@ -19,6 +20,7 @@ export function TalentFinaliseManager({ updateLogin }) {
         step2: false,
         step3: false
     });
+    const [finalisationLoading, setFL] = useState(false);
     const [finalObj, setFinalObj] = useState({});
     const { langData } = useLang();
 
@@ -58,16 +60,21 @@ export function TalentFinaliseManager({ updateLogin }) {
         if (stepIndex < (steps.length - 1)) {
             setSI(prev => prev + 1)
         } else {
+            setFL(true)
             finaliseTalentUserAccount(finalObj, (res) => {
                 updateLogin(res.data.token)
-            }, () => { }, () => { })
+            }, () => { }, () => {
+                setFL(false)
+            })
         }
     }
     return <div className='talentFinaliseAccount'>
         {steps[stepIndex].component}
         <section className='tfa-navigator'>
             <button onClick={handlePrev} disabled={stepIndex == 0 ? true : false}>Precedent</button>
-            <button onClick={handleNext} disabled={stepIsValids['step' + stepIndex] ? false : true} >Suivant</button>
+            <button onClick={handleNext} disabled={stepIsValids['step' + stepIndex] ? (finalisationLoading ? true : false) : true} >
+                {finalisationLoading ? <SvgSpinnersBarsFade /> : 'Suivant'}
+            </button>
         </section>
     </div>
 }
@@ -115,7 +122,8 @@ function TalentFinaliseFormationsAndExperience({ langData, setSIV, finalObj, set
         initialValues: {
             formations: finalObj.formations ?? [],
             skills: finalObj.skills ?? [],
-            experiences: finalObj.formations ?? []
+            experiences: finalObj.formations ?? [],
+            expYears: finalObj.expYears ?? ''
         },
         validationSchema: talentSkillFormationAndExpValidation,
         validateOnMount: true
@@ -183,7 +191,8 @@ function TalentFinaliseOtherData({ langData, setSIV, setFinalObj, finalObj }) {
             desiredSalary: finalObj.desiredSalary ?? '',
             preferredLocations: finalObj.preferredLocations ?? '',
             linkedinUrl: finalObj.linkedinUrl ?? '',
-            description: finalObj.description ?? ''
+            langages: finalObj.langages ?? '',
+            description: finalObj.description ?? '',
         },
         validationSchema: talentOtherDataValidation,
         validateOnMount: true

@@ -23,7 +23,7 @@ a {
 }
 
 input,textarea{
-  padding: 15px;
+  padding: 12px;
   /* border: 0; */
   font-size: 18px;
   &:focus{

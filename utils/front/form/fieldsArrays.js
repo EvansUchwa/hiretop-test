@@ -5,13 +5,12 @@ import {
     jobTitleField,
     jobTypeField,
     locationField,
-    passwordConfirmationField, passwordField, phoneField, profilPicField, remoteAcceptedField, requiredDegreeField, requiredExpYearField, requiredLangField, salaryField, societyNameField, workSectorField, tasksField, firstnameField, lastnameField, ageField, formationsField, experiencesField, skillsField, resumeField, desiredSalaryField, preferredLocationsField, linkedinUrlField, lastDegreeField, titleField, professionField
+    passwordConfirmationField, passwordField, phoneField, profilPicField, remoteAcceptedField, requiredDegreeField, requiredExpYearField, requiredLangField, salaryField, societyNameField, workSectorField, tasksField, firstnameField, lastnameField, ageField, formationsField, experiencesField, skillsField, resumeField, desiredSalaryField, preferredLocationsField, linkedinUrlField, lastDegreeField, titleField, professionField, expYearsField, langagesField
 } from "./fields"
 
 
 export function signupFields() {
     return [
-        // genderField,
         emailField,
         passwordField, passwordConfirmationField
     ]
@@ -50,7 +49,7 @@ export function talentGeneralFields() {
 }
 
 export function talentSkillsExpAndFormationsFields() {
-    return [formationsField, experiencesField, skillsField, lastDegreeField];
+    return [formationsField, experiencesField, skillsField, lastDegreeField, expYearsField];
 }
 
 export function talentProfilPicAndResumeFields() {
@@ -61,7 +60,7 @@ export function talentProfilPicAndResumeFields() {
 
 export function talentOtherDataFields() {
     return [
-        desiredSalaryField, preferredLocationsField, linkedinUrlField, descriptionField
+        desiredSalaryField, preferredLocationsField, linkedinUrlField, langagesField, descriptionField
     ];
 }
 
@@ -80,5 +79,17 @@ export function jobFields() {
         remoteAcceptedField,
         salaryField,
         applyLimitDateField
+    ]
+}
+
+export function jobSearchFields() {
+    return [
+        jobSectorField,
+        jobTypeField,
+        requiredDegreeField,
+        requiredExpYearField,
+        locationField,
+        remoteAcceptedField,
+        salaryField
     ]
 }

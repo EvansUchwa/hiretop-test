@@ -9,8 +9,12 @@
             align-items: center;
             justify-content: center;
             padding: 0 30px;
+            width: 60%;
         }
-        width: 50%;
+        &:nth-child(2){
+            width: 40%;
+        }
+        
     }
 
 h2{
@@ -18,7 +22,7 @@ h2{
     margin-bottom: 25px;
 }
     .registerOrLogin{
-        width: 80%;
+        width: 70%;
         margin: auto;
         padding: 50px 0;
         .registerOrLogin-othersOptions{

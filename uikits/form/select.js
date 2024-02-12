@@ -21,32 +21,31 @@ export function SelectWithFormik(props) {
 
     return <div className={'formField selectField'}>
         <label htmlFor="">{label}
-            {rqrd && <sup>Champs Obligatoire</sup>}
+            {rqrd && <sup>*</sup>}
         </label>
         <span onClick={() => setToggleSelection(prev => !prev)}
             className="flex">
             {currentValueLabel ? currentValueLabel : chooseLabel}
             {/* <CarbonChevronDown /> */}
         </span>
-        <section>
-            {
-                toggleSelection && <div className="flex f-column">
-                    {
-                        options.map((fc, i) => <span
-                            key={'select ' + name + ' nb' + i}
-                            onClick={() => {
-                                helpers.setValue(fc)
-                                // setCVL(fc[labelKey]);
-                                setToggleSelection(false)
-                            }}
-                            className={fc == value ? 'currentSelected' : ''}
-                        >
-                            {optionsL[fc]}
-                        </span>)
-                    }
-                </div>
-            }
-        </section>
+        {
+            toggleSelection && <div className="flex f-column">
+                {
+                    options.map((fc, i) => <span
+                        key={'select ' + name + ' nb' + i}
+                        onClick={() => {
+                            helpers.setValue(fc)
+                            // setCVL(fc[labelKey]);
+                            setToggleSelection(false)
+                        }}
+                        className={fc == value ? 'currentSelected' : ''}
+                    >
+                        {optionsL[fc]}
+                    </span>)
+                }
+            </div>
+        }
+
         <ErrorMessage name={name} component="div" className="input-error-msg" />
     </div>;
 }
