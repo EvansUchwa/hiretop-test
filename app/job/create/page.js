@@ -3,12 +3,12 @@ import FormFieldProvider from '@/components/formFieldProvider';
 import MyCustomFormikForm from '@/components/other';
 import { useAuth } from '@/contexts/authContext';
 import { useLang } from '@/contexts/langContext';
-import { registerUser } from '@/services/front/auth';
+import { withAuth } from '@/hocs/withAuth';
 import { createJob } from '@/services/front/job';
 import { FormButton } from '@/uikits/button';
 import { jobFields } from '@/utils/front/form/fieldsArrays';
 import { jobValidation } from '@/utils/front/form/fieldsValidations';
-import { errorAlert, handleEnterKeyPress, successAlert } from '@/utils/front/others';
+import { errorAlert, successAlert } from '@/utils/front/others';
 import { useFormik, FormikProvider, Form } from 'formik';
 import React from 'react'
 
@@ -39,20 +39,18 @@ function CreateJob() {
             setSubmitting(false)
         })
     }
-    const { langData } = useLang();
+    const { buttonsL, jobL } = useLang();
     return (
         <div className='createOrUpdateJob'>
-            <h1>Creer une nouvelle offre</h1>
-            {/* multipletext */}
+            <h1>{jobL.addJobTitle}</h1>
             <FormikProvider value={formik}>
                 <MyCustomFormikForm>
                     {
                         jobFields().map((item, i) => <FormFieldProvider
-                            formLangs={langData.form.fields}
                             key={'add job field nb' + i}
                             {...item} />)
                     }
-                    <FormButton text={isSubmitting ? '' : langData.buttons.register}
+                    <FormButton text={isSubmitting ? '' : buttonsL.publish}
                         isValid={isSubmitting ? false : isValid} />
                 </MyCustomFormikForm>
             </FormikProvider>
@@ -60,4 +58,4 @@ function CreateJob() {
     )
 }
 
-export default CreateJob;
+export default withAuth(CreateJob, 'society');

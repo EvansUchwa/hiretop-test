@@ -1,4 +1,6 @@
+import { useLang } from '@/contexts/langContext';
 import SimpleButton from '@/uikits/button';
+import { MaterialSymbolsBrightnessAlert } from '@/uikits/icon';
 import {
     filterJobsByAZ, filterJobsByZA, filterJobsByCreatedAtRecent, filterJobsByCreatedAtOldest, filterJobsByMostViews,
     filterJobsByLeastViews, handleEnterKeyPress
@@ -6,6 +8,7 @@ import {
 import { Form } from 'formik'
 import React, { useEffect, useState } from 'react'
 
+const sorterEnums = ["aToz", "zToa", "latestToldest", "oldestToLatest", "viewsHighToLow", "viewsLowToHigh"]
 export function MyCustomFormikForm({ children }) {
     return (
         <Form onKeyDown={handleEnterKeyPress}>{children}</Form>
@@ -14,7 +17,7 @@ export function MyCustomFormikForm({ children }) {
 
 export function DataSorter({ dataToSort, setDataToSort }) {
     const [sorter, setSorter] = useState('aToz');
-
+    const { formsL } = useLang();
     function handleChange(e) {
         const { value } = e.target;
         setSorter(value)
@@ -22,7 +25,6 @@ export function DataSorter({ dataToSort, setDataToSort }) {
 
     useEffect(() => {
         const copy = [...dataToSort]
-        console.log('her');
         if (sorter == 'aToz') {
             filterJobsByAZ(copy, 'jobTitle', setDataToSort)
         } else if (sorter == 'zToa') {
@@ -40,12 +42,11 @@ export function DataSorter({ dataToSort, setDataToSort }) {
     }, [sorter])
     return (<section>
         <select onChange={(e) => handleChange(e)}>
-            <option value="aToz">A a Z</option>
-            <option value="zToa">Z a A</option>
-            <option value="latestToldest">Plus recent au moins recent</option>
-            <option value="oldestToLatest">Moins recent au plus recent</option>
-            <option value="viewsHighToLow">Plus visible au moins visible</option>
-            <option value="viewsLowToHigh">Moins visible au plus visible</option>
+            {
+                sorterEnums.map((item, i) => <option value={item}>{
+                    formsL.fields.sorterOptions[item]
+                }</option>)
+            }
         </select>
     </section >
     )
@@ -60,5 +61,36 @@ export function DataNotFoundBackToHome() {
     </div>
 }
 
+export function NoDataFoundMakeAnotherActions({ message, btnLabel, btnLink }) {
+    return <div className='dataNotFoundBackToHome'>
+        <p>
+            {message}
+        </p>
+        <SimpleButton text={btnLabel}
+            isLink={btnLink} />
+    </div>
+}
+
+export function AlertBox({ title, content }) {
+    return <div className='alertBox'>
+        <section className='flex'>
+            <MaterialSymbolsBrightnessAlert />
+            <h3>{title} </h3>
+        </section>
+        {content}
+    </div>
+}
+
+export function WelcomeConnectedUser({ user }) {
+    const { dashboardHomeL, buttonsL } = useLang();
+
+    return <div className='dahsboard-welcome'>
+        <p>
+            {dashboardHomeL.welcome.title}, <b>{user.role == 'society' ? user.societyName : user.firstname}</b>
+        </p>
+        <p>{dashboardHomeL.welcome[user.role].callToAction}</p>
+        <SimpleButton text={user.role == 'society' ? buttonsL.exploreTalents : buttonsL.exploreJobs} />
+    </div>
+}
 
 export default MyCustomFormikForm

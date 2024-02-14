@@ -1,0 +1,54 @@
+.account{
+    width: 95%;
+    margin: auto;
+
+    &>section{
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px 0;
+    }
+    .previewProfile{
+        text-align: center;
+        p{
+            margin-bottom: 10px;
+        }
+    }
+}
+.viewTabs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px 0;
+    .vt-labels{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: space-evenly;
+        article{
+            background-color: $grey-primary;
+            padding: 10px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            &.activeTab{
+                background-color: $primary-color;
+                color: white;
+            }
+        }
+    }
+    .vt-view{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 758px) {
+    .viewTabs{
+        .vt-labels{
+            article{
+               font-size: 10px;
+            }
+        }
+        .vt-view{
+        }
+    }
+}

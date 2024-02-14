@@ -1,0 +1,73 @@
+.dashboard{
+    width: 95%;
+    margin: auto;
+    padding: 25px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 25px 0;
+
+    .dahsboard-welcome{
+        display: flex;
+        flex-direction: column;
+        gap: 15px 0;
+        width: 45%;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: white;
+        p:first-child{
+            font-size: 30px;
+        }
+    }
+    .dahsboard-talentStats{
+        width: 45%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: space-evenly;
+    
+    }
+}
+
+.smallStatCard{
+    width: 45%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    span{
+        font-size: 50px;
+        font-weight: bolder;
+        color: $secondary-color;
+    }
+    b{
+        color:rgba($color: $secondary-color, $alpha: 0.5);
+    }
+}
+.dashboard-last10UserApplys,.dashboard-last10UserApplys{
+    width: 100%;
+    &>section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    &>h2{
+        color: $secondary-color;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 972px) {
+    .dashboard{
+        // width: 100%;
+        .dahsboard-welcome{
+            width: 100%;
+        }
+        .dahsboard-talentStats{
+            width: 100%;
+        }
+    }
+   
+}

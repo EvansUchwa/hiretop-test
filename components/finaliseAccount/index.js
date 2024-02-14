@@ -7,22 +7,16 @@ import { useLang } from '@/contexts/langContext';
 import FinalisAccountWrapper from './wrapper';
 import { useAuth } from '@/contexts/authContext';
 
-import { TalentFinaliseManager } from './talent';
+import { TalentFinaliseAccountStepper } from './talent';
 import SocietyFinaliseAccount from './society';
 
 
 function FinaliseUserAccount() {
     const { updateLogin } = useAuth();
-    const { langData } = useLang();
-    let finaliseAccountL = langData.finaliseAccount;
+    const { finaliseAccountL, formsL } = useLang();
     const [selectedRole, setSR] = useState(null);
     const [showFormByRoleType, setSFRT] = useState(false);
 
-    const formik = useFormik({
-        initialValues: {
-            role: '',
-        }
-    });
     const rolesList = [
         { value: 'society' },
         { value: 'talent' },
@@ -30,7 +24,7 @@ function FinaliseUserAccount() {
 
     const viewsByRole = {
         society: <SocietyFinaliseAccount updateLogin={updateLogin} />,
-        talent: <TalentFinaliseManager updateLogin={updateLogin} />,
+        talent: <TalentFinaliseAccountStepper updateLogin={updateLogin} />,
     }
 
     if (showFormByRoleType) {
@@ -40,12 +34,12 @@ function FinaliseUserAccount() {
     }
 
     return (
-        <FinalisAccountWrapper title={finaliseAccountL.title}>
+        <FinalisAccountWrapper title={finaliseAccountL.title} role={selectedRole}>
             <div className='fa-chooseRole'>
                 <h3>{finaliseAccountL.youAre}</h3>
                 <section className='flex'>
                     {
-                        rolesList.map((item, i) => <SimpleButton text={langData.form.fields.roleOptions[item.value]}
+                        rolesList.map((item, i) => <SimpleButton text={formsL.fields.roleOptions[item.value]}
                             defaultBg={item.value != selectedRole ? '#ededed' : ''}
                             defaultColor={item.value != selectedRole ? 'grey' : ''}
                             key={'nb' + i}
@@ -53,11 +47,11 @@ function FinaliseUserAccount() {
                     }
                 </section>
                 <br />
-                <FormButton text={'Etape suivante'}
+                <SimpleButton text={'Etape suivante'}
                     onClick={() => {
                         setSFRT(true)
                     }}
-                    isValid={selectedRole ? true : false} />
+                    disabled={selectedRole == null ? true : false} />
             </div>
         </FinalisAccountWrapper>
     )

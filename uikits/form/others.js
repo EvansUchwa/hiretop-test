@@ -13,7 +13,7 @@ export function TextAreaWithFormik(props) {
                 name={name}
                 placeholder={ph}
                 {...rest}
-                row={100} />
+                style={{ height: 200 }} />
         </section>
         <ErrorMessage name={name} component="div" className="input-error-msg" />
     </div>;
@@ -33,16 +33,24 @@ export function MultipleTextWithFormik(props) {
         const { value } = e.target;
         setNewText(value)
     }
+    function handleDeleteItem(i) {
+        let copy = [...value];
+        copy.splice(i, 1)
+        setValue(copy)
+    }
     return <div className={' formField  formFiedMultipletext '}>
         <label htmlFor="">{label}
             {rqrd && <sup>*</sup>}
         </label>
         {
-            value && <div>
+            value && <div className="flex f-wrap">
                 {
-                    value.map((item, i) => <span key={name + 'multiple text nb' + i}>
-                        {item}
-                    </span>)
+                    value.map((item, i) => <article key={name + 'multiple text1 nb' + i}>
+                        <p>
+                            {item}
+                        </p>
+                        <span onClick={() => handleDeleteItem(i)}>X</span>
+                    </article>)
                 }
             </div>
         }
@@ -84,6 +92,7 @@ export function MultipleTextWithFormik(props) {
 
 export function MultipleTextBlockWithFormik(props) {
     const { name, ph, label, type, btnsLang, rqrd, ...rest } = props;
+    const [newTitle, setNT] = useState(null);
     const [newDesc, setND] = useState(null);
     const [newStartDate, setNSD] = useState(null);
     const [newEndDate, setNED] = useState(null);
@@ -107,23 +116,30 @@ export function MultipleTextBlockWithFormik(props) {
         const { value } = e.target;
         setND(value)
     }
+    function handleTitleChange(e) {
+        const { value } = e.target;
+        setNT(value)
+    }
+    function handleDeleteItem(i) {
+        let copy = [...value];
+        copy.splice(i, 1)
+        setValue(copy)
+    }
     return <div className={' formField  formFiedMultipletext '}>
         <label htmlFor="">{label}
             {rqrd && <sup>*</sup>}
         </label>
         {
-            value && <div>
+            value && <div className="flex f-column">
                 {
-                    value.map((item, i) => <article key={name + 'multiple text nb' + i}>
+                    value.map((item, i) => <article key={name + 'multiple text2 nb' + i}>
                         <p>
-                            <b>Debut:</b> {item.start}
-                        </p>
-                        <p>
-                            <b>Fin:</b> {item.end}
+                            <b>{item.title} </b>: Du {item.start} au {item.end}
                         </p>
                         <p>
                             <b>Description:</b> {item.desc}
                         </p>
+                        <span onClick={() => handleDeleteItem(i)}>X</span>
                     </article>)
                 }
             </div>
@@ -137,6 +153,10 @@ export function MultipleTextBlockWithFormik(props) {
             }
             {
                 showInput && <div >
+                    <label htmlFor="">Titre</label>
+                    <input type="title"
+                        onChange={handleTitleChange}
+                    />
                     <label htmlFor="">Date de debut</label>
                     <input type="date"
                         onChange={handleStartDateChange}
@@ -151,10 +171,10 @@ export function MultipleTextBlockWithFormik(props) {
 
                     <SimpleButton
                         text="Ajouter"
-                        disabled={(newStartDate && newEndDate && newDesc) ? false : true}
+                        disabled={(newTitle && newStartDate && newEndDate && newDesc) ? false : true}
                         onClick={() => {
                             const copy = [...value]
-                            copy.push({ desc: newDesc, start: newStartDate, end: newEndDate })
+                            copy.push({ title: newTitle, desc: newDesc, start: newStartDate, end: newEndDate })
                             setValue(copy)
                             setSI(false)
                             setNSD(null)

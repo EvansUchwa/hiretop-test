@@ -1,9 +1,11 @@
 import { ErrorMessage, Field, useField } from 'formik'
 import React, { useEffect } from 'react'
+import uniqid from 'uniqid';
 
 export function InputRadioWithFormik({ name, label, options, optionsL, rqrd }) {
     const [field, meta, helpers] = useField(name);
     const { value } = meta;
+    const uniqueId = uniqid();
     return (
         <div className='formField radioField'>
             <label htmlFor="">{label}
@@ -16,9 +18,9 @@ export function InputRadioWithFormik({ name, label, options, optionsL, rqrd }) {
                             name={name}
                             value={item}
                             checked={value == item}
-                            id={name + 'chk-' + i} />
+                            id={name + 'chk-' + uniqueId + i} />
                         <label className='flex'
-                            htmlFor={name + 'chk-' + i}
+                            htmlFor={name + 'chk-' + uniqueId + i}
                         >
                             <span></span>
                             <b>

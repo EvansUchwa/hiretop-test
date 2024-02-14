@@ -4,7 +4,7 @@ import { DocFileInputWithFormik } from '@/uikits/form/file';
 import { MultipleTextBlockWithFormik, MultipleTextWithFormik, TextAreaWithFormik } from '@/uikits/form/others';
 import PasswordFieldWithFormik from '@/uikits/form/password';
 import { SelectWithFormik } from '@/uikits/form/select';
-import { TextFieldWithFormik } from '@/uikits/form/text';
+import { SearchFieldWithFormik, TextFieldWithFormik } from '@/uikits/form/text';
 import React from 'react'
 
 function dispatchCheckboxOptionsL(name, formLangs) {
@@ -38,9 +38,10 @@ function dispatchSelectOptionsL(name, formLangs) {
 }
 function FormFieldProvider(props) {
     const { fieldType, name, options, chooseLabel, rqrd, ...rest } = props;
-    const textFields = ['email', 'text', 'date', 'number'];
+    const textFields = ['email', 'text', 'date', 'number', 'hour', 'time'];
     const formLangs = useLang().langData.form.fields;
     const btnsLang = useLang().langData.buttons;
+
 
 
     if (fieldType == 'password') {
@@ -59,6 +60,13 @@ function FormFieldProvider(props) {
             label={formLangs[name].label}
             placeholder={formLangs[name].ph}
             rqrd={rqrd}
+        />
+    } else if (fieldType == 'search') {
+        return <SearchFieldWithFormik {...rest}
+            name={name}
+            type={'search'}
+            label={''}
+            placeholder={formLangs[name].ph}
         />
     } else if (fieldType == 'multipletext') {
         return <MultipleTextWithFormik {...rest}

@@ -6,13 +6,11 @@ import {
 } from '@/utils/front/form/fieldsArrays';
 import { Form, useFormik, FormikProvider } from 'formik'
 import FormFieldProvider from '../formFieldProvider';
-import { useLang } from '@/contexts/langContext';
 import { talentFileValidation, talentGeneralValidation, talentOtherDataValidation, talentSkillFormationAndExpValidation } from '@/utils/front/form/fieldsValidations';
-import { errorAlert, successAlert } from '@/utils/front/others';
 import { finaliseTalentUserAccount } from '@/services/front/acoount';
 import { SvgSpinnersBarsFade } from '@/uikits/icon';
 
-export function TalentFinaliseManager({ updateLogin }) {
+export function TalentFinaliseAccountStepper({ updateLogin }) {
     const [stepIndex, setSI] = useState(0);
     const [stepIsValids, setSIV] = useState({
         step0: false,
@@ -22,32 +20,30 @@ export function TalentFinaliseManager({ updateLogin }) {
     });
     const [finalisationLoading, setFL] = useState(false);
     const [finalObj, setFinalObj] = useState({});
-    const { langData } = useLang();
-
     let steps = [
         {
             title: 'General', component: <TalentFinaliseGeneral
                 setSIV={setSIV} setFinalObj={setFinalObj}
                 finalObj={finalObj}
-                langData={langData} />
+            />
         },
         {
             title: 'Formations,experience et Competence', component: <TalentFinaliseFormationsAndExperience
                 setSIV={setSIV} setFinalObj={setFinalObj}
                 finalObj={finalObj}
-                langData={langData} />
+            />
         },
         {
             title: 'Fichiers', component: <TalentFinaliseResumeAndProfilPic
                 setSIV={setSIV} setFinalObj={setFinalObj}
                 finalObj={finalObj}
-                langData={langData} />
+            />
         },
         {
             title: 'Autres', component: <TalentFinaliseOtherData
                 setSIV={setSIV} setFinalObj={setFinalObj}
                 finalObj={finalObj}
-                langData={langData} />
+            />
         }
     ];
 
@@ -78,7 +74,7 @@ export function TalentFinaliseManager({ updateLogin }) {
         </section>
     </div>
 }
-function TalentFinaliseGeneral({ langData, setSIV, setFinalObj, finalObj }) {
+function TalentFinaliseGeneral({ setSIV, setFinalObj, finalObj }) {
     const formik = useFormik({
         initialValues: {
             profession: finalObj.profession ?? '',
@@ -108,7 +104,6 @@ function TalentFinaliseGeneral({ langData, setSIV, setFinalObj, finalObj }) {
             <Form>
                 {
                     talentGeneralFields().map((item, i) => <FormFieldProvider key={'talent fg field nb' + i}
-                        formLangs={langData.form.fields}
                         {...item} />)
                 }
             </Form>
@@ -117,7 +112,7 @@ function TalentFinaliseGeneral({ langData, setSIV, setFinalObj, finalObj }) {
 }
 
 
-function TalentFinaliseFormationsAndExperience({ langData, setSIV, finalObj, setFinalObj }) {
+function TalentFinaliseFormationsAndExperience({ setSIV, finalObj, setFinalObj }) {
     const formik = useFormik({
         initialValues: {
             formations: finalObj.formations ?? [],
@@ -144,7 +139,6 @@ function TalentFinaliseFormationsAndExperience({ langData, setSIV, finalObj, set
             <Form>
                 {
                     talentSkillsExpAndFormationsFields().map((item, i) => <FormFieldProvider key={'talent fg field nb' + i}
-                        formLangs={langData.form.fields}
                         {...item} />)
                 }
             </Form>
@@ -153,7 +147,7 @@ function TalentFinaliseFormationsAndExperience({ langData, setSIV, finalObj, set
 }
 
 
-function TalentFinaliseResumeAndProfilPic({ langData, setSIV, setFinalObj, finalObj }) {
+function TalentFinaliseResumeAndProfilPic({ setSIV, setFinalObj, finalObj }) {
     const formik = useFormik({
         initialValues: {
             profilPic: finalObj.profilPic ?? '', resume: finalObj.resume ?? ''
@@ -177,7 +171,6 @@ function TalentFinaliseResumeAndProfilPic({ langData, setSIV, setFinalObj, final
             <Form>
                 {
                     talentProfilPicAndResumeFields().map((item, i) => <FormFieldProvider key={'talent fg field nb' + i}
-                        formLangs={langData.form.fields}
                         {...item} />)
                 }
             </Form>
@@ -185,7 +178,7 @@ function TalentFinaliseResumeAndProfilPic({ langData, setSIV, setFinalObj, final
     )
 }
 
-function TalentFinaliseOtherData({ langData, setSIV, setFinalObj, finalObj }) {
+function TalentFinaliseOtherData({ setSIV, setFinalObj, finalObj }) {
     const formik = useFormik({
         initialValues: {
             desiredSalary: finalObj.desiredSalary ?? '',
@@ -213,7 +206,6 @@ function TalentFinaliseOtherData({ langData, setSIV, setFinalObj, finalObj }) {
             <Form>
                 {
                     talentOtherDataFields().map((item, i) => <FormFieldProvider key={'talent fg field nb' + i}
-                        formLangs={langData.form.fields}
                         {...item} />)
                 }
             </Form>

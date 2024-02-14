@@ -73,7 +73,7 @@ export const POST = simpleMiddleware(async (req) => {
         const generatedJobs = [];
 
         // Générer 10 offres d'emploi aléatoires
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 10; i++) {
             // Générer des données aléatoires pour un nouveau job
             const randomJobData = generateRandomData(userConnectedId);
 

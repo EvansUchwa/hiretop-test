@@ -1,12 +1,14 @@
 'use client';
-import { DataNotFoundBackToHome } from '@/components/other';
+import ApplyToJob from '@/components/jobApply/newApply';
+import { NoDataFoundMakeAnotherActions } from '@/components/other';
 import { useAuth } from '@/contexts/authContext';
 import { useLang } from '@/contexts/langContext';
+import { bothAuth } from '@/hocs/bothAuth';
 import { useJobDetails } from '@/hooks/useJob'
-import SimpleButton from '@/uikits/button';
 import { MaterialSymbolsLocationOn } from '@/uikits/icon';
 import { SectionSpinner } from '@/uikits/others';
 import { checkUrl } from '@/utils/front/others';
+import dayjs from 'dayjs';
 import Link from 'next/link';
 import { useParams } from 'next/navigation'
 import React from 'react'
@@ -14,15 +16,18 @@ import React from 'react'
 function JobDetail() {
     const { jobId } = useParams();
     const { job, jobLoading } = useJobDetails(jobId);
-    const { langData } = useLang();
-    const formL = langData.form.fields;
+    const { buttonsL, noDataFoundL, formsL, jobL } = useLang();
     const { user } = useAuth();
 
     if (jobLoading)
         return <SectionSpinner />
 
     if (!job) {
-        return <DataNotFoundBackToHome />
+        return <NoDataFoundMakeAnotherActions
+            message={noDataFoundL.noJobFound}
+            btnLabel={buttonsL.exploreJobs}
+            btnLink={'/job/all'}
+        />
     }
 
     return (
@@ -34,22 +39,22 @@ function JobDetail() {
                         alt="societyLogo" />
                     <div>
                         <p>
-                            <Link href={''}>Nom de la societe</Link>
+                            <Link href={'/society/' + job.autor._id + '/details'}>{job.autor.societyName}</Link>
                             <b><MaterialSymbolsLocationOn />  {job.autor.country + ',' + job.autor.address}</b>
                         </p>
-                        <span>{formL.workSectorOptions[job.jobSector]} </span>
+                        <span>{formsL.fields.workSectorOptions[job.jobSector]} </span>
                     </div>
                 </div>
             </section>
             <section className='jd-aditionalInfos1 flex f-column'>
                 <div>
-                    <h2>{formL['jobDescription'].label}</h2>
+                    <h2>{formsL.fields['jobDescription'].label}</h2>
                     <p>
                         {job.jobDescription}
                     </p>
                 </div>
                 <div>
-                    <h2>{formL['tasks'].label}</h2>
+                    <h2>{formsL.fields['tasks'].label}</h2>
                     <ul>
                         {
                             job.tasks.map((item, i) => <li key={'task nb' + i}>
@@ -59,7 +64,7 @@ function JobDetail() {
                     </ul>
                 </div>
                 <div>
-                    <h2>{formL['advantages'].label}</h2>
+                    <h2>{formsL.fields['advantages'].label}</h2>
                     <ul>
                         {
                             job.advantages.map((item, i) => <li key={'advantages nb' + i}>
@@ -69,7 +74,7 @@ function JobDetail() {
                     </ul>
                 </div>
                 <div>
-                    <h2>{formL['requiredLang'].label}</h2>
+                    <h2>{formsL.fields['requiredLang'].label}</h2>
                     <ul>
                         {
                             job.requiredLang.map((item, i) => <li key={'lang nb' + i}>
@@ -80,47 +85,42 @@ function JobDetail() {
                 </div>
             </section>
             <section className='jd-aditionalInfos2 flex f-column'>
-                <h2>Plus d'informations</h2>
+                <h2>{jobL.otherInformationsTitle}</h2>
                 <p>
-                    <b>{formL['location'].label}: </b>
+                    <b>{formsL.fields['location'].label}: </b>
                     <p>
                         {job.location}
                     </p>
                 </p>
                 <p>
-                    <b>{formL['requiredDegree'].label}: </b>
+                    <b>{formsL.fields['requiredDegree'].label}: </b>
                     <p>
                         {job.requiredDegree}
                     </p>
                 </p>
                 <p>
-                    <b>{formL['requiredExpYear'].label}</b>
+                    <b>{formsL.fields['requiredExpYear'].label}</b>
                     <p>
                         {job.requiredExpYear}
                     </p>
                 </p>
                 <p>
-                    <b>{formL['salary'].label}: </b>
+                    <b>{formsL.fields['salary'].label}: </b>
                     <p>
                         {job.salary}
                     </p>
                 </p>
                 <p>
-                    <b>{formL['applyLimitDate'].label}: </b>
+                    <b>{formsL.fields['applyLimitDate'].label}: </b>
                     <p>
-                        {job.applyLimitDate}
+                        {dayjs(job.applyLimitDate).format('MM-DD-YYYY')}
                     </p>
                 </p>
             </section>
 
-            {
-                user && user.role == 'talent' && <section>
-                    <SimpleButton text="Postuler a l'offre" />
-                </section>
-            }
-
+            <ApplyToJob jobId={job._id} />
         </div>
     )
 }
 
-export default JobDetail;
+export default bothAuth(JobDetail);

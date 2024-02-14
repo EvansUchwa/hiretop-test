@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
-import { simpleMiddleware } from "../../simpleMiddleware";
 import Job from "@/models/Job";
 import { getIpAddress } from "@/utils/back/others";
-// import dayjs from "dayjs";
+import DB_CONNEXION from "@/utils/back/database";
 
 export const GET = async (req, { params }) => {
     const jobId = params.id;
     const ip = getIpAddress();
-    // const jobId = req.nextUrl.searchParams.get('jobId');
+    await DB_CONNEXION();
+
     try {
         const job = await Job.findById(jobId).populate('autor');
         if (job && !job.views.includes(ip)) {

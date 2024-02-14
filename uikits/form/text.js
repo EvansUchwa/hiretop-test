@@ -1,5 +1,7 @@
 'use client';
-import { ErrorMessage, Field } from 'formik';
+import { ErrorMessage, Field, useField } from 'formik';
+import { MaterialSymbolsSearch } from '../icon';
+import { useState } from 'react';
 
 export function TextFieldWithFormik({ label, type, placeholder, name, rqrd }) {
     return (
@@ -17,3 +19,25 @@ export function TextFieldWithFormik({ label, type, placeholder, name, rqrd }) {
     )
 }
 
+export function SearchFieldWithFormik({ label, type, placeholder, name, rqrd }) {
+    const [field, meta, helpers] = useField(name);
+    const [tempValue, setTV] = useState();
+    const { value } = meta;
+    function handleChange(e) {
+        setTV(e.target.value)
+    }
+    return (
+        <div className='formField searchField'>
+            {/* {value} */}
+            <section>
+                <input type={type} name={name}
+                    placeholder={placeholder}
+                    value={tempValue ? tempValue : value}
+                    onChange={handleChange} />
+                <span onClick={() => helpers.setValue(tempValue)}>
+                    <MaterialSymbolsSearch />
+                </span>
+            </section>
+        </div>
+    )
+}

@@ -1,13 +1,19 @@
-import { degreeEnum, expYearsEnum, jobTypeEnum, langEnum, remoteAcceptedEnum, categorieEnum, countrysEnum } from "@/utils/back/enums"
+import { degreeEnum, expYearsEnum, jobTypeEnum, langEnum, remoteAcceptedEnum, categorieEnum, countrysEnum, interviewTypesEnums } from "@/utils/back/enums"
 
 
-export const passwordField = { name: 'password', fieldType: 'password' }
+export const passwordField = { name: 'password', fieldType: 'password' };
+export const currentPasswordField = { name: 'currentPassword', fieldType: 'password' };
+export const newPasswordField = { name: 'newPassword', fieldType: 'password' };
+
 
 export const passwordConfirmationField = { name: 'passwordConfirmation', fieldType: 'password' }
 
 export const emailField = { name: 'email', fieldType: 'email' }
 
 export const professionField = { name: 'profession', fieldType: 'text', rqrd: true }
+
+
+
 
 export const firstnameField = { name: 'firstname', fieldType: 'text', rqrd: true }
 
@@ -30,8 +36,8 @@ export const phoneField = { name: 'phone', fieldType: 'number', rqrd: true }
 export const addressField = { name: 'address', fieldType: 'text', rqrd: true }
 export const societyNameField = { name: 'societyName', fieldType: 'text', rqrd: true }
 
-export const profilPicField = { name: 'profilPic', fieldType: 'file', rqrd: true }
-export const resumeField = { name: 'resume', fieldType: 'file', rqrd: true }
+export const profilPicField = { name: 'profilPic', fieldType: 'file', rqrd: true, accept: "image/*" }
+export const resumeField = { name: 'resume', fieldType: 'file', rqrd: true, accept: ".pdf,.docx" }
 
 
 export const advantagesField = { name: 'advantages', fieldType: 'multipletext', rqrd: true }
@@ -89,3 +95,25 @@ export const expYearsField = { name: 'expYears', fieldType: 'select', options: e
 
 
 export const langagesField = { name: 'langages', fieldType: 'checkbox', options: langEnum, rqrd: true }
+
+export const applyerMessageField = { name: 'applyerMessage', fieldType: 'textarea', rqrd: true }
+
+export const recrutorMessageField = { name: 'recrutorMessage', fieldType: 'textarea', rqrd: true }
+
+export const interviewTypeField = { name: 'interviewType', fieldType: 'select', rqrd: true, options: interviewTypesEnums }
+
+export const interviewDateField = { name: 'interviewDate', fieldType: 'date', rqrd: true }
+
+
+export const interviewHourField = { name: 'interviewHour', fieldType: 'time', rqrd: true }
+
+
+
+
+
+export const searchTalentKeyWordField = { name: 'searchTalentKeyword', fieldType: 'search', rqrd: true }
+
+export const searchJobKeywordField = { name: 'searchJobKeyword', fieldType: 'search', rqrd: true }
+
+// export const searchTalentKeyWordField = { name: 'searchTalentKeyWord', fieldType: 'search', rqrd: true }
+// export const searchTalentKeyWordField = { name: 'searchTalentKeyWord', fieldType: 'search', rqrd: true }

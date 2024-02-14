@@ -1,0 +1,110 @@
+.newApply{
+    margin: 25px auto;
+}
+.applyList{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.jobListWithApplys{
+    margin: auto;
+    width: 95%;
+    gap: 50px 0;
+    justify-content: center;
+    align-items: center;
+    .jobWithApplys{
+        width: 100%;
+        text-align: center;
+        gap: 10px 0;
+        h3{
+            color: $secondary-color;
+        }
+        &>div{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .jwa-filter{
+            form{
+                flex-direction: row;
+                justify-content: center;
+                gap: 20px;
+            }
+        }
+    }
+}
+.applyCard{
+    
+}
+.applyCard2{
+    img{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        margin-bottom: 10px;
+    }
+}
+.applyCard,.applyCard2{
+    width: 30%;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: white;
+    text-align: center;
+    p{
+        margin: 20px 0;
+        b{
+            color: $primary-color;
+        }
+    }
+    section{
+        margin-bottom: 10px;
+    }
+
+    h3{
+        color: $secondary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        cursor: pointer;
+    }
+    
+    button{
+        // font-size: 14px;
+        // padding: 6px 12px;
+    }
+}
+.ac2Links{
+        gap:0 15px;
+        align-items: center;
+        justify-content: center;
+        a{
+            font-size: 13px;
+            padding: 6px;
+            color: $tertiary-color;
+            border: solid 1px $tertiary-color;
+            border-radius: 10px;
+        }
+        margin-bottom: 10px;
+}
+.ac2Btns{
+        gap: 10px 0;
+        align-items: center;
+        a{
+            font-size: 15px;
+        }
+}
+
+@media screen and (min-width: 572px) and (max-width: 758px) {
+    .applyCard,.applyCard2{
+        width: 48% !important;
+    }
+}
+@media screen and (max-width: 572px) {
+    .applyCard,.applyCard2{
+        width: 100% !important;
+    }
+}

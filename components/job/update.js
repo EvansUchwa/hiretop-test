@@ -27,7 +27,6 @@ function UpdateJobForm({ job }) {
     function handleSubmit(formData) {
         updateJob(job._id, formData, (res) => {
             successAlert('job', 'updated')
-            // console.log(res.data._id);
             window.location = '/job/' + job._id + '/details'
         }, (error) => {
             errorAlert(error)
@@ -35,20 +34,17 @@ function UpdateJobForm({ job }) {
             setSubmitting(false)
         })
     }
-    const { langData } = useLang();
+    const { buttonsL } = useLang();
     return (
         <div className='createOrUpdateJob'>
-            <h1>Modifier votre offre</h1>
-            {/* multipletext */}
             <FormikProvider value={formik}>
                 <Form onKeyDown={handleEnterKeyPress}>
                     {
                         jobFields().map((item, i) => <FormFieldProvider
-                            formLangs={langData.form.fields}
-                            key={'add job field nb' + i}
+                            key={'update job field nb' + i}
                             {...item} />)
                     }
-                    <FormButton text={isSubmitting ? '' : langData.buttons.register}
+                    <FormButton text={isSubmitting ? '' : buttonsL.save}
                         isValid={isSubmitting ? false : isValid} />
                 </Form>
             </FormikProvider>

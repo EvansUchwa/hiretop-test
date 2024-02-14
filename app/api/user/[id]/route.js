@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
 import User from "@/models/User";
 import { getIpAddress } from "@/utils/back/others";
+import DB_CONNEXION from "@/utils/back/database";
 
 
 export const GET = async (req, { params }) => {
+    await DB_CONNEXION();
     const userRole = req.nextUrl.searchParams.get('role');
     const userId = params.id;
     const ip = getIpAddress();

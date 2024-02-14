@@ -1,24 +1,26 @@
 "use client";
 import React from 'react'
-import Image from "next/image";
-import { ConnectedNavbar } from '@/uikits/navbar';
-import Sidebar from '@/uikits/sidebar';
 import { withAuth } from '@/hocs/withAuth';
+import { useAuth } from '@/contexts/authContext';
+import TalentsStats from '@/components/stats/talents';
+import { WelcomeConnectedUser } from '@/components/other';
+import { Last10UserApplys } from '@/components/jobApply/lastApplys';
+import SocietyStats from '@/components/stats/society';
+import { Last10JobPosted } from '@/components/job/lastJobs';
 
 function Dashboard() {
-    {/* <Image
-    src={session.user?.image}
-    fill
-    alt=""
-    className="object-cover rounded-full"/> */}
+    const { user } = useAuth();
 
     return (
-        <div>
-            <div className="dashboard">
-                {/* <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident asperiores facilis ad eaque exercitationem cumque dolorum enim excepturi, aliquid quasi quos veritatis! Totam fuga quisquam quas autem velit ducimus vero!
-                </p> */}
-            </div>
+        <div className="dashboard">
+            <WelcomeConnectedUser user={user} />
+            {user.role == 'talent' ? <>
+                <TalentsStats />
+                <Last10UserApplys />
+            </> : <>
+                <SocietyStats />
+                <Last10JobPosted />
+            </>}
         </div>
     )
 }

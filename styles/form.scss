@@ -52,13 +52,30 @@ form{
         }
         &.formFiedMultipletext{
             article{
-                background-color: rgba($color: $primary-color, $alpha: 0.5);
+                background-color: rgba($color: $primary-color, $alpha: 0.2);
                 padding: 10px;
+                position: relative;
+                border-radius: 10px;
                 b{
                     color: black;
                 }
                 p{
                     margin: 5px 0;
+                }
+                span{
+                    background-color: $secondary-color !important;
+                    color: white;
+                    height: 25px;
+                    width: 25px;
+                    border-radius: 50px;
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 9999999;
+                    top: -10px;
+                    right: -10px;
+                    cursor: pointer;
                 }
             }
             button{
@@ -69,18 +86,22 @@ form{
                 color: white;
             }
             div{
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
                 margin-bottom: 10px;
-                span{
-                    background-color: rgba($color: $primary-color, $alpha: 0.1);
-                    // color: white;
-                    padding: 4px 12px;
-                    border-radius: 10px;
-                }
-                
+                gap: 10px;
             }
+            // div{
+            //     display: flex;
+            //     flex-wrap: wrap;
+            //     gap: 10px;
+            //     margin-bottom: 10px;
+            //     span{
+            //         background-color: rgba($color: $primary-color, $alpha: 0.1);
+            //         // color: white;
+            //         padding: 4px 12px;
+            //         border-radius: 10px;
+            //     }
+                
+            // }
         }
         &.radioField{
             input{
@@ -222,6 +243,23 @@ form{
                 
             }
         }
+        &.searchField{
+            position: relative;
+            width: 100% !important;
+            section{
+                span{
+                    cursor: pointer;
+                    background-color: $grey-primary;
+                    position: absolute;
+                    right: 2px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    padding: 8px 12px;
+                    border-radius: 8px;
+                    font-size: 20px;
+                }
+            }
+        }
     }
 
     .pf-pwdHider{
@@ -237,10 +275,20 @@ form{
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            right: 2px;
-            padding: 10px;
+            right: 4px;
+            padding: 8px;
             font-size: 20px;
             color: $grey-secondary;
         }
     }
+}
+.reinitSearchParamBtn{
+    margin: 10px 0 !important;
+    button{
+        padding: 5px 10px;
+        background-color: $tertiary-color;
+        background-image: initial;
+    }
+    text-align: center;
+    margin: auto;
 }

@@ -66,7 +66,7 @@ export const PUT = simpleMiddleware(async (req) => {
             lastDegree, expYears, langages
         });
 
-        var token = await new SignJWT({ userId: user._id, userRole: user.role })
+        var token = await new SignJWT({ userId: user._id, userRole: role })
             .setProtectedHeader({ alg: 'HS256' })
             .setIssuedAt()
             .sign(getJwtSecret());

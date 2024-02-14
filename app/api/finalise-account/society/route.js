@@ -32,7 +32,7 @@ export const PUT = simpleMiddleware(async (req) => {
             role, workSector, societyName, country, address, phone, description, profilPic: profilPicObj
         });
 
-        var token = await new SignJWT({ userId: user._id, userRole: user.role })
+        var token = await new SignJWT({ userId: user._id, userRole: role })
             .setProtectedHeader({ alg: 'HS256' })
             .setIssuedAt()
             .sign(getJwtSecret());

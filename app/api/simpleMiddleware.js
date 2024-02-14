@@ -17,10 +17,10 @@ export function simpleMiddleware(handler, role = null) {
             const decoded = jwt.verify(authorization, getJwtSecret());
             request.userConnectedId = decoded.userId;
             request.userConnectedRole = decoded.userRole;
-
+            // console.log(decoded);
             if (role) {
                 if (decoded.userRole != role)
-                    return NextResponse.json({ type: 'operation', result: 'invalid' }, { status: 400 });
+                    return NextResponse.json({ type: 'operation', result: 'invalidess' }, { status: 400 });
             }
 
             return handler(request);

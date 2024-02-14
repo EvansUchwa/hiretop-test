@@ -38,7 +38,7 @@ h2{
 }
 
 .finaliseAccount{
-    width: 90%;
+    width: 60%;
     min-height: 100vh;
     margin: auto;
     padding: 50px 0;
@@ -53,6 +53,10 @@ h2{
     }
     .fa-chooseRole{
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         h3{
             margin-bottom: 15px;
         }
@@ -60,17 +64,14 @@ h2{
             gap: 0 15px;
         }
     }
+    &>div{
+        width: 100%;
+    }
 }
 
-.societyFinaliseAccount{
-    padding: 50px 0;
-    width: 60%;
-    margin: auto;
-}
+
 
 .talentFinaliseAccount{
-    width: 70%;
-    margin: auto;
     .tfa-navigator{
         margin: 25px auto;
         display: flex;
@@ -87,5 +88,17 @@ h2{
         display: flex;
         flex-direction: column;
         gap: 10px 0;
+    }
+}
+
+@media screen  and (max-width: 972) and (min-width: 758px) {
+    .finaliseAccount{
+        width: 70%;
+    }
+}
+
+@media screen  and (max-width: 758px) {
+    .finaliseAccount{
+        width: 90%;
     }
 }

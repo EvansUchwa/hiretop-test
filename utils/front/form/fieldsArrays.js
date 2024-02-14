@@ -5,7 +5,7 @@ import {
     jobTitleField,
     jobTypeField,
     locationField,
-    passwordConfirmationField, passwordField, phoneField, profilPicField, remoteAcceptedField, requiredDegreeField, requiredExpYearField, requiredLangField, salaryField, societyNameField, workSectorField, tasksField, firstnameField, lastnameField, ageField, formationsField, experiencesField, skillsField, resumeField, desiredSalaryField, preferredLocationsField, linkedinUrlField, lastDegreeField, titleField, professionField, expYearsField, langagesField
+    passwordConfirmationField, passwordField, phoneField, profilPicField, remoteAcceptedField, requiredDegreeField, requiredExpYearField, requiredLangField, salaryField, societyNameField, workSectorField, tasksField, firstnameField, lastnameField, ageField, formationsField, experiencesField, skillsField, resumeField, desiredSalaryField, preferredLocationsField, linkedinUrlField, lastDegreeField, titleField, professionField, expYearsField, langagesField, applyerMessageField, recrutorMessageField, interviewDateField, interviewHourField, interviewTypeField, currentPasswordField, newPasswordField, searchKeyField, searchTalentKeyWordField, searchJobKeywordField
 } from "./fields"
 
 
@@ -20,6 +20,13 @@ export function loginFields() {
     return [
         emailField,
         passwordField
+    ]
+}
+
+export function changePaswordFields() {
+    return [
+        newPasswordField,
+        passwordConfirmationField
     ]
 }
 
@@ -64,6 +71,32 @@ export function talentOtherDataFields() {
     ];
 }
 
+export function updateTalentGeneralData() {
+    return [
+        ...talentGeneralFields(),
+        ...talentSkillsExpAndFormationsFields(),
+        ...talentOtherDataFields()
+    ]
+}
+
+export function updateTalentFiles() {
+    return talentProfilPicAndResumeFields()
+}
+
+export function updateSocietyGeneralData() {
+    return [
+        phoneField,
+        addressField,
+        societyNameField,
+        countryField,
+        workSectorField,
+        descriptionField
+    ]
+}
+export function updateSocietyFiles() {
+    return [profilPicField]
+}
+
 export function jobFields() {
     return [
         jobTitleField,
@@ -84,6 +117,7 @@ export function jobFields() {
 
 export function jobSearchFields() {
     return [
+        searchJobKeywordField,
         jobSectorField,
         jobTypeField,
         requiredDegreeField,
@@ -91,5 +125,53 @@ export function jobSearchFields() {
         locationField,
         remoteAcceptedField,
         salaryField
+    ]
+}
+
+export function newAppplyFields() {
+    return [
+        applyerMessageField
+    ]
+}
+
+export function validateAppplyFields() {
+    return [
+        recrutorMessageField, interviewTypeField, interviewDateField, interviewHourField
+    ]
+}
+
+export function rejectAppplyFields() {
+    return [
+        recrutorMessageField
+    ]
+}
+
+export function changePaswwordFields() {
+    return [
+        currentPasswordField,
+        ...changePaswordFields()
+    ]
+}
+
+export function forgotPasswordStep1() {
+    return [
+        emailField
+    ]
+}
+
+export function forgotPasswordStep2() {
+    return changePaswordFields()
+}
+
+export function sortApplyFields() {
+    return [
+        genderField,
+        lastDegreeField, expYearsField
+    ]
+}
+
+export function searchOrSortTalentApplyFields() {
+    return [
+        searchTalentKeyWordField, genderField, lastDegreeField, expYearsField
     ]
 }

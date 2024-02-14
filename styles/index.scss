@@ -3,14 +3,20 @@
 
 @import './auth.scss';
 @import './job.scss';
+@import './applys.scss';
+
+
 @import './talent.scss';
+@import './dashboard.scss';
+
 
 
 
 @import './navbar.scss';
-@import './sidebar.scss';
 @import './form.scss';
 @import './modal.scss';
+@import './others.scss';
+
 
 
 
@@ -33,18 +39,19 @@ button{
     cursor: pointer;
     font-size: 20px;
     &.btnDisabled,&:disabled{
-        background-color: #ededed;
-        background-image: initial;
-        color: grey;
+        background-color: #ededed !important;
+        background-image: initial !important;
+        color: grey !important;
         // cursor:none;
     }
 }
 .dashboardPageWrapper{
     min-height: 100vh;
     background-color: #f3f4f6;
+   
     .dpw-content{
-        width: calc(100% - $sidebarWidth);
         margin-left: auto;
+        transition: all .5s;
         // padding: 25px 0;
         h1{
             margin: 25px auto;
@@ -96,7 +103,9 @@ ul,li{
 }
 
 .dataNotFoundBackToHome{
-    width: 80%;
+    // width: 80%;
+    // background-color: gray;
+    width: 250px;
     margin: 25px auto;
     text-align: center;
     button{
@@ -107,4 +116,31 @@ ul,li{
 select{
     padding: 15px 20px;
     border-radius: 8px;
+}
+
+.alertBox{
+    width: 100%;
+    background-color: rgba($color: $secondary-color, $alpha: 0.4);
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+
+    section{
+        align-items: center;
+        gap: 0 15px;
+        h3{
+            color: $secondary-color;
+        }
+        svg{
+            font-size: 30px;
+            color: $secondary-color;
+        }
+    }
+    p{
+        margin-top: 10px;
+    }
+    a{
+        color: $primary-color;
+        font-weight: bold;
+    }
 }

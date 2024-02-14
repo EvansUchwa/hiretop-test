@@ -11,7 +11,7 @@ function GenericWrapper({ children }) {
                 <AuthProvider>
                     {children}
                     <Modal />
-                    <Toaster />
+                    <Toaster richColors={true} />
                 </AuthProvider>
             </ModalProvider>
         </SearchParamsProvider>

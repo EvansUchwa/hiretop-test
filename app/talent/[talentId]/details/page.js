@@ -4,7 +4,7 @@ import { TalentExpOrFormationCard } from '@/components/talent/card';
 import { useLang } from '@/contexts/langContext';
 import { bothAuth } from '@/hocs/bothAuth';
 import { useTalentDetails } from '@/hooks/useTalent'
-import { MaterialSymbolsLocationOn, PhEnvelope, PhLinkedinLogo } from '@/uikits/icon';
+import { MaterialSymbolsCallSharp, MaterialSymbolsLocationOn, PhEnvelope, PhLinkedinLogo } from '@/uikits/icon';
 import { SectionSpinner } from '@/uikits/others';
 import { checkUrl } from '@/utils/front/others';
 import Link from 'next/link';
@@ -48,9 +48,10 @@ function TalentDetails() {
                         <a href={'mailto:' + talent.email} target='_blank'>
                             <PhEnvelope />
                         </a>
-
-                        <button>Message</button>
-
+                        <a href={'tel:' + talent.phone} target='_blank'>
+                            <MaterialSymbolsCallSharp />
+                        </a>
+                        {/* <button>Message</button> */}
                     </div>
                     <div className='tbod-middle flex'>
                         <p>
@@ -66,7 +67,7 @@ function TalentDetails() {
                         <b>Skill</b>
                         <div className='flex'>
                             {
-                                talent.skills.map((item, i) => <span key={'skil nb' + i}>Skille 1</span>)
+                                talent.skills.map((item, i) => <span key={'skil nb' + i}>{item}</span>)
                             }
                         </div>
                     </div>

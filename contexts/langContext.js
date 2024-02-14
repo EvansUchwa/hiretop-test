@@ -1,5 +1,5 @@
 'use client';
-import { createContext, useState, useEffect, useContext } from 'react';
+import { createContext, useState, useContext } from 'react';
 import frLang from '../utils/front/langages/fr.json';
 import enLang from '../utils/front/langages/en.json';
 import { lsGet, lsSet } from '@/utils/front/storage';
@@ -19,16 +19,23 @@ export const LangProvider = ({ children }) => {
         setLangData(newLang == 'fr' ? frLang : enLang)
     }
 
-    function getSpecificPart(part) {
-        setLangData((prev) => {
-            return prev[part];
-        })
-    }
-
     return (
         <LangContext.Provider value={{
             lang, langData,
-            changeLang, getSpecificPart
+            formsL: langData.form,
+            buttonsL: langData.buttons,
+            accountL: langData.account,
+            finaliseAccountL: langData.finaliseAccount,
+            authL: langData.auth,
+            dashboardHomeL: langData.dashboardHome,
+            finaliseAccountL: langData.finaliseAccount,
+            jobL: langData.job,
+            applyL: langData.apply,
+            navLinksL: langData.navLinks,
+            cardsL: langData.cards,
+            infosL: langData.infos,
+            appAdvantagesL: langData.appAdvantages,
+            noDataFoundL: langData.noDataFound
         }}>
             {children}
         </LangContext.Provider>

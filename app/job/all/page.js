@@ -3,6 +3,7 @@ import { JobListSorterLayout, JobSearchLayout } from '@/components/job/layout'
 import { DataNotFoundBackToHome, DataSorter } from '@/components/other'
 import { useAuth } from '@/contexts/authContext'
 import { useLang } from '@/contexts/langContext'
+import { bothAuth } from '@/hocs/bothAuth'
 import { useJobs } from '@/hooks/useJob'
 import SimpleButton from '@/uikits/button'
 import { SectionSpinner } from '@/uikits/others'
@@ -42,4 +43,4 @@ function JobList() {
     )
 }
 
-export default JobList
+export default bothAuth(JobList)

@@ -4,8 +4,6 @@ import { simpleMiddleware } from "../simpleMiddleware";
 
 export const GET = simpleMiddleware(async (req) => {
     const { userConnectedId } = req;
-    console.log(userConnectedId);
-    // return NextResponse.json('ok', { status: 200, })
     try {
         const user = await User.findById(userConnectedId);
         if (!user)

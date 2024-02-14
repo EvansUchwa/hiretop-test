@@ -20,6 +20,7 @@
     border: solid 1px #ededed;
     padding: 20px;
     justify-content: space-between;
+    align-items: center;
     border-radius: 8px;
     margin: 10px auto;
     cursor: pointer;
@@ -27,17 +28,31 @@
     background-color: white;
 
     &:hover{
-        background-color: $primary-color;
-        color: white;
+        background-color: rgba($color: $primary-color, $alpha: 0.1);
+        // color: white;
     }
-    img{
+    .jc-img{
         width: 10%;
-        border-radius: 20px;
-        border: solid 5px $primary-color;
-        background-color: $secondary-color;
+        display: flex;
+        flex-direction: column;
+        gap: 5px 0;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        img{
+            width: 100%;
+            border-radius: 10px;
+            aspect-ratio: 1/1;
+            border-radius: 100%;
+            border: solid 5px $primary-color;
+        }
+        span{
+            font-size: 10px;
+        }
     }
+    
     .jc-infos{
-        min-width: 70%;
+        width: 70%;
         b{
             display: inline-block;
             margin: 6px 0;
@@ -54,10 +69,21 @@
         }
     }
     .js-actionAndDate{
+        width: 15%;
         text-align: center;
         gap: 5px 0;
         button{
             padding: 6px 10px;
+        }
+    }
+    .js-actionAndDate2{
+        flex-wrap: wrap;
+        margin-top: 20px;
+        gap: 10px;
+        a{
+            margin: auto;
+            color: $secondary-color;
+            font-weight: bold;
         }
     }
 }
@@ -74,7 +100,7 @@
     }
     .jd-header{
         padding: 50px 25px;
-        border-radius: 20px;
+        border-radius: 0 0 20px 20px;
         background-color: $primary-color;
         color: white;
         h1{
@@ -121,6 +147,7 @@
 }
 
 
+
 .searchJobForm{
     margin: 25px auto;
     form{
@@ -129,4 +156,28 @@
     gap: 25px;
     justify-content: space-evenly;
     }
+}
+
+@media screen and (min-width: 572px) and (max-width: 758px) {
+   
+}
+@media screen and (max-width: 972px) {
+    .jobCard{
+        gap: 20px 0;
+        .jc-img{
+            width: 50%;
+            margin: auto;
+        }
+        
+        .jc-infos{
+            width: 100%;
+           text-align: center;
+        }
+        .js-actionAndDate{
+            width: 100%;
+        }
+    }
+}
+@media screen and (max-width: 572px) {
+   
 }

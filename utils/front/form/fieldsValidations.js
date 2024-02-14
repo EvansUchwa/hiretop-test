@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
 import { countrysEnum } from '@/utils/back/enums';
 import { categorieEnum } from '@/utils/back/enums';
+
 const email = Yup.string().email('Email').required("Champs requis");
 const phone = Yup.string().required("Champs requis");
 const address = Yup.string().required("Champs requis");
@@ -28,7 +29,7 @@ const linkedinUrl = Yup.string().matches(
 const profilPic = Yup.mixed().required("Champs requis");
 const resume = Yup.mixed().required("Champs requis");
 
-const description = Yup.string().required("Champs requis");
+const description = Yup.string().min(100, 'Minimum 1 valeur').required("Champs requis");
 
 const location = Yup.string().required("Champs requis");
 
@@ -54,6 +55,14 @@ const skills = Yup.array().min(1, 'Minimum 1 valeur').notRequired();
 const profession = Yup.string().required("Champs requis");
 const expYears = Yup.string().required("Champs requis");
 const langages = Yup.array().min(1, 'Minimum 1 secteur').required("Champs requis");
+
+const applyerMessage = Yup.string().min(100, 'Minimum 1 valeur').required("Champs requis");
+const recrutorMessage = Yup.string().min(100, 'Minimum 1 valeur').required("Champs requis");
+
+const interviewType = Yup.string().required("Champs requis");
+const interviewHour = Yup.string().required("Champs requis");
+const interviewDate = Yup.string().required("Champs requis");
+
 
 const jobDescription = description;
 
@@ -96,6 +105,13 @@ export const societyfinaliseAccountValidation = Yup.object().shape({
     phone, address, societyName, profilPic, country, workSector, description
 });
 
+export const societyUpdateGeneralInformationValidation = Yup.object().shape({
+    phone, address, societyName, country, workSector, description
+});
+export const societyUpdateFilesValidation = Yup.object().shape({
+    profilPic
+});
+
 
 export const talentGeneralValidation = Yup.object().shape({
     phone, address, firstname, lastname, age, country, workSector, gender, profession
@@ -114,9 +130,23 @@ export const talentOtherDataValidation = Yup.object().shape({
     desiredSalary, preferredLocations, linkedinUrl, description, langages
 });
 
+export const talentUpdateGeneralInformationValidation = Yup.object().shape({
+    ...talentGeneralValidation.fields,
+    ...talentSkillFormationAndExpValidation.fields, ...talentOtherDataValidation.fields
+});
+
 export const jobValidation = Yup.object().shape({
     jobTitle, jobSector, jobType,
     requiredDegree, requiredExpYear, requiredLang,
     remoteAccepted, jobDescription,
     advantages, tasks, location, applyLimitDate, salary
+});
+
+
+export const applyAcceptValidation = Yup.object().shape({
+    recrutorMessage, interviewType, interviewHour, interviewDate
+});
+
+export const applyRejectValidation = Yup.object().shape({
+    recrutorMessage
 });

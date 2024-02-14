@@ -3,18 +3,26 @@ import React from 'react'
 import SimpleButton from '@/uikits/button'
 import { checkUrl, formatRelativeTime } from '@/utils/front/others'
 import Link from 'next/link'
+import { useLang } from '@/contexts/langContext'
+import { useAuth } from '@/contexts/authContext'
 
-function JobCard({ formL, item, user }) {
+
+function JobCard({ item }) {
+    const { formsL, buttonsL } = useLang();
+    const { user } = useAuth();
     return (
         <article
             className="jobCard flex f-wrap">
-            {/* <img src="https://i.pinimg.com/originals/f9/6a/26/f96a261e5a60d7d66b36e2850e3eb19b.png" alt="enterprise logo" /> */}
-            <img src={checkUrl(item.autor.profilPic.url)} alt="enterprise logo" />
+            <a href={'/society/' + item.autor._id + '/details'} className='jc-img'>
+                <img src={checkUrl(item.autor.profilPic.url)} alt="enterprise logo" />
+                <b>{item.autor.societyName} </b>
+                <span>{formatRelativeTime(item.createdAt)} </span>
+            </a>
 
             <section className='jc-infos'>
                 <h2>{item.jobTitle}</h2>
                 <b>
-                    {formL.workSectorOptions[item.jobSector]}
+                    {formsL.fields.workSectorOptions[item.jobSector]}
                 </b>
                 <div className='flex f-wrap'>
 
@@ -31,16 +39,17 @@ function JobCard({ formL, item, user }) {
                         <MaterialSymbolsAttachMoney /> {item.salary}
                     </span>
                 </div>
+                <div className='flex js-actionAndDate2'>
+                    {
+                        user && user.role == 'society' && <>
+                            <Link href={'/job/' + item._id + '/update'}>{buttonsL.updateJob}</Link>
+                            <Link href={'/job/all/with-applys/'}>{buttonsL.seeApplies}</Link>
+                        </>
+                    }
+                </div>
             </section>
             <section className='js-actionAndDate flex f-column'>
-                {
-                    user && user.role == 'society' && <SimpleButton
-                        defaultBg={'transparent'}
-                        defaultColor={'grey'}
-                        text={<Link href={'/job/' + item._id + '/update'}>Modifier</Link>} />
-                }
-                <SimpleButton text={<Link href={'/job/' + item._id + '/details'}>Voir plus</Link>} />
-                <span>{formatRelativeTime(item.createdAt)} </span>
+                <SimpleButton text={<Link href={'/job/' + item._id + '/details'}>{buttonsL.seeMore}</Link>} />
             </section>
         </article>
     )

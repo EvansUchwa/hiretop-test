@@ -1,11 +1,10 @@
 import { NextResponse } from "next/server";
-import { simpleMiddleware } from "../../simpleMiddleware";
 import Job from "@/models/Job";
 import { getJobFinalQuery } from "@/utils/back/others";
-// import dayjs from "dayjs";
-
+import DB_CONNEXION from "@/utils/back/database";
 
 export const GET = async (req) => {
+    await DB_CONNEXION();
     let querys = getJobFinalQuery(req);
     try {
         const jobs = await Job.find(querys).populate('autor');

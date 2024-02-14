@@ -1,16 +1,17 @@
 'use client';
 import { societyFinaliseAccountFields } from '@/utils/front/form/fieldsArrays';
-import { Form, useFormik, FormikProvider } from 'formik'
+import { useFormik, FormikProvider } from 'formik'
 import React, { useState } from 'react'
 import FormFieldProvider from '../formFieldProvider';
 import { useLang } from '@/contexts/langContext';
 import { FormButton } from '@/uikits/button';
 import { societyfinaliseAccountValidation } from '@/utils/front/form/fieldsValidations';
 import { finaliseSocietyUser } from '@/services/front/acoount';
-import { errorAlert, successAlert } from '@/utils/front/others';
+import { errorAlert } from '@/utils/front/others';
+import MyCustomFormikForm from '../other';
 
 function SocietyFinaliseAccount({ updateLogin }) {
-    const { langData } = useLang();
+    const { buttonsL } = useLang();
     const [operationLoad, setOL] = useState(false)
     const formik = useFormik({
         initialValues: {
@@ -40,18 +41,17 @@ function SocietyFinaliseAccount({ updateLogin }) {
     return (
         <div className='societyFinaliseAccount'>
             <FormikProvider value={formik}>
-                <Form>
+                <MyCustomFormikForm>
                     {
                         societyFinaliseAccountFields().map((item, i) => <FormFieldProvider key={'soct field nb' + i}
-                            formLangs={langData.form.fields}
                             {...item} />)
                     }
 
                     <FormButton
-                        text={isSubmitting ? '' : "Enregistrer et Continuer"}
+                        text={isSubmitting ? '' : buttonsL.save}
                         isValid={isSubmitting ? false : isValid}
                     />
-                </Form>
+                </MyCustomFormikForm>
             </FormikProvider>
         </div>
     )

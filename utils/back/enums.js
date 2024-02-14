@@ -2,6 +2,16 @@ export const genderEnums = [
     "Man", "Woman"
 ]
 
+export const jobApplyStatusEnums = ['pending', 'accepted', 'rejected']
+
+export const interviewTypesEnums = [
+    "In-Person Interview",
+    "Remote Interview",
+    "In-Person Technical Interview",
+    "Remote Technical Interview",
+    "Phone Interview"
+];
+
 export const degreeEnum = [
     'High School Diploma',
     'Associate Degree',
