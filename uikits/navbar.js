@@ -8,11 +8,11 @@ import { checkUrl } from '@/utils/front/others';
 import { useRouter } from 'next/navigation';
 import { useLang } from '@/contexts/langContext';
 import Image from 'next/image';
-
 import SvgLogo from '../public/icon.svg'
 import SimpleButton from './button';
 
 export function NotConnectedNav() {
+    const { lang, changeLang } = useLang();
     const [mobileNavVisible, setMNV] = useState(false);
     return (
         <nav className='notConnectedNav'>
@@ -31,10 +31,9 @@ export function NotConnectedNav() {
 
             <div className={'ncn-left ' + (mobileNavVisible ? 'ncn-left-mobile' : '')}>
                 <section className='ncn-links'>
-                    <Link href={''}>Home</Link>
-                    <Link href={''}>Les offres</Link>
-                    {/* <Link href={''}>Les Entreprises</Link> */}
-                    <Link href={''}>Les talents</Link>
+                    <Link href={'/'}>{navLinksL.home}</Link>
+                    <Link href={'/job/all'}>{navLinksL.allJobList}</Link>
+                    <Link href={'/talent/all'}>{navLinksL.talentList} </Link>
                 </section>
 
                 <section className='ncn-actions'>
@@ -44,6 +43,9 @@ export function NotConnectedNav() {
                         isLink={'/register'} />
                 </section>
             </div>
+            <span onClick={() => changeLang(lang == 'fr' ? 'en' : 'fr')}>
+                {lang == 'fr' ? <CircleFlagsUs /> : <CircleFlagsFr />}
+            </span>
         </nav>
     )
 }

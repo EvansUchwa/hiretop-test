@@ -5,9 +5,6 @@ import SimpleButton from '@/uikits/button';
 import { useRouter } from 'next/navigation';
 
 function Home() {
-  const router = useRouter();
-  const { lang, langData, changeLang } = useLang();
-
   return (
     <div className={'home'}>
       <div className='homeBanner'>

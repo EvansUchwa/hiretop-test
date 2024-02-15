@@ -1,13 +1,13 @@
 'use client'
 import { ApplyCardViewByTalent } from '@/components/jobApply/card';
-import { DataNotFoundBackToHome, NoDataFoundMakeAnotherActions } from '@/components/other';
+import { NoDataFoundMakeAnotherActions } from '@/components/other';
 import { useAuth } from '@/contexts/authContext';
 import { useLang } from '@/contexts/langContext';
 import { withAuth } from '@/hocs/withAuth';
 import { useTalentAllApply } from '@/hooks/useApply'
 import { SectionSpinner } from '@/uikits/others';
 import React from 'react'
-// allApplysTitle
+
 function AllJobWithApply() {
     const { user } = useAuth();
     const { applys, applysLoading } = useTalentAllApply();

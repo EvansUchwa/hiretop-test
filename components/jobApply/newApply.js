@@ -9,6 +9,7 @@ import { newAppplyFields } from '@/utils/front/form/fieldsArrays';
 import FormFieldProvider from '../formFieldProvider';
 import { useLang } from '@/contexts/langContext';
 import { applyValidation } from '@/utils/front/form/fieldsValidations';
+
 import { applyToJob } from '@/services/front/apply';
 import { errorAlert, successAlert } from '@/utils/front/others';
 import { useAllApplyForAJob } from '@/hooks/useApply';

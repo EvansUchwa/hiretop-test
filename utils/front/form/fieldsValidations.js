@@ -147,6 +147,9 @@ export const jobValidation = Yup.object().shape({
     advantages, tasks, location, applyLimitDate, salary
 });
 
+export const applyValidation = Yup.object().shape({
+    applyerMessage
+});
 
 export const applyAcceptValidation = Yup.object().shape({
     recrutorMessage, interviewType, interviewHour, interviewDate
