@@ -8,6 +8,8 @@ export const newPasswordField = { name: 'newPassword', fieldType: 'password' };
 
 export const passwordConfirmationField = { name: 'passwordConfirmation', fieldType: 'password' }
 
+export const newPasswordConfirmationField = { name: 'newPasswordConfirmation', fieldType: 'password' }
+
 export const emailField = { name: 'email', fieldType: 'email' }
 
 export const professionField = { name: 'profession', fieldType: 'text', rqrd: true }

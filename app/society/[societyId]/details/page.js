@@ -49,7 +49,7 @@ function SocietyDetails() {
                         <b>{formsL.fields.workSector.label}</b>
                         <div className='flex'>
                             {
-                                society.workSector.map((item, i) => <span key={'skil nb' + i}>{item}</span>)
+                                society.workSector.map((item, i) => <span key={'skil nb' + i}>{formsL.fields.workSectorOptions[item]}</span>)
                             }
                         </div>
                     </div>

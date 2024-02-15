@@ -13,18 +13,19 @@ function Account() {
     const { user, refetchUserLoggedData } = useAuth();
     const { accountL, buttonsL } = useLang();
 
+
     return (
         <div className='account'>
             <h1>{accountL.title}</h1>
             <section>
                 <ViewTabs tabsList={[
                     {
-                        label: accountL.tabs.labels.myProfil, view: <div className='previewProfile'>
+                        label: accountL.tabs.labels.myProfile, view: <div className='previewProfile'>
                             <p>
-                                {accountL.previewProfilText}
+                                {accountL.previewProfileText}
                             </p>
                             <SimpleButton
-                                text={buttonsL.previewProfil}
+                                text={buttonsL.previewProfile}
                                 isLink={'/' + user.role + '/' + user._id + "/details"}
                             />
                         </div>

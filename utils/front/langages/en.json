@@ -1,4 +1,536 @@
 {
-    "welcome": "Welcome",
-    "hello": "Hello"
-  }
+  "account": {
+    "title": "Manage Your Account",
+    "previewProfileText": "You can preview how your profile appears to other users",
+    "tabs": {
+      "labels": {
+        "myProfile": "My Account Overview",
+        "updateYourInformations": "Update Your Information",
+        "updateYourFiles": "Update Your Files",
+        "updateYourPassword": "Change Your Password"
+      }
+    }
+  },
+  "appAdvantages": {
+    "forSociety": [
+      "Expand your team with the best talents in the industry! Our network connects you with highly skilled and motivated professionals ready to contribute to the success of your business.",
+      "Find the tech talents you need to succeed! Our platform provides privileged access to a large pool of qualified candidates ready to take on your business challenges."
+    ],
+    "forTalent": [
+      "Explore a world of opportunities! Our platform allows you to discover the latest job offers in the technology field tailored to your skills and professional aspirations.",
+      "Save time in your job search! Our user-friendly interface and intuitive features enable you to apply in just a few clicks, without hassle or time wastage."
+    ]
+  },
+  "finalizeAccount": {
+    "title": "Finalize Your Registration",
+    "subTitle": "...",
+    "youAre": "You are?"
+  },
+  "auth": {
+    "registerTitle": "Registration",
+    "loginTitle": "Login",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account? Create one"
+  },
+  "dashboardHome": {
+    "welcome": {
+      "title": "Welcome",
+      "talent": {
+        "callToAction": "Discover the new talents registered on our platform. Find your next collaborator among a community of qualified professionals in the technology field."
+      },
+      "society": {
+        "callToAction": "Explore the latest exciting career opportunities in the technology field. Browse job offers and apply today for a new professional challenge."
+      }
+    },
+    "statsLabels": {
+      "jobCount": "Published Offers",
+      "applyCount": "Total Applications",
+      "applyAcceptedCount": "Accepted Applications",
+      "applyRejectedCount": "Rejected Applications",
+      "applyOnPendingCount": "Applications Pending"
+    },
+    "lastJobsTitle": "Your Last Ten Published Offers",
+    "lastApplysTitle": "Your Last Ten Applications"
+  },
+  "job": {
+    "addJobTitle": "Create a New Job Offer",
+    "jobsPostedBySocietyProfileTitle": "Offers Posted by This Profile",
+    "otherInformationsTitle": "Other Information"
+  },
+  "apply": {
+    "allApplysTitle": "List of Applications"
+  },
+  "cards": {
+    "job": {},
+    "talent": {},
+    "apply": {
+      "jobTitleBold": "For the Offer",
+      "societyNameBold": "From the Company",
+      "statusBold": "Status",
+      "interviewTypeBold": "Interview Type",
+      "interviewDateBold": "Interview Date",
+      "interviewHourBold": "Interview Time",
+      "viewRecruiterMessage": "Recruiter's Message",
+      "viewApplicantMessage": "Applicant's Message",
+      "viewYourMessage": "Your Message"
+    }
+  },
+  "buttons": {
+    "register": "Register",
+    "login": "Login",
+    "logout": "Logout",
+    "saveAndContinue": "Save and Continue",
+    "publish": "Publish",
+    "save": "Save",
+    "sendApply": "Submit My Application",
+    "youAlreadySendApply": "You have already applied for this position",
+    "confirm": "I Confirm",
+    "cancel": "Cancel",
+    "viewJob": "View Job",
+    "viewTalentProfile": "Talent Profile",
+    "clickHere": "Click Here",
+    "seeMore": "See More",
+    "updateJob": "Modify Job",
+    "seeApplies": "View Applications",
+    "previewProfile": "Preview Your Profile",
+    "exploreTalents": "Explore Profiles Now! 🚀",
+    "exploreJobs": "Explore Opportunities Now! 🚀",
+    "multipleTextBtns": {
+      "preferredLocations": "Add New Preference",
+      "skills": "Add New Skill",
+      "formations": "Add New Education",
+      "experiences": "Add New Experience",
+      "advantages": "Add New Advantage",
+      "tasks": "Add New Task"
+    },
+    "acceptApply": "Accept This Application",
+    "rejectApply": "Reject This Application"
+  },
+  "others": {
+    "orLabel": "Or"
+  },
+  "infos": {
+    "newApplyResumeInfosTitle": "Regarding Your Application",
+    "newApplyResumeInfos": "We inform you that your CV currently saved in your account will be reviewed by the recruiter when considering your application for this position. If you wish to make changes to your CV or update it before submitting your application, we encourage you to do so now."
+  },
+  "alerts": {
+    "data": {
+      "updated": "Information successfully updated!"
+    },
+    "account": {
+      "createdButNeedEmailValidation": "Account created, but check your emails to validate your address",
+      "updated": "Account information updated!"
+    },
+    "email": {
+      "notVerified": "Email not verified",
+      "notFound": "Email not found",
+      "alreadyExist": "Email already in use"
+    },
+    "password": {
+      "mismatch": "Email not verified",
+      "incorrect": "Incorrect password"
+    },
+    "operation": {
+      "invalid": "An error occurred"
+    },
+    "job": {
+      "created": "Job posted successfully",
+      "updated": "Job updated successfully",
+      "deleted": "Job deleted successfully"
+    },
+    "apply": {
+      "created": "Application submitted",
+      "accepted": "Application accepted",
+      "rejected": "Application rejected"
+    }
+  },
+  "navLinks": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "addJob": "Add Job",
+    "yourCreatedJobs": "Your Published Jobs",
+    "allJobList": "All Jobs",
+    "societyList": "Company List",
+    "searchJob": "Search Job",
+    "account": "My Account",
+    "talentList": "Talent List",
+    "yourApplies": "Your Applications",
+    "yourCreatedJobsWithApplies": "Applications on Your Jobs"
+  },
+  "noDataFound": {
+    "noJobFound": "No matching jobs found",
+    "noApplyFound": "No applications found",
+    "noProfileFound": "No matching profiles found"
+  },
+  "form": {
+    "fields": {
+      "email": {"label": "Your email", "ph": "Your email"},
+      "password": {"label": "Your password", "ph": "Your password"},
+      "currentPassword": {"label": "Current password", "ph": "Current password"},
+      "newPassword": {"label": "New password", "ph": "New password"},
+      
+      "passwordConfirmation": {"label": "Confirm your password", "ph": "Confirm your password"},
+      "newPasswordConfirmation": {"label": "Confirm your password", "ph": "Confirm your password"},
+
+      "lastname": {"label": "Your last name", "ph": "Your last name"},
+      "firstname": {"label": "Your first name", "ph": "Your first name"},
+      "age": {"label": "Your age", "ph": "Your age"},
+      "lastDegree": {"label": "Degree", "ph": "Your last degree"},
+      
+      "formations": {"label": "Your education", "ph": ""},
+      "skills": {"label": "Your skills", "ph": ""},
+      "experiences": {"label": "Your work experience", "ph": ""},
+      "expYears": {"label": "Experience level", "ph": ""},
+      "languages": {"label": "Languages you speak", "ph": ""},
+      "desiredSalary": {"label": "Desired approximate salary", "ph": "Salary in $"},
+      "preferredLocations": {"label": "Preferred location", "ph": ""},
+      "linkedinUrl": {"label": "Your Linkedin profile link", "ph": "Your Linkedin profile link"},
+      
+      "gender": {"label": "Gender", "ph": "Your gender"},
+      "address": {"label": "Your address", "ph": "Your address"},
+      "phone": {"label": "Your phone number", "ph": "Your phone number"},
+      "country": {"label": "Your country", "ph": "Your country"},
+      "societyName": {"label": "Your company name", "ph": "Your company name"},
+      
+      "profilPic": {"label": "Profile picture", "ph": "Your company logo"},
+      "resume": {"label": "Your CV", "ph": ""},
+      
+      "workSector": {"label": "Field in which you operate"},
+      "description": {"label": "A description of yourself", "ph": "Describe yourself here"},
+      
+      "jobTitle": {"label": "Job title", "ph": "Job title"},
+      
+      "profession": {"label": "Your profession title", "ph": "Your profession title"},
+      
+      "jobSector": {"label": "Business sector", "ph": "Business sector"},
+      "jobType": {"label": "Contract type", "ph": "Contract type"},
+      "requiredDegree": {"label": "Required degree", "ph": "Required degree"},
+      "requiredExpYear": {"label": "Required years of experience", "ph": "Required years of experience"},
+      "requiredLang": {"label": "Required languages", "ph": "Required languages"},
+      
+      "remoteAccepted": {"label": "Remote work", "ph": "Remote work"},
+      
+      "jobDescription": {"label": "Description", "ph": "Description"},
+      "tasks": {"label": "Tasks to be performed", "ph": "Tasks to be performed"},
+      "advantages": {"label": "Advantages", "ph": "Advantages"},
+      
+      "location": {"label": "Location", "ph": "Location"},
+      "salary": {"label": "Approximate salary", "ph": "Approximate salary"},
+      "applyLimitDate": {"label": "Application deadline", "ph": "Application deadline"},
+      
+      "applicantMessage": {"label": "Message", "ph": "A short message you would like to leave for the recruiter regarding your profile..."},
+      
+      "recruiterMessage": {"label": "Recruiter's message", "ph": "A short message you would like to leave for the candidate..."},
+      "interviewDate": {"label": "Interview date", "ph": "Interview date"},
+      "interviewHour": {"label": "Interview time", "ph": "Interview time"},
+      "interviewType": {"label": "Interview type", "ph": "Interview type"},
+      
+      "searchTalentKeyword": {"label": "", "ph": "Search for a talent by name, first name, email"},
+      "searchJobKeyword": {"label": "", "ph": "Search for a job offer"},
+      
+      "selectLabels": {
+        "choose": "Choose...",
+        "country": "Country",
+        "requiredDegree": "Required education level",
+        "requiredExpYear": "Experience level",
+        "jobType": "Contract type",
+        "jobSector": "Category",
+        "lastDegree": "Degree",
+        "expYears": "Experience level",
+        "interviewType": "Interview type"
+      },
+      "statusOptions": {
+        "pending": "In progress",
+        "accepted": "Accepted",
+        "rejected": "Rejected"
+      },
+      "interviewTypeOptions": {
+        "In-Person Interview": "In-Person Interview",
+        "Remote Interview": "Remote Interview",
+        "In-Person Technical Interview": "In-Person Technical Interview",
+        "Remote Technical Interview": "Remote Technical Interview",
+        "Phone Interview": "Phone Interview"
+      },
+      "sorterOptions": {
+        "aToz": "A to Z",
+        "zToa": "Z to A",
+        "latestToOldest": "Latest to Oldest",
+        "oldestToLatest": "Oldest to Latest",
+        "viewsHighToLow": "Highest to Lowest Visibility",
+        "viewsLowToHigh": "Lowest to Highest Visibility"
+      },
+      "genderOptions": {
+        "male": "Male",
+        "female": "Female"
+      },
+      "remoteAcceptedOptions": {
+        "yes": "Oui",
+        "no": "Non"
+      },
+      "roleOptions": {
+        "society": "Une Entreprise",
+        "talent": "Un talent"
+      },
+
+      "workSectorOptions": {
+        "automobile": "Automobile",
+        "recruitment": "Recrutement et placement",
+        "consultancy": "Conseil / Études",
+        "digital": "Numérique",
+        "industry": "Industrie",
+        "agriculture": "Agriculture / Pêche / Espaces verts",
+        "hospitality": "Hôtellerie / Restauration",
+        "informationTechnology": "Informatique / Réseaux",
+        "foodIndustry": "Agroalimentaire",
+        "construction": "Construction",
+        "finance": "Finance / Assurance",
+        "education": "Éducation / Formation",
+        "energy": "Énergie",
+        "publicServices": "Services publics",
+        "chemistry": "Chimie / Parachimie",
+        "health": "Santé",
+        "startups": "Startups",
+        "services": "Services",
+        "telecommunications": "Télécommunications",
+        "woodPaperPrinting": "Bois / Papier / Imprimerie",
+        "retail": "Commerce",
+        "automotive": "Automobile",
+        "engineering": "Ingénierie",
+        "textile": "Textile / Habillement",
+        "transportation": "Transport / Logistique",
+        "environment": "Environnement",
+        "media": "Médias",
+        "law": "Droit",
+        "artsCulture": "Arts / Culture",
+        "telecom": "Télécommunications"
+      },
+      "requiredDegreeOptions": {
+        "High School Diploma": "High School Diploma",
+        "Associate Degree": "Associate Degree",
+        "Bachelor's Degree": "Bachelor's Degree",
+        "Master's Degree": "Master's Degree",
+        "Doctorate (Ph.D.)": "Doctorate",
+        "GED (General Educational Development)": "General Educational Development Diploma",
+        "Vocational Certificate": "Vocational Certificate",
+        "Professional Certification": "Professional Certification"
+      },
+      "requiredExpYearOptions": {
+        "Entry Level (0-2 years)": "Entry Level (0-2 years)",
+        "Early Career (3-5 years)": "Early Career (3-5 years)",
+        "Mid Career (6-10 years)": "Mid Career (6-10 years)",
+        "Experienced (11-15 years)": "Experienced (11-15 years)",
+        "Senior Level (16+ years)": "Senior Level (16+ years)"
+      },
+      "requiredLangOptions": {
+        "french": "French",
+        "english": "English"
+      },
+      "jobTypeOptions": {
+        "Full-time": "Full-time",
+        "Part-time": "Part-time",
+        "Contract": "Contract",
+        "Temporary": "Temporary",
+        "Internship": "Internship",
+        "Freelance": "Freelance",
+        "Remote": "Remote"
+      },
+      "countryOptions": {
+        "Afghanistan": "Afghanistan",
+        "Albania": "Albanie",
+        "Algeria": "Algérie",
+        "Andorra": "Andorre",
+        "Angola": "Angola",
+        "Antigua and Barbuda": "Antigua-et-Barbuda",
+        "Argentina": "Argentine",
+        "Armenia": "Arménie",
+        "Australia": "Australie",
+        "Austria": "Autriche",
+        "Azerbaijan": "Azerbaïdjan",
+        "Bahamas": "Bahamas",
+        "Bahrain": "Bahreïn",
+        "Bangladesh": "Bangladesh",
+        "Barbados": "Barbade",
+        "Belarus": "Biélorussie",
+        "Belgium": "Belgique",
+        "Belize": "Belize",
+        "Benin": "Bénin",
+        "Bhutan": "Bhoutan",
+        "Bolivia": "Bolivie",
+        "Bosnia and Herzegovina": "Bosnie-Herzégovine",
+        "Botswana": "Botswana",
+        "Brazil": "Brésil",
+        "Brunei": "Brunei",
+        "Bulgaria": "Bulgarie",
+        "Burkina Faso": "Burkina Faso",
+        "Burundi": "Burundi",
+        "Cabo Verde": "Cap-Vert",
+        "Cambodia": "Cambodge",
+        "Cameroon": "Cameroun",
+        "Canada": "Canada",
+        "Central African Republic": "République centrafricaine",
+        "Chad": "Tchad",
+        "Chile": "Chili",
+        "China": "Chine",
+        "Colombia": "Colombie",
+        "Comoros": "Comores",
+        "Congo": "Congo",
+        "Costa Rica": "Costa Rica",
+        "Cote d'Ivoire": "Côte d'Ivoire",
+        "Croatia": "Croatie",
+        "Cuba": "Cuba",
+        "Cyprus": "Chypre",
+        "Czechia": "Tchéquie",
+        "Denmark": "Danemark",
+        "Djibouti": "Djibouti",
+        "Dominica": "Dominique",
+        "Dominican Republic": "République dominicaine",
+        "Ecuador": "Équateur",
+        "Egypt": "Égypte",
+        "El Salvador": "Salvador",
+        "Equatorial Guinea": "Guinée équatoriale",
+        "Eritrea": "Érythrée",
+        "Estonia": "Estonie",
+        "Eswatini": "Eswatini",
+        "Ethiopia": "Éthiopie",
+        "Fiji": "Fidji",
+        "Finland": "Finlande",
+        "France": "France",
+        "Gabon": "Gabon",
+        "Gambia": "Gambie",
+        "Georgia": "Géorgie",
+        "Germany": "Allemagne",
+        "Ghana": "Ghana",
+        "Greece": "Grèce",
+        "Grenada": "Grenade",
+        "Guatemala": "Guatemala",
+        "Guinea": "Guinée",
+        "Guinea-Bissau": "Guinée-Bissau",
+        "Guyana": "Guyana",
+        "Haiti": "Haïti",
+        "Honduras": "Honduras",
+        "Hungary": "Hongrie",
+        "Iceland": "Islande",
+        "India": "Inde",
+        "Indonesia": "Indonésie",
+        "Iran": "Iran",
+        "Iraq": "Irak",
+        "Ireland": "Irlande",
+        "Israel": "Israël",
+        "Italy": "Italie",
+        "Jamaica": "Jamaïque",
+        "Japan": "Japon",
+        "Jordan": "Jordanie",
+        "Kazakhstan": "Kazakhstan",
+        "Kenya": "Kenya",
+        "Kiribati": "Kiribati",
+        "Korea, North": "Corée du Nord",
+        "Korea, South": "Corée du Sud",
+        "Kosovo": "Kosovo",
+        "Kuwait": "Koweït",
+        "Kyrgyzstan": "Kirghizistan",
+        "Laos": "Laos",
+        "Latvia": "Lettonie",
+        "Lebanon": "Liban",
+        "Lesotho": "Lesotho",
+        "Liberia": "Libéria",
+        "Libya": "Libye",
+        "Liechtenstein": "Liechtenstein",
+        "Lithuania": "Lituanie",
+        "Luxembourg": "Luxembourg",
+        "Madagascar": "Madagascar",
+        "Malawi": "Malawi",
+        "Malaysia": "Malaisie",
+        "Maldives": "Maldives",
+        "Mali": "Mali",
+        "Malta": "Malte",
+        "Marshall Islands": "Îles Marshall",
+        "Mauritania": "Mauritanie",
+        "Mauritius": "Maurice",
+        "Mexico": "Mexique",
+        "Micronesia": "Micronésie",
+        "Moldova": "Moldavie",
+        "Monaco": "Monaco",
+        "Mongolia": "Mongolie",
+        "Montenegro": "Monténégro",
+        "Morocco": "Maroc",
+        "Mozambique": "Mozambique",
+        "Myanmar": "Myanmar",
+        "Namibia": "Namibie",
+        "Nauru": "Nauru",
+        "Nepal": "Népal",
+        "Netherlands": "Pays-Bas",
+        "New Zealand": "Nouvelle-Zélande",
+        "Nicaragua": "Nicaragua",
+        "Niger": "Niger",
+        "Nigeria": "Nigeria",
+        "North Macedonia": "Macédoine du Nord",
+        "Norway": "Norvège",
+        "Oman": "Oman",
+        "Pakistan": "Pakistan",
+        "Palau": "Palaos",
+        "Panama": "Panama",
+        "Papua New Guinea": "Papouasie-Nouvelle-Guinée",
+        "Paraguay": "Paraguay",
+        "Peru": "Pérou",
+        "Philippines": "Philippines",
+        "Poland": "Pologne",
+        "Portugal": "Portugal",
+        "Qatar": "Qatar",
+        "Romania": "Roumanie",
+        "Russia": "Russie",
+        "Rwanda": "Rwanda",
+        "Saint Kitts and Nevis": "Saint-Kitts-et-Nevis",
+        "Saint Lucia": "Sainte-Lucie",
+        "Saint Vincent and the Grenadines": "Saint-Vincent-et-les-Grenadines",
+        "Samoa": "Samoa",
+        "San Marino": "Saint-Marin",
+        "Sao Tome and Principe": "Sao Tomé-et-Principe",
+        "Saudi Arabia": "Arabie saoudite",
+        "Senegal": "Sénégal",
+        "Serbia": "Serbie",
+        "Seychelles": "Seychelles",
+        "Sierra Leone": "Sierra Leone",
+        "Singapore": "Singapour",
+        "Slovakia": "Slovaquie",
+        "Slovenia": "Slovénie",
+        "Solomon Islands": "Îles Salomon",
+        "Somalia": "Somalie",
+        "South Africa": "Afrique du Sud",
+        "South Sudan": "Soudan du Sud",
+        "Spain": "Espagne",
+        "Sri Lanka": "Sri Lanka",
+        "Sudan": "Soudan",
+        "Suriname": "Suriname",
+        "Sweden": "Suède",
+        "Switzerland": "Suisse",
+        "Syria": "Syrie",
+        "Taiwan": "Taïwan",
+        "Tajikistan": "Tadjikistan",
+        "Tanzania": "Tanzanie",
+        "Thailand": "Thaïlande",
+        "Timor-Leste": "Timor oriental",
+        "Togo": "Togo",
+        "Tonga": "Tonga",
+        "Trinidad and Tobago": "Trinité-et-Tobago",
+        "Tunisia": "Tunisie",
+        "Turkey": "Turquie",
+        "Turkmenistan": "Turkménistan",
+        "Tuvalu": "Tuvalu",
+        "Uganda": "Ouganda",
+        "Ukraine": "Ukraine",
+        "United Arab Emirates": "Émirats arabes unis",
+        "United Kingdom": "Royaume-Uni",
+        "United States": "États-Unis",
+        "Uruguay": "Uruguay",
+        "Uzbekistan": "Ouzbékistan",
+        "Vanuatu": "Vanuatu",
+        "Vatican City": "Cité du Vatican",
+        "Venezuela": "Venezuela",
+        "Vietnam": "Vietnam",
+        "Yemen": "Yémen",
+        "Zambia": "Zambie",
+        "Zimbabwe": "Zimbabwe"
+      }
+    }
+  }  
+}

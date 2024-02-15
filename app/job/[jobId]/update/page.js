@@ -1,6 +1,7 @@
 'use client';
 import UpdateJobForm from '@/components/job/update';
 import { useLang } from '@/contexts/langContext';
+import { withAuth } from '@/hocs/withAuth';
 import { useJobDetails } from '@/hooks/useJob'
 import { SectionSpinner } from '@/uikits/others';
 import { useParams } from 'next/navigation'
@@ -20,4 +21,4 @@ function JobUpdate() {
 }
 
 
-export default JobUpdate
+export default withAuth(JobUpdate)

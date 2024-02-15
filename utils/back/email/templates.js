@@ -66,4 +66,10 @@ export function applyRejectedEmail(origin, nomPoste, nomEntreprise, talentFirsta
     `;
 }
 
-{/* <p>Merci de faire partie de la communauté <strong>[Nom de la Plateforme]</strong>  */ }
+
+export function changePasswordEmail(origin) {
+
+    return `
+        Url de reinitialisation: ${origin},
+    `;
+}

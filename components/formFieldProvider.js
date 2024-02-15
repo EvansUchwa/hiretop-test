@@ -57,8 +57,8 @@ function FormFieldProvider(props) {
         return <TextFieldWithFormik {...rest}
             name={name}
             type={fieldType}
-            label={formLangs[name].label}
-            placeholder={formLangs[name].ph}
+            label={formLangs[name] && formLangs[name].label}
+            placeholder={formLangs[name] && formLangs[name].ph}
             rqrd={rqrd}
         />
     } else if (fieldType == 'search') {
@@ -66,21 +66,21 @@ function FormFieldProvider(props) {
             name={name}
             type={'search'}
             label={''}
-            placeholder={formLangs[name].ph}
+            placeholder={formLangs[name] && formLangs[name].ph}
         />
     } else if (fieldType == 'multipletext') {
         return <MultipleTextWithFormik {...rest}
             name={name}
-            label={formLangs[name].label}
-            placeholder={formLangs[name].ph}
+            label={formLangs[name] && formLangs[name].label}
+            placeholder={formLangs[name] && formLangs[name].ph}
             btnsLang={btnsLang.multipleTextBtns}
             rqrd={rqrd}
         />
     } else if (fieldType == 'multipletextBlock') {
         return <MultipleTextBlockWithFormik {...rest}
             name={name}
-            label={formLangs[name].label}
-            placeholder={formLangs[name].ph}
+            label={formLangs[name] && formLangs[name].label}
+            placeholder={formLangs[name] && formLangs[name].ph}
             btnsLang={btnsLang.multipleTextBtns}
             rqrd={rqrd}
         />
@@ -88,23 +88,23 @@ function FormFieldProvider(props) {
         return <TextAreaWithFormik {...rest}
             name={name}
             options={options}
-            label={formLangs[name].label}
-            placeholder={formLangs[name].ph}
+            label={formLangs[name] && formLangs[name].label}
+            placeholder={formLangs[name] && formLangs[name].ph}
             rqrd={rqrd}
         />
     } else if (fieldType == 'radio') {
         return <InputRadioWithFormik {...rest}
             name={name}
             options={options}
-            label={formLangs[name].label}
-            optionsL={formLangs[name + 'Options']}
+            label={formLangs[name] && formLangs[name].label}
+            optionsL={formLangs[name] && formLangs[name + 'Options']}
             rqrd={rqrd}
         />
     } else if (fieldType == 'checkbox') {
         return <InputCheckboxWithFormik {...rest}
             options={options}
             name={name}
-            label={formLangs[name].label}
+            label={formLangs[name] && formLangs[name].label}
             optionsL={dispatchCheckboxOptionsL(name, formLangs)}
             rqrd={rqrd}
         />
@@ -113,14 +113,14 @@ function FormFieldProvider(props) {
         return <DocFileInputWithFormik {...rest}
             name={name}
             type={fieldType}
-            label={formLangs[name].label}
+            label={formLangs[name] && formLangs[name].label}
             rqrd={rqrd}
         />
     } else if (fieldType == 'select') {
         return <SelectWithFormik {...rest}
             name={name}
             options={options}
-            label={formLangs[name].label}
+            label={formLangs[name] && formLangs[name].label}
             optionsL={dispatchSelectOptionsL(name, formLangs)}
             chooseLabel={formLangs.selectLabels[name]}
             rqrd={rqrd}

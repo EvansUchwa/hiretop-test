@@ -91,7 +91,12 @@ const workSector = Yup.array().min(1, 'Minimum 1 secteur').required("Champs requ
 
 const password = Yup.string().min(8, 'Too short!').max(150, 'Too Long')
     .required("Champs requis");
+const currentPassword = password;
+const newPassword = password;
+
 const passwordConfirmation = Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match').required("Champs requis");
+const newPasswordConfirmation = Yup.string().oneOf([Yup.ref('newPassword'), null], 'Passwords must match').required("Champs requis");
+
 
 export const SignupValidation = Yup.object().shape({
     email, password, passwordConfirmation
@@ -149,4 +154,8 @@ export const applyAcceptValidation = Yup.object().shape({
 
 export const applyRejectValidation = Yup.object().shape({
     recrutorMessage
+});
+
+export const changePasswordValidation = Yup.object().shape({
+    currentPassword, newPassword, newPasswordConfirmation
 });

@@ -49,6 +49,7 @@
     gap: 0 10px;
     span{
         font-size: 30px;
+        cursor: pointer;
     }
     a{
         align-items: center;
@@ -134,6 +135,12 @@
  }
 
  @media screen  and (max-width:758px) {
+    .visibleSidebar{
+        &~.dpw-content{
+            transform: translateX($sidebarWidth);
+            width: 100% !important;
+        }
+    }
     .sidebarVisbleNavStyle{
         transform: initial !important;
     }

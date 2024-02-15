@@ -21,7 +21,7 @@ export const LangProvider = ({ children }) => {
 
     return (
         <LangContext.Provider value={{
-            lang, langData,
+            lang, langData, changeLang,
             formsL: langData.form,
             buttonsL: langData.buttons,
             accountL: langData.account,

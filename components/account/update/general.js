@@ -46,7 +46,6 @@ export function UpdateTalentGeneralInformations({ user, refetchUserLoggedData })
         }, (error) => {
             errorAlert(error)
         }, () => {
-            // setOL(false)
             setSubmitting(false)
         })
     }

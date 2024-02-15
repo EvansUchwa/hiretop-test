@@ -89,7 +89,8 @@ export function WelcomeConnectedUser({ user }) {
             {dashboardHomeL.welcome.title}, <b>{user.role == 'society' ? user.societyName : user.firstname}</b>
         </p>
         <p>{dashboardHomeL.welcome[user.role].callToAction}</p>
-        <SimpleButton text={user.role == 'society' ? buttonsL.exploreTalents : buttonsL.exploreJobs} />
+        <SimpleButton text={user.role == 'society' ? buttonsL.exploreTalents : buttonsL.exploreJobs}
+            isLink={user.role == 'society' ? '/talent/all' : 'job/all'} />
     </div>
 }
 

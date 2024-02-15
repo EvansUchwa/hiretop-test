@@ -1,13 +1,11 @@
 {
-    "welcome": "Bienvenue",
-    "hello": "Bonjour",
     "account": {
       "title": "Gestion de votre compte",
       "previewProfileText": "Vous pouvez visualiser le rendu de votre profil tel que les autres utilisateurs le voient",
       "tabs": {
         "labels": {
           "myProfile": "Aperçu de mon compte",
-          "updateYourInformation": "Modifier vos informations",
+          "updateYourInformations": "Modifier vos informations",
           "updateYourFiles": "Modifier vos fichiers",
           "updateYourPassword": "Modifier votre mot de passe"
         }
@@ -129,8 +127,9 @@
         "alreadyExist": "Email déjà utilisé"
       },
       "password": {
-        "mismatch": "Email non vérifié",
-        "incorrect": "Mot de passe incorrect"
+        "mismatch": "",
+        "incorrect": "Mot de passe incorrect",
+        "updated": "Mot de passe mis a jour"
       },
       "operation": {
         "invalid": "Une erreur est survenue"
@@ -172,10 +171,12 @@
         "newPassword": {"label": "Nouveau mot de passe", "ph": "Nouveau mot de passe"},
     
         "passwordConfirmation": {"label": "Confirmer votre mot de passe", "ph": "Confirmer votre mot de passe"},
+        "newPasswordConfirmation": {"label": "Confirmer votre mot de passe", "ph": "Confirmer votre mot de passe"},
+        
         "lastname": {"label": "Votre nom", "ph": "Votre nom"},
         "firstname": {"label": "Votre prénom", "ph": "Votre prénom"},
         "age": {"label": "Votre âge", "ph": "Votre âge"},
-        "lastDegree": {"label": "Votre dernier diplôme", "ph": "Votre dernier diplôme"},
+        "lastDegree": {"label": "Diplôme", "ph": "Votre dernier diplôme"},
     
         "formations": {"label": "Vos formations", "ph": ""},
         "skills": {"label": "Vos compétences", "ph": ""},
@@ -186,13 +187,13 @@
         "preferredLocations": {"label": "Localisation préférée", "ph": ""},
         "linkedinUrl": {"label": "Lien de votre profil Linkedin", "ph": "Lien de votre profil Linkedin"},
     
-        "gender": {"label": "Votre sexe", "ph": "Votre sexe"},
+        "gender": {"label": "Sexe", "ph": "Votre sexe"},
         "address": {"label": "Votre adresse", "ph": "Votre adresse"},
         "phone": {"label": "Votre numéro de téléphone", "ph": "Votre numéro de téléphone"},
         "country": {"label": "Votre pays", "ph": "Votre pays"},
         "societyName": {"label": "Le nom de votre entreprise", "ph": "Le nom de votre entreprise"},
     
-        "profilePic": {"label": "Photo de profil", "ph": "Logo de votre entreprise"},
+        "profilPic": {"label": "Photo de profil", "ph": "Logo de votre entreprise"},
         "resume": {"label": "Votre CV", "ph": ""},
     
         "workSector": {"label": "Domaine dans lequel vous intervenez"},
@@ -274,60 +275,60 @@
     
         "workSectorOptions": {
           "automobile":  "Automobile",
-          "Recruitment": "Recrutement et Placement",
-          "Consultancy": "Conseil / Études",
-          "Digital": "Numérique",
-          "Industry": "Industrie",
-          "Agriculture": "Agriculture / Pêche / Espaces Verts",
-          "Hospitality": "Hôtellerie / Restauration",
-          "InformationTechnology": "Informatique / Réseaux",
-          "FoodIndustry": "Agroalimentaire",
-          "Construction": "Construction",
-          "Finance": "Finance / Assurance",
-          "Education": "Éducation / Formation",
-          "Energy": "Énergie",
-          "PublicServices": "Services Publics",
-          "Chemistry": "Chimie / Parachimie",
-          "Health": "Santé",
-          "Startups": "Startups",
-          "Services": "Services",
-          "Telecommunications": "Télécommunications",
-          "WoodPaperPrinting": "Bois / Papier / Imprimerie",
-          "Retail": "Commerce",
-          "Automotive": "Automobile",
-          "Engineering": "Ingénierie",
-          "Textile": "Textile / Habillement",
-          "Transportation": "Transport / Logistique",
-          "Environment": "Environnement",
-          "Media": "Médias",
-          "Law": "Droit",
-          "ArtsCulture": "Arts / Culture",
-          "Telecom": "Télécommunications"
+          "recruitment": "Recrutement et Placement",
+          "consultancy": "Conseil / Études",
+          "digital": "Numérique",
+          "industry": "Industrie",
+          "agriculture": "Agriculture / Pêche / Espaces Verts",
+          "hospitality": "Hôtellerie / Restauration",
+          "informationTechnology": "Informatique / Réseaux",
+          "foodIndustry": "Agroalimentaire",
+          "construction": "Construction",
+          "finance": "Finance / Assurance",
+          "education": "Éducation / Formation",
+          "energy": "Énergie",
+          "publicServices": "Services Publics",
+          "chemistry": "Chimie / Parachimie",
+          "health": "Santé",
+          "startups": "Startups",
+          "services": "Services",
+          "telecommunications": "Télécommunications",
+          "woodPaperPrinting": "Bois / Papier / Imprimerie",
+          "retail": "Commerce",
+          "automotive": "Automobile",
+          "engineering": "Ingénierie",
+          "textile": "Textile / Habillement",
+          "transportation": "Transport / Logistique",
+          "environment": "Environnement",
+          "media": "Médias",
+          "law": "Droit",
+          "artsCulture": "Arts / Culture",
+          "telecom": "Télécommunications"
         },
         "requiredDegreeOptions": {
-          "HighSchoolDiploma": "Diplôme d'Études Secondaires",
-          "AssociateDegree": "Diplôme d'Études Collégiales",
-          "BachelorDegree": "Baccalauréat",
-          "MasterDegree": "Master",
-          "DoctoratePhD": "Doctorat",
-          "GED": "Diplôme d'Études Générales",
-          "VocationalCertificate": "Certificat Professionnel",
-          "ProfessionalCertification": "Certification Professionnelle"
+          "High School Diploma": "Diplôme d'Études Secondaires",
+          "Associate Degree": "Diplôme d'Études Collégiales",
+          "Bachelor's Degree": "Baccalauréat",
+          "Master's Degree": "Master",
+          "Doctorate (Ph.D.)": "Doctorat",
+          "GED (General Educational Development)": "Diplôme d'Études Générales",
+          "Vocational Certificate": "Certificat Professionnel",
+          "Professional Certification": "Certification Professionnelle"
         },
         "requiredExpYearOptions": {
-          "EntryLevel02Years": "Débutant (0-2 ans)",
-          "EarlyCareer35Years": "Début de carrière (3-5 ans)",
-          "MidCareer610Years": "Milieu de carrière (6-10 ans)",
-          "Experienced1115Years": "Expérimenté (11-15 ans)",
-          "SeniorLevel16Years": "Niveau Senior (16 ans et plus)"
+          "Entry Level (0-2 years)": "Débutant (0-2 ans)",
+          "Early Career (3-5 years)": "Début de carrière (3-5 ans)",
+          "Mid Career (6-10 years)": "Milieu de carrière (6-10 ans)",
+          "Experienced (11-15 years)": "Expérimenté (11-15 ans)",
+          "Senior Level (16+ years)": "Niveau Senior (16 ans et plus)"
         },
         "requiredLangOptions": {
-          "French": "Français",
-          "English": "Anglais"
+          "french": "Français",
+          "english": "Anglais"
         },
         "jobTypeOptions": {
-          "FullTime": "Temps plein",
-          "PartTime": "Temps partiel",
+          "Full-time": "Temps plein",
+          "Part-time": "Temps partiel",
           "Contract": "Contrat",
           "Temporary": "Temporaire",
           "Internship": "Stage",

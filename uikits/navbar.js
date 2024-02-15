@@ -7,6 +7,7 @@ import { useAuth } from '@/contexts/authContext'
 import { checkUrl } from '@/utils/front/others'
 import { isMobile, isTablet } from 'react-device-detect'
 import { redirect, useRouter } from 'next/navigation'
+import { useLang } from '@/contexts/langContext';
 export function Navbar1() {
     return (
         <nav className='navbar1'>
@@ -16,8 +17,7 @@ export function Navbar1() {
 }
 
 export function ConnectedNavbar() {
-
-    // const {isMO}
+    const { lang, changeLang } = useLang();
     const { user } = useAuth();
     const { toggleSidebar, sidebarVisible } = useNavbar();
     const [searchKey, setSK] = useState(null);
@@ -61,6 +61,9 @@ export function ConnectedNavbar() {
                 </Link>
                 <span>
                     <MaterialSymbolsLogout />
+                </span>
+                <span onClick={() => changeLang(lang == 'fr' ? 'en' : 'fr')}>
+                    {lang == 'fr' ? "EN" : "FR"}
                 </span>
             </div>
         </nav>

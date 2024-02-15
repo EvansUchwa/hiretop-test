@@ -62,3 +62,15 @@ export async function finaliseTalentUserAccount(formData, successCb = null, errC
         finallyCb && finallyCb()
     }
 }
+
+export async function updateUserPassword(formData, successCb = null, errCb = null, finallyCb = null) {
+    try {
+        let res = await axiosInstance.put('/update-account/password', formData);
+        successCb && successCb(res)
+    } catch (error) {
+        console.log(error);
+        errCb && errCb(error)
+    } finally {
+        finallyCb && finallyCb()
+    }
+}

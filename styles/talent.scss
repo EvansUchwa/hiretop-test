@@ -121,6 +121,10 @@ p{
                 }
             }
             .tbod-bottom{
+                div{
+                    flex-wrap: wrap;
+                gap: 10px;
+                }
                 b{
                     margin-bottom: 15px;
                 }

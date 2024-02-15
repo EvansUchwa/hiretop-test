@@ -5,7 +5,7 @@ import {
     jobTitleField,
     jobTypeField,
     locationField,
-    passwordConfirmationField, passwordField, phoneField, profilPicField, remoteAcceptedField, requiredDegreeField, requiredExpYearField, requiredLangField, salaryField, societyNameField, workSectorField, tasksField, firstnameField, lastnameField, ageField, formationsField, experiencesField, skillsField, resumeField, desiredSalaryField, preferredLocationsField, linkedinUrlField, lastDegreeField, titleField, professionField, expYearsField, langagesField, applyerMessageField, recrutorMessageField, interviewDateField, interviewHourField, interviewTypeField, currentPasswordField, newPasswordField, searchKeyField, searchTalentKeyWordField, searchJobKeywordField
+    passwordConfirmationField, passwordField, phoneField, profilPicField, remoteAcceptedField, requiredDegreeField, requiredExpYearField, requiredLangField, salaryField, societyNameField, workSectorField, tasksField, firstnameField, lastnameField, ageField, formationsField, experiencesField, skillsField, resumeField, desiredSalaryField, preferredLocationsField, linkedinUrlField, lastDegreeField, titleField, professionField, expYearsField, langagesField, applyerMessageField, recrutorMessageField, interviewDateField, interviewHourField, interviewTypeField, currentPasswordField, newPasswordField, searchKeyField, searchTalentKeyWordField, searchJobKeywordField, newPasswordConfirmationField
 } from "./fields"
 
 
@@ -26,7 +26,7 @@ export function loginFields() {
 export function changePaswordFields() {
     return [
         newPasswordField,
-        passwordConfirmationField
+        newPasswordConfirmationField
     ]
 }
 
