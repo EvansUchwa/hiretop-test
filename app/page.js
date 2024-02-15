@@ -1,18 +1,20 @@
 "use client";
+import { useLang } from '@/contexts/langContext';
 import { withoutAuth } from '@/hocs/withoutAuth';
 import SimpleButton from '@/uikits/button';
 
 function Home() {
+  const { homeL } = useLang();
   return (
     <div className={'home'}>
       <div className='homeBanner'>
         <section className='hb-text'>
           <h1>
-            We are
+            {homeL.weAreStartText}
           </h1>
           <b>HIRE TOP</b>
           <h2>
-            We connect people and job opportunities
+            {homeL.weAreEndText}
           </h2>
         </section>
         <section className='hb-actions'>

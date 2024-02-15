@@ -11,45 +11,55 @@
       }
     }
   },
+  "home": {
+    "weAreStartText": "We are",
+    "weAreEndText": "your gateway to exceptional professional opportunities. Here, we believe in the power of the connection between talents and opportunities, shaping the future of successful careers."
+  },
   "appAdvantages": {
     "forSociety": [
-      "Expand your team with the best talents in the industry! Our network connects you with highly skilled and motivated professionals ready to contribute to the success of your business.",
-      "Find the tech talents you need to succeed! Our platform provides privileged access to a large pool of qualified candidates ready to take on your business challenges."
+      "Expand your team with the best talents in the industry! Our network connects you with highly qualified and motivated professionals ready to contribute to the success of your company.",
+      "Find the tech talents you need to succeed! Our platform provides privileged access to a wide pool of qualified candidates, ready to take on your company's challenges."
     ],
     "forTalent": [
-      "Explore a world of opportunities! Our platform allows you to discover the latest job offers in the technology field tailored to your skills and professional aspirations.",
-      "Save time in your job search! Our user-friendly interface and intuitive features enable you to apply in just a few clicks, without hassle or time wastage."
+      "Explore a world of opportunities! Our platform allows you to discover the latest job offers in the technology field, tailored to your skills and professional aspirations.",
+      "Save time in your job search! Our user-friendly interface and intuitive features allow you to apply in just a few clicks, without hassle or wasted time."
     ]
   },
-  "finalizeAccount": {
-    "title": "Finalize Your Registration",
+  "finaliseAccount": {
+    "title": "Complete Your Registration",
     "subTitle": "...",
     "youAre": "You are?"
   },
   "auth": {
     "registerTitle": "Registration",
     "loginTitle": "Login",
+    "resetPasswordStep1": "Forgot Password (Step 1)",
+    "resetPasswordStep2": "Forgot Password (Step 2)",
+  
     "alreadyHaveAccount": "Already have an account?",
-    "dontHaveAccount": "Don't have an account? Create one"
+    "passwordForgot": "Forgot Password",
+    "dontHaveAccount": "Don't have an account? Create one",
+    "loginBannerText": "Log in to your account to explore exciting professional opportunities.",
+    "signupBannerText": "If you don't have an account yet, join us and discover a world of possibilities."
   },
   "dashboardHome": {
     "welcome": {
       "title": "Welcome",
       "talent": {
-        "callToAction": "Discover the new talents registered on our platform. Find your next collaborator among a community of qualified professionals in the technology field."
+        "callToAction": "Discover the new talents registered on our platform now. Find your next collaborator among a community of qualified professionals in the technology field."
       },
       "society": {
         "callToAction": "Explore the latest exciting career opportunities in the technology field. Browse job offers and apply today for a new professional challenge."
       }
     },
     "statsLabels": {
-      "jobCount": "Published Offers",
+      "jobCount": "Job Offers Published",
       "applyCount": "Total Applications",
-      "applyAcceptedCount": "Accepted Applications",
-      "applyRejectedCount": "Rejected Applications",
+      "applyAcceptedCount": "Applications Accepted",
+      "applyRejectedCount": "Applications Rejected",
       "applyOnPendingCount": "Applications Pending"
     },
-    "lastJobsTitle": "Your Last Ten Published Offers",
+    "lastJobsTitle": "Your Last Ten Published Job Offers",
     "lastApplysTitle": "Your Last Ten Applications"
   },
   "job": {
@@ -64,21 +74,29 @@
     "job": {},
     "talent": {},
     "apply": {
-      "jobTitleBold": "For the Offer",
-      "societyNameBold": "From the Company",
+      "jobTitleBold": "For the job",
+      "societyNameBold": "From the company",
       "statusBold": "Status",
       "interviewTypeBold": "Interview Type",
       "interviewDateBold": "Interview Date",
       "interviewHourBold": "Interview Time",
-      "viewRecruiterMessage": "Recruiter's Message",
-      "viewApplicantMessage": "Applicant's Message",
+      "viewRecrutorMessage": "Recruiter's Message",
+      "viewApplyerMessage": "Candidate's Message",
       "viewYourMessage": "Your Message"
     }
-  },
+  },  
   "buttons": {
     "register": "Register",
     "login": "Login",
     "logout": "Logout",
+    "searchAndFilter": "Search and Filter",
+  
+    "backToHome": "Back to Home",
+    "addJob": "Add a Job",
+  
+    "previousStep": "Previous",
+    "nextStep": "Next",
+  
     "saveAndContinue": "Save and Continue",
     "publish": "Publish",
     "save": "Save",
@@ -110,6 +128,7 @@
     "orLabel": "Or"
   },
   "infos": {
+    "reallyWantToLogout": "Do you really want to log out?",
     "newApplyResumeInfosTitle": "Regarding Your Application",
     "newApplyResumeInfos": "We inform you that your CV currently saved in your account will be reviewed by the recruiter when considering your application for this position. If you wish to make changes to your CV or update it before submitting your application, we encourage you to do so now."
   },
@@ -119,16 +138,21 @@
     },
     "account": {
       "createdButNeedEmailValidation": "Account created, but check your emails to validate your address",
+  
+      "readYourEmailForPassReset": "An email has been sent to you for password reset",
+  
       "updated": "Account information updated!"
     },
     "email": {
+      "verified": "Email verified",
       "notVerified": "Email not verified",
       "notFound": "Email not found",
       "alreadyExist": "Email already in use"
     },
     "password": {
-      "mismatch": "Email not verified",
-      "incorrect": "Incorrect password"
+      "mismatch": "",
+      "incorrect": "Incorrect password",
+      "updated": "Password updated"
     },
     "operation": {
       "invalid": "An error occurred"
@@ -143,25 +167,25 @@
       "accepted": "Application accepted",
       "rejected": "Application rejected"
     }
-  },
+  },   
   "navLinks": {
     "home": "Home",
     "dashboard": "Dashboard",
-    "addJob": "Add Job",
+    "addJob": "Add a Job",
     "yourCreatedJobs": "Your Published Jobs",
     "allJobList": "All Jobs",
-    "societyList": "Company List",
-    "searchJob": "Search Job",
+    "societyList": "List of Companies",
+    "searchJob": "Search for a Job",
     "account": "My Account",
-    "talentList": "Talent List",
+    "talentList": "List of Talents",
     "yourApplies": "Your Applications",
     "yourCreatedJobsWithApplies": "Applications on Your Jobs"
   },
   "noDataFound": {
-    "noJobFound": "No matching jobs found",
-    "noApplyFound": "No applications found",
-    "noProfileFound": "No matching profiles found"
-  },
+    "noJobFound": "No matching job found",
+    "noApplyFound": "No application found",
+    "noProfileFound": "No matching profile found"
+  },  
   "form": {
     "fields": {
       "email": {"label": "Your email", "ph": "Your email"},
