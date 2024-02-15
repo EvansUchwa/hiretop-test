@@ -1,8 +1,6 @@
 "use client";
-import { useLang } from '@/contexts/langContext';
 import { withoutAuth } from '@/hocs/withoutAuth';
 import SimpleButton from '@/uikits/button';
-import { useRouter } from 'next/navigation';
 
 function Home() {
   return (
