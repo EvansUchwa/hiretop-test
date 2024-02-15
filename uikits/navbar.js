@@ -14,7 +14,7 @@ import { useModal } from '@/contexts/modalContext';
 import { ConfirmationModal } from './modal';
 
 export function NotConnectedNav() {
-    const { lang, changeLang, navLinksL } = useLang();
+    const { lang, changeLang, navLinksL, buttonsL } = useLang();
     const [mobileNavVisible, setMNV] = useState(false);
     const pathname = usePathname();
 
@@ -47,9 +47,9 @@ export function NotConnectedNav() {
                 </section>
 
                 <section className='ncn-actions'>
-                    <SimpleButton text="Se connecter" defaultBg="transparent" defaultColor="black"
+                    <SimpleButton text={buttonsL.login} defaultBg="transparent" defaultColor="black"
                         isLink={'/login'} />
-                    <SimpleButton text="S'inscrire"
+                    <SimpleButton text={buttonsL.register}
                         isLink={'/register'} />
                 </section>
             </div>

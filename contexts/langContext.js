@@ -36,7 +36,8 @@ export const LangProvider = ({ children }) => {
             infosL: langData.infos,
             appAdvantagesL: langData.appAdvantages,
             noDataFoundL: langData.noDataFound,
-            alertsL: langData.alerts
+            alertsL: langData.alerts,
+            homeL: langData.home,
         }}>
             {children}
         </LangContext.Provider>

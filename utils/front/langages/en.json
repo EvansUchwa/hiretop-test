@@ -13,7 +13,7 @@
   },
   "home": {
     "weAreStartText": "We are",
-    "weAreEndText": "your gateway to exceptional professional opportunities. Here, we believe in the power of the connection between talents and opportunities, shaping the future of successful careers."
+    "weAreEndText": "Your gateway to exceptional professional opportunities. Here, we believe in the power of the connection between talents and opportunities, shaping the future of successful careers."
   },
   "appAdvantages": {
     "forSociety": [
@@ -113,6 +113,9 @@
     "previewProfile": "Preview Your Profile",
     "exploreTalents": "Explore Profiles Now! 🚀",
     "exploreJobs": "Explore Opportunities Now! 🚀",
+    "browseTalents": "Explore Profiles",
+"browseJobs": "Explore Opportunities",
+
     "multipleTextBtns": {
       "preferredLocations": "Add New Preference",
       "skills": "Add New Skill",

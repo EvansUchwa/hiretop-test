@@ -13,7 +13,7 @@
     },
     "home":{
       "weAreStartText":"Nous sommes",
-      "weAreEndText": " votre passerelle vers des opportunités professionnelles exceptionnelles. Ici, nous croyons en la puissance de la rencontre entre les talents et les opportunités, façonnant ainsi le futur de carrières réussies."
+      "weAreEndText": "Votre passerelle vers des opportunités professionnelles exceptionnelles. Ici, nous croyons en la puissance de la rencontre entre les talents et les opportunités, façonnant ainsi le futur de carrières réussies."
     },
     "appAdvantages": {
       "forSociety": [
@@ -114,6 +114,8 @@
       "previewProfile": "Visualiser votre profil",
       "exploreTalents": "Explorez les profils dès maintenant ! 🚀",
       "exploreJobs": "Explorez les opportunités dès maintenant ! 🚀",
+      "browseTalents": "Explorez les profils",
+      "browseJobs": "Explorez les opportunités",
       "multipleTextBtns": {
         "preferredLocations": "Ajouter nouvelle préférence",
         "skills": "Ajouter nouvelle compétence",

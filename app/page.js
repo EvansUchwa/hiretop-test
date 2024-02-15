@@ -4,7 +4,7 @@ import { withoutAuth } from '@/hocs/withoutAuth';
 import SimpleButton from '@/uikits/button';
 
 function Home() {
-  const { homeL } = useLang();
+  const { homeL, buttonsL } = useLang();
   return (
     <div className={'home'}>
       <div className='homeBanner'>
@@ -18,8 +18,8 @@ function Home() {
           </h2>
         </section>
         <section className='hb-actions'>
-          <SimpleButton text='Browse Jobs' isLink="/job/all" />
-          <SimpleButton text='Browse Talents' defaultBg="transparent" defaultColor="black" isLink="/talent/all" />
+          <SimpleButton text={buttonsL.browseJobs} isLink="/job/all" />
+          <SimpleButton text={buttonsL.browseTalents} defaultBg="transparent" defaultColor="black" isLink="/talent/all" />
         </section>
       </div>
     </div>
