@@ -1,19 +1,29 @@
 'use client';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CircleFlagsFr, CircleFlagsUs, MaterialSymbolsLogout, MaterialSymbolsMenu, MaterialSymbolsSearch } from './icon'
 import Link from 'next/link'
 import { useNavbar } from '@/contexts/navContext';
 import { useAuth } from '@/contexts/authContext';
 import { checkUrl } from '@/utils/front/others';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useLang } from '@/contexts/langContext';
 import Image from 'next/image';
 import SvgLogo from '../public/icon.svg'
 import SimpleButton from './button';
+import { useModal } from '@/contexts/modalContext';
+import { ConfirmationModal } from './modal';
 
 export function NotConnectedNav() {
-    const { lang, changeLang } = useLang();
+    const { lang, changeLang, navLinksL } = useLang();
     const [mobileNavVisible, setMNV] = useState(false);
+    const pathname = usePathname();
+
+
+    useEffect(() => {
+        if (mobileNavVisible) {
+            setMNV(false)
+        }
+    }, [pathname])
     return (
         <nav className='notConnectedNav'>
             <section className='ncn-logo'>
@@ -43,27 +53,36 @@ export function NotConnectedNav() {
                         isLink={'/register'} />
                 </section>
             </div>
-            <span onClick={() => changeLang(lang == 'fr' ? 'en' : 'fr')}>
-                {lang == 'fr' ? <CircleFlagsUs /> : <CircleFlagsFr />}
-            </span>
+            <div className='langToggler'>
+                <span onClick={() => changeLang(lang == 'fr' ? 'en' : 'fr')}>
+                    {lang == 'fr' ? <CircleFlagsUs /> : <CircleFlagsFr />}
+                </span>
+            </div>
         </nav>
     )
 }
 
 export function ConnectedNavbar() {
-    const { lang, changeLang } = useLang();
-    const { user } = useAuth();
+    const { lang, changeLang, infosL } = useLang();
+    const { user, logout } = useAuth();
     const { toggleSidebar, sidebarVisible } = useNavbar();
     const [searchKey, setSK] = useState(null);
     const router = useRouter();
+    const { showModal } = useModal();
 
     function handleSearchKeyChange(e) {
         const { value } = e.target;
         setSK(value)
-
     }
     function redirectToSearchResultPage() {
         router.push(user.role == 'talent' ? '/job/all?searchJobKeyword=' + searchKey : '/talent/all?searchTalentKeyword=' + searchKey)
+    }
+
+    function confirmLogout() {
+        showModal(<ConfirmationModal
+            title={infosL.reallyWantToLogout}
+            operationAfterValidation={() => logout()}
+        />)
     }
     return (
         <nav className={'navbar2 flex ' + (sidebarVisible ? '' : 'sidebarVisbleNavStyle')}>
@@ -93,7 +112,7 @@ export function ConnectedNavbar() {
                     <img src={checkUrl(user.profilPic.url)} alt="user connected profil pic" />
                     <b>{user.role == 'talent' ? user.firstname : user.societyName} </b>
                 </Link>
-                <span>
+                <span onClick={confirmLogout}>
                     <MaterialSymbolsLogout />
                 </span>
                 <span onClick={() => changeLang(lang == 'fr' ? 'en' : 'fr')}>

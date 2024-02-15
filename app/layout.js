@@ -6,7 +6,10 @@ import "../styles/globals.css";
 import TranslateWrapper from "@/components/translateWrapper";
 import GenericWrapper from "@/components/genericWrapper";
 
+import Head from "next/head";
+
 const myFont = Nunito_Sans({ subsets: ["latin"], weight: ['600', "800"] });
+
 
 export const metadata = {
   title: "Hiretop",
@@ -16,6 +19,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="shortcut icon" href="/favicon.ico" />
+      </Head>
       <body className={myFont.className}>
         <TranslateWrapper>
           <GenericWrapper>

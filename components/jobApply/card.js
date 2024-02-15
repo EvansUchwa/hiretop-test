@@ -120,7 +120,7 @@ export function ApplyCardViewBySociety({ apply, jobsWithApplysRefetch }) {
 
             <div className='ac2Links flex '>
                 <Link href={'/job/' + apply.job._id + '/details'}>{buttonsL.viewJob}</Link>
-                <Link href={'/talent/' + apply.talent._id + '/details'}>{buttonsL.viewTalentProfil}</Link>
+                <Link href={'/talent/' + apply.talent._id + '/details'}>{buttonsL.viewTalentProfile}</Link>
             </div>
 
             <div className='ac2Btns flex f-column'>

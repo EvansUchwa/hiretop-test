@@ -16,7 +16,7 @@ function Sidebar() {
     const { toggleSidebar, sidebarVisible } = useNavbar()
     const { showModal } = useModal();
     const { user, logout } = useAuth();
-    const { navLinksL, buttonsL } = useLang();
+    const { navLinksL, buttonsL, infosL } = useLang();
     let sidebarLinksyRole = {
         society: [
             { label: navLinksL.dashboard, link: '/dashboard', icon: <MaterialSymbolsDashboard /> },
@@ -61,7 +61,7 @@ function Sidebar() {
             <div className="sidebar-logout flex">
                 <MaterialSymbolsLogout />
                 <span onClick={() => showModal(<ConfirmationModal
-                    title="Voulez vous vraiment vous deconnecter ?"
+                    title={infosL.reallyWantToLogout}
                     operationAfterValidation={() => logout()}
                 />)}>{buttonsL.logout}</span>
             </div>

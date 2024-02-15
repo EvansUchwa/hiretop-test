@@ -1,6 +1,6 @@
 import { useLang } from '@/contexts/langContext';
 import SimpleButton from '@/uikits/button';
-import { MaterialSymbolsBrightnessAlert } from '@/uikits/icon';
+import { MaterialSymbolsBrightnessAlert, MaterialSymbolsKeyboardArrowDown } from '@/uikits/icon';
 import {
     filterJobsByAZ, filterJobsByZA, filterJobsByCreatedAtRecent, filterJobsByCreatedAtOldest, filterJobsByMostViews,
     filterJobsByLeastViews, handleEnterKeyPress
@@ -93,6 +93,20 @@ export function WelcomeConnectedUser({ user }) {
         <p>{dashboardHomeL.welcome[user.role].callToAction}</p>
         <SimpleButton text={user.role == 'society' ? buttonsL.exploreTalents : buttonsL.exploreJobs}
             isLink={user.role == 'society' ? '/talent/all' : 'job/all'} />
+    </div>
+}
+
+export function SearchAndFilterSectionWrapper({ children }) {
+    const [open, setOpen] = useState(false);
+    const { buttonsL } = useLang()
+
+    return <div className='searchAndFilterSectionWrapper'>
+        <p onClick={() => setOpen(prev => !prev)}>
+            {buttonsL.searchAndFilter}  <MaterialSymbolsKeyboardArrowDown />
+        </p>
+        {
+            open && children
+        }
     </div>
 }
 

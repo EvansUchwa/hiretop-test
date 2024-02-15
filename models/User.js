@@ -28,6 +28,8 @@ const UserSchema = new Schema({
     role: { type: String, default: null },
     identifier: { type: String, required: true },
     profilPic: { type: Object, default: null },
+    resume: { type: Object, default: null },
+
     email: { type: String, required: true },
     phone: { type: String, default: null },
     country: { type: String, default: true },

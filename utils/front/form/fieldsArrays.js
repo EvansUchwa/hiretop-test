@@ -122,9 +122,9 @@ export function jobSearchFields() {
         jobTypeField,
         requiredDegreeField,
         requiredExpYearField,
-        locationField,
         remoteAcceptedField,
-        salaryField
+        // salaryField,
+        // locationField,
     ]
 }
 

@@ -87,6 +87,7 @@
         }
     }
     .ncn-mobileMenuToggle{
+        margin-left: auto;
         display: none;
         cursor: pointer;
         &.ncn-mobileMenuToggleActive{
@@ -115,6 +116,16 @@
             flex-wrap: wrap;
             align-items: center;
             gap: 0 10px;
+        }
+    }
+    .langToggler{
+        margin-left: 10px;
+        font-size: 25px;
+        cursor: pointer;
+        span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 }
@@ -207,11 +218,14 @@
             display: none !important;
             opacity: 0;
             transition: all .5s;
+            background-color: white;
+                z-index: 99999999999999;
             &.ncn-left-mobile{
                 opacity: 1;
                 border-bottom: solid 1px grey;
                 position: absolute;
                 background-color: white;
+                z-index: 99999999999999;
                 top: 100%;
                 left: 0;
                 width: 100%;

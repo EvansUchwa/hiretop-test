@@ -8,6 +8,7 @@ import { FormButton } from '@/uikits/button';
 import { updateSocietyOrTalentFilesData } from '@/services/front/acoount';
 import { errorAlert, successAlert } from '@/utils/front/others';
 
+
 export function UpdateTalentFiles({ user, refetchUserLoggedData }) {
     const { buttonsL } = useLang();
     const formik = useFormik({
@@ -26,7 +27,6 @@ export function UpdateTalentFiles({ user, refetchUserLoggedData }) {
         }, (error) => {
             errorAlert(error)
         }, () => {
-            // setOL(false)'
             setSubmitting(false)
         })
     }
@@ -51,7 +51,7 @@ export function UpdateTalentFiles({ user, refetchUserLoggedData }) {
     )
 }
 
-export function UpdateSocietyFiles({ user }) {
+export function UpdateSocietyFiles({ user, refetchUserLoggedData }) {
     const { buttonsL } = useLang();
     const formik = useFormik({
         initialValues: {
@@ -68,7 +68,6 @@ export function UpdateSocietyFiles({ user }) {
         }, (error) => {
             errorAlert(error)
         }, () => {
-            // setOL(false)'
             setSubmitting(false)
         })
     }

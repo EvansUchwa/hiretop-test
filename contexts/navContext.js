@@ -4,10 +4,10 @@ import { isMobile, isTablet } from 'react-device-detect'
 
 export const NavbarProvider = ({ children }) => {
     const [sidebarVisible, setsidebarVisible] = useState((isMobile || isTablet) ? false : true);
-
     const toggleSidebar = () => {
         setsidebarVisible(!sidebarVisible);
     };
+
 
     return (
         <NavContext.Provider value={{ toggleSidebar, sidebarVisible }}>

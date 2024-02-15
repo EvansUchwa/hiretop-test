@@ -80,8 +80,8 @@
         "interviewTypeBold": "Type d'entretien",
         "interviewDateBold": "Date de l'entretien",
         "interviewHourBold": "Heure de l'entretien",
-        "viewRecruiterMessage": "Message du recruteur",
-        "viewApplicantMessage": "Message du candidat",
+        "viewRecrutorMessage": "Message du recruteur",
+        "viewApplyerMessage": "Message du candidat",
         "viewYourMessage": "Votre message"
       }
     },
@@ -89,6 +89,7 @@
       "register": "S'inscrire",
       "login": "Se connecter",
       "logout": "Se déconnecter",
+      "searchAndFilter": "Recherche et Filtre",
 
       "backToHome": "Revenir a l'accueil",
       "addJob": "Ajouter une offre",
@@ -128,6 +129,7 @@
       "orLabel": "Ou"
     },
     "infos": {
+      "reallyWantToLogout": "Voulez vous vraiment vous deconnecté?",
       "newApplyResumeInfosTitle": "Par rapport à votre candidature",
       "newApplyResumeInfos": "Nous vous informons que votre CV actuellement enregistré dans votre compte sera consulté par le recruteur lors de l'examen de votre candidature pour ce poste. Si vous souhaitez apporter des modifications à votre CV ou le mettre à jour avant de soumettre votre candidature, nous vous encourageons à le faire dès maintenant."
     },

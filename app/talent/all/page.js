@@ -6,12 +6,33 @@ import TalentCard from '@/components/talent/card';
 import { SectionSpinner } from '@/uikits/others';
 import { SearchOrFilterTalent } from '@/components/talent/searchOrFilter';
 import { bothAuth } from '@/hocs/bothAuth';
+import { NoDataFoundMakeAnotherActions } from '@/components/other';
+import { useAuth } from '@/contexts/authContext';
+import { useLang } from '@/contexts/langContext';
 
 function talentList() {
+    const { buttonsL, noDataFoundL } = useLang();
     const { talents, talentsLoading } = useTalents();
+    const { user } = useAuth();
 
     if (talentsLoading)
         return <SectionSpinner />;
+
+    if (talents.length == 0) {
+        if (user && user.role == 'society') {
+            return <NoDataFoundMakeAnotherActions
+                message={noDataFoundL.noProfileFound}
+                btnLabel={buttonsL.backToHome}
+                btnLink={'/dashboard'}
+            />
+        } else {
+            return <NoDataFoundMakeAnotherActions
+                message={noDataFoundL.noProfileFound}
+                btnLabel={buttonsL.register}
+                btnLink={'/register'}
+            />
+        }
+    }
     return (
         <div className='talentList'>
             <h1>Talent</h1>

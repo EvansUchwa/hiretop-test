@@ -151,3 +151,17 @@ select{
         font-weight: bold;
     }
 }
+
+.searchAndFilterSectionWrapper{
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    &>p{
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $secondary-color;
+        cursor: pointer;
+    }
+}

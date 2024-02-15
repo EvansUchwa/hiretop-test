@@ -21,7 +21,7 @@
             z-index: 2;
         }
         .hb-text{
-            z-index: 9999999999;
+            z-index: 99999;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -33,7 +33,7 @@
             margin: 25px auto;
         }
         .hb-actions{
-            z-index: 9999999999;
+            z-index: 99999;
             display: flex;
             gap: 0 10px;
             align-items: center;

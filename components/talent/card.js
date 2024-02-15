@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 import React from 'react'
 
 function TalentCard({ talent }) {
-    const { firstname, lastname, description, _id, profilPic } = talent;
+    const { firstname, lastname, description, _id, profilPic, linkedinUrl, email } = talent;
     return (
         <article className='talentCard'>
             <img
@@ -17,10 +17,10 @@ function TalentCard({ talent }) {
                 {description}
             </p>
             <section>
-                <a href=''>
+                <a href={linkedinUrl} target='_blank'>
                     <PhLinkedinLogo />
                 </a>
-                <a href=''>
+                <a href={'mailto:' + email} target='_blank'>
                     <PhEnvelope />
                 </a>
             </section>

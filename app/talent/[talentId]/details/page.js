@@ -87,7 +87,7 @@ function TalentDetails() {
                     }
                 </section>
                 <section>
-                    <h2>Exp</h2>
+                    <h2>Experience professionelle</h2>
                     {
                         talent.experiences.map((item, i) => <TalentExpOrFormationCard key={'talent exp  nb' + i}
                             data={item}
@@ -100,7 +100,7 @@ function TalentDetails() {
                         <b>Langues: </b>
                         {
                             talent.langages.map((item, i) => <span key={'lang exp  nb' + i}>
-                                {item}
+                                {formsL.fields.requiredLangOptions[item]}
                             </span>)
                         }
                     </p>
@@ -110,6 +110,9 @@ function TalentDetails() {
                             talent.desiredSalary + '$'
                         }
                     </p>
+                    <a href={checkUrl(talent.resume.url)} target='_blank'>
+                        <button>Voir le CV</button>
+                    </a>
                     {/* <p>
                         <b>Langues: </b>
                         {

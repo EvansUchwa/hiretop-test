@@ -1,7 +1,7 @@
 import { jobSearchFields } from '@/utils/front/form/fieldsArrays'
 import { FormikProvider, useFormik } from 'formik'
 import React, { useEffect } from 'react'
-import MyCustomFormikForm from '../other'
+import MyCustomFormikForm, { SearchAndFilterSectionWrapper } from '../other'
 import { useLang } from '@/contexts/langContext'
 import FormFieldProvider from '../formFieldProvider'
 import { useMySearchParams } from '@/contexts/searchParamContext'
@@ -58,25 +58,27 @@ export function SearchJobForm() {
         setRASP(null)
     }
     return (
-        <div className='searchJobForm'>
-            {
-                (values.jobSector || values.jobType || values.requiredDegree ||
-                    values.requiredExpYear || values.remoteAccepted || values.searchJobKeyword) && <div className='reinitSearchParamBtn'>
-                    <SimpleButton
-                        text="Reinitialiser les recherche" onClick={resetSearch} />
-                </div>
-            }
+        <SearchAndFilterSectionWrapper>
+            <div className='searchJobForm'>
+                {
+                    (values.jobSector || values.jobType || values.requiredDegree ||
+                        values.requiredExpYear || values.remoteAccepted || values.searchJobKeyword) && <div className='reinitSearchParamBtn'>
+                        <SimpleButton
+                            text="Reinitialiser les recherche" onClick={resetSearch} />
+                    </div>
+                }
 
-            <FormikProvider value={formik}>
-                <MyCustomFormikForm>
-                    {
-                        jobSearchFields().map((item, i) => <FormFieldProvider
-                            formLangs={langData.form.fields}
-                            key={'search job field nb' + i}
-                            {...item} />)
-                    }
-                </MyCustomFormikForm>
-            </FormikProvider>
-        </div>
+                <FormikProvider value={formik}>
+                    <MyCustomFormikForm>
+                        {
+                            jobSearchFields().map((item, i) => <FormFieldProvider
+                                formLangs={langData.form.fields}
+                                key={'search job field nb' + i}
+                                {...item} />)
+                        }
+                    </MyCustomFormikForm>
+                </FormikProvider>
+            </div>
+        </SearchAndFilterSectionWrapper>
     )
 }
