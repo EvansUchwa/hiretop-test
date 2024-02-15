@@ -62,7 +62,7 @@ p{
         margin: -20vh auto auto auto;
         display: flex;
         justify-content: center;
-        gap: 50px;
+        gap: 10px;
         z-index: 1111111111;
         .tbo-image{
             // background-color: 
@@ -174,12 +174,15 @@ p{
     }
 }
 
-.searchOrFilterTalent{
+.searchOrFilter{
     form{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
         margin: 25px 0;
+        .formField{
+            min-width: 200px;
+        }
     }
 }
 

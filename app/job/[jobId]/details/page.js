@@ -78,7 +78,7 @@ function JobDetail() {
                     <ul>
                         {
                             job.requiredLang.map((item, i) => <li key={'lang nb' + i}>
-                                {item}
+                                {formsL.fields.requiredLangOptions[item]}
                             </li>)
                         }
                     </ul>

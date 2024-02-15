@@ -1,13 +1,13 @@
 'use client'
-import { useEffect, useState } from "react";
 import { ErrorMessage, useField } from "formik";
+import { useLang } from "@/contexts/langContext";
 
 export function DocFileInputWithFormik(props) {
     const { name, label, accept } = props;
     const [field, meta, helpers] = useField(name);
     const { value } = meta;
     const { setValue } = helpers;
-
+    const { formsL } = useLang();
 
 
     return <div className="formField flex f-column docFileField">
@@ -20,7 +20,7 @@ export function DocFileInputWithFormik(props) {
                 accept={accept ? accept : ''} />
             <label htmlFor={"fileInp-" + name} className={value ? 'fileSelected' : ''}>
                 <span >
-                    Choisir un fichier
+                    {formsL.chooseFile}
                 </span>
                 {
                     value && <p>{value.name} </p>

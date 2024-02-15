@@ -1,22 +1,33 @@
 "use client";
 import { useLang } from '@/contexts/langContext';
+import { withoutAuth } from '@/hocs/withoutAuth';
+import SimpleButton from '@/uikits/button';
 import { useRouter } from 'next/navigation';
 
-export default function Home() {
+function Home() {
   const router = useRouter();
   const { lang, langData, changeLang } = useLang();
 
   return (
-    <main className={''}>
-      <div>
-        <h1>Mdr</h1>
-        <p>
-          {langData.welcome}
-        </p>
-        <button onClick={() => changeLang(lang == 'fr' ? 'en' : 'fr')}>
-          Change Lang
-        </button>
+    <div className={'home'}>
+      <div className='homeBanner'>
+        <section className='hb-text'>
+          <h1>
+            We are
+          </h1>
+          <b>HIRE TOP</b>
+          <h2>
+            We connect people and job opportunities
+          </h2>
+        </section>
+        <section className='hb-actions'>
+          <SimpleButton text='Browse Jobs' isLink="/job/all" />
+          <SimpleButton text='Browse Talents' defaultBg="transparent" defaultColor="black" isLink="/talent/all" />
+        </section>
       </div>
-    </main>
+    </div>
   );
 }
+
+
+export default withoutAuth(Home);

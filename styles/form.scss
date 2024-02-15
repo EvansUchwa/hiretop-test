@@ -89,19 +89,13 @@ form{
                 margin-bottom: 10px;
                 gap: 10px;
             }
-            // div{
-            //     display: flex;
-            //     flex-wrap: wrap;
-            //     gap: 10px;
-            //     margin-bottom: 10px;
-            //     span{
-            //         background-color: rgba($color: $primary-color, $alpha: 0.1);
-            //         // color: white;
-            //         padding: 4px 12px;
-            //         border-radius: 10px;
-            //     }
-                
-            // }
+           section{
+            div{
+                display: flex;
+                flex-direction: column;
+                gap: 10px 0;
+            }
+           }
         }
         &.radioField{
             input{

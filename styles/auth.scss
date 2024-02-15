@@ -1,18 +1,39 @@
 .authWrapper{
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     &>section{
         &:nth-child(1){
-            background-image: $gradient1;
+            background-color: $primary-color;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 0 30px;
-            width: 60%;
+            width: 55%;
+            div{
+                width: 70%;
+                border-radius: 10px;
+                background-color: rgba($color: #fff, $alpha: 0.2);
+                padding: 25px;
+                backdrop-filter: blur(10px);
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px 0;
+                text-align: center;
+                color: white;
+                p{
+                    font-size: 25px;
+                }
+                img{
+                    width: 60%;
+                    height: initial !important;
+                }
+            }
         }
         &:nth-child(2){
-            width: 40%;
+            width: 45%;
         }
         
     }
@@ -91,6 +112,16 @@ h2{
     }
 }
 
+.resetPassword{
+    width: 60%;
+    margin: auto;
+    padding: 50px 0;
+    h2{
+        margin-bottom: 10px;
+        text-align: center;
+    }
+}
+
 @media screen  and (max-width: 972) and (min-width: 758px) {
     .finaliseAccount{
         width: 70%;
@@ -98,6 +129,33 @@ h2{
 }
 
 @media screen  and (max-width: 758px) {
+    .authWrapper{
+        flex-direction: column;
+        &>section{
+            width: 100% !important;
+            &:nth-child(1){
+                padding: 20px 30px;
+                div{
+                    width: 90%;
+                   p{
+                    font-size: 16px;
+                   }
+                }
+            }
+            &:nth-child(2){
+                form{
+
+                }
+            }
+        }
+
+    }
+    .registerOrLogin{
+        width: 90% !important;
+    }
+    .resetPassword{
+        width: 90%;
+    }
     .finaliseAccount{
         width: 90%;
     }

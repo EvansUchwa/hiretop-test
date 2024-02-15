@@ -7,7 +7,7 @@ import { useLang } from '@/contexts/langContext';
 
 export function Last10JobPosted() {
     const { jobs, jobsLoading } = useJobsCreatedByConnectedSociety(10);
-    const { dashboardHomeL } = useLang();
+    const { dashboardHomeL, noDataFoundL, buttonsL } = useLang();
     if (jobsLoading)
         return <SectionSpinner />;
 
@@ -22,9 +22,9 @@ export function Last10JobPosted() {
                             />)
                         }
                     </section> : <NoDataFoundMakeAnotherActions
-                        message={'Pas d\'offre'}
-                        btnLabel={'Ajouter une offre'}
-                        btnLink={'/job/all'}
+                        message={noDataFoundL.noJobFound}
+                        btnLabel={buttonsL.addJob}
+                        btnLink={'/job/create'}
                     />
                 }
             </section>

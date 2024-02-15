@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 
 export const POST = async (req) => {
     const body = await req.json();
-    const { token, newPassword } = body;
+    const { token } = body;
 
     await DB_CONNEXION();
     try {
@@ -13,10 +13,6 @@ export const POST = async (req) => {
         if (!user) {
             return NextResponse.json({ type: 'email', result: 'notFound' }, { status: 401 })
         }
-
-        const hashPass = await bcrypt.hash(newPassword, 12);
-        user.password = hashPass;
-        await user.save();
         return NextResponse.json('ok', { status: 200 })
     } catch (error) {
         console.log(error)

@@ -68,4 +68,7 @@ theschema.pre('save', async function (next) {
     }
 });
 
-export default mongoose.models.job || mongoose.model('job', theschema);
+const Job = mongoose.models.job || mongoose.model('job', theschema);
+Job.ensureIndexes();
+
+export default Job;

@@ -8,6 +8,8 @@
 
 @import './talent.scss';
 @import './dashboard.scss';
+@import './home.scss';
+
 
 
 
@@ -19,7 +21,12 @@
 
 
 
-
+h1,h2,h3,b{
+    font-weight: 800;
+}
+p,span,a,button{
+    font-weight: 600;
+}
 // @import './variables.scss';
 
 

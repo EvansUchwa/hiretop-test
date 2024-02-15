@@ -1,20 +1,18 @@
 'use client'
+import { NoDataFoundMakeAnotherActions } from '@/components/other';
+import { useLang } from '@/contexts/langContext';
+import { withoutAuth } from '@/hocs/withoutAuth';
 import { validateUserEmail } from '@/services/front/acoount';
 import SimpleButton from '@/uikits/button';
 import { SectionSpinner } from '@/uikits/others';
 import { useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
-function EmailValidationPage() {
+
+function MakeValidationRequest() {
     const searchParam = useSearchParams();
     const token = searchParam.get('token');
-
-    if (!token)
-        return 'Operation impossible'
-    return <MakeValidationRequest token={token} />
-}
-
-function MakeValidationRequest({ token }) {
+    const { alertsL, buttonsL } = useLang();
     const [loading, setLoading] = useState(true);
     const [emailValidated, setEmailValidated] = useState(false);
     let content;
@@ -28,22 +26,30 @@ function MakeValidationRequest({ token }) {
         })
     }, []);
 
+    if (!token) {
+        return <NoDataFoundMakeAnotherActions
+            message={alertsL.operation.invalid}
+            btnLabel={buttonsL.backToHome}
+            btnLink={'/'}
+        />
+    }
     if (loading)
         content = <SectionSpinner />
     else if (!emailValidated) {
-        content = <div>
-            <h1>Email non valider</h1>
-            <SimpleButton text="S'inscrire" isLink='/register' />
-        </div>
+        content = <NoDataFoundMakeAnotherActions
+            message={alertsL.email.notVerified}
+            btnLabel={buttonsL.register}
+            btnLink={'/'}
+        />;
     } else {
         content = <div>
-            <h1>Email valider</h1>
-            <SimpleButton text="Se connecter" isLink='/login' />
+            <h1>{alertsL.email.verified}</h1>
+            <SimpleButton text={buttonsL.login} isLink='/login' />
         </div>
     }
     return <div className='emailValidation'>
         {content}
     </div>
 }
-// w-t-hiretop-$2b$12$2g9MRROHli0FNCqESwbeM.gh1v8mtzpqRM/ugMEAt9jcMRrk6Vx0q
-export default EmailValidationPage
+
+export default withoutAuth(MakeValidationRequest);

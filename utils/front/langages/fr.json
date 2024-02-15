@@ -11,6 +11,10 @@
         }
       }
     },
+    "home":{
+      "weAreStartText":"Nous sommes",
+      "weAreEndText": " votre passerelle vers des opportunités professionnelles exceptionnelles. Ici, nous croyons en la puissance de la rencontre entre les talents et les opportunités, façonnant ainsi le futur de carrières réussies."
+    },
     "appAdvantages": {
       "forSociety": [
         "Développez votre équipe avec les meilleurs talents du secteur ! Notre réseau vous connecte avec des professionnels hautement qualifiés et motivés, prêts à contribuer au succès de votre entreprise.",
@@ -21,7 +25,7 @@
         "Gagnez du temps dans votre recherche d'emploi ! Notre interface conviviale et nos fonctionnalités intuitives vous permettent de postuler en quelques clics seulement, sans tracas ni perte de temps."
       ]
     },
-    "finalizeAccount": {
+    "finaliseAccount": {
       "title": "Finaliser votre inscription",
       "subTitle": "...",
       "youAre": "Vous êtes ?"
@@ -29,8 +33,14 @@
     "auth": {
       "registerTitle": "Inscription",
       "loginTitle": "Connexion",
+      "resetPasswordStep1": "Mot de passe oublie(Etape 1)",
+      "resetPasswordStep2": "Mot de passe oublie(Etape 2)",
+
       "alreadyHaveAccount": "Vous avez déjà un compte ?",
-      "dontHaveAccount": "Vous n'avez pas de compte ? Créez-en un"
+      "passwordForgot": "Mot de passe oublie",
+      "dontHaveAccount": "Vous n'avez pas de compte ? Créez-en un",
+      "loginBannerText": "Connectez-vous à votre compte pour explorer des opportunités professionnelles passionnantes.",
+      "signupBannerText": "Si vous n'avez pas encore de compte, rejoignez-nous et découvrez un monde de possibilités."
     },
     "dashboardHome": {
       "welcome": {
@@ -79,6 +89,14 @@
       "register": "S'inscrire",
       "login": "Se connecter",
       "logout": "Se déconnecter",
+
+      "backToHome": "Revenir a l'accueil",
+      "addJob": "Ajouter une offre",
+
+      "previousStep": "Precedent",
+      "nextStep": "Suivant",
+
+
       "saveAndContinue": "Enregistrer et Continuer",
       "publish": "Publier",
       "save": "Enregistrer",
@@ -119,9 +137,13 @@
       },
       "account": {
         "createdButNeedEmailValidation": "Compte créé, mais vérifiez vos mails pour valider votre adresse",
+
+        "readYourEmailForPassReset": "Un email vous a été envoyé pour la réinitialisation du mot de passe",
+
         "updated": "Informations du compte mises à jour !"
       },
       "email": {
+        "verified": "Email vérifié",
         "notVerified": "Email non vérifié",
         "notFound": "Email non répertorié",
         "alreadyExist": "Email déjà utilisé"
@@ -164,6 +186,9 @@
       "noProfileFound": "Aucun profil correspondant"
     },
     "form": {
+      "choose": "Choisir",
+      "chooseFile": "Choisir fichier",
+
       "fields": {
         "email": {"label": "Votre email", "ph": "Votre email"},
         "password": {"label": "Votre mot de passe", "ph": "Votre mot de passe"},
@@ -182,7 +207,7 @@
         "skills": {"label": "Vos compétences", "ph": ""},
         "experiences": {"label": "Vos expériences pro", "ph": ""},
         "expYears": {"label": "Niveau d'expérience", "ph": ""},
-        "languages": {"label": "Langues que vous parlez", "ph": ""},
+        "langages": {"label": "Langues parlez", "ph": ""},
         "desiredSalary": {"label": "Salaire approximatif souhaité", "ph": "Salaire en $"},
         "preferredLocations": {"label": "Localisation préférée", "ph": ""},
         "linkedinUrl": {"label": "Lien de votre profil Linkedin", "ph": "Lien de votre profil Linkedin"},

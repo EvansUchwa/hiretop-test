@@ -38,8 +38,6 @@ export function InputRadioWithFormik({ name, label, options, optionsL, rqrd }) {
 export function InputCheckboxWithFormik({ name, label, options, optionsL, rqrd }) {
     const [field, meta, helpers] = useField(name);
     const { value } = meta;
-
-
     return (
         <div className='formField checkboxField'>
             <label htmlFor="">{label}

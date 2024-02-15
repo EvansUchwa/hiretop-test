@@ -4,9 +4,10 @@ import { getIpAddress } from "@/utils/back/others";
 import DB_CONNEXION from "@/utils/back/database";
 
 export const GET = async (req, { params }) => {
+    await DB_CONNEXION();
+
     const jobId = params.id;
     const ip = getIpAddress();
-    await DB_CONNEXION();
 
     try {
         const job = await Job.findById(jobId).populate('autor');

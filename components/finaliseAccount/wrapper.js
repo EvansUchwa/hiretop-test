@@ -1,5 +1,5 @@
 import React from 'react'
-import PngLogo from '../../public/icon.png'
+import PngLogo from '../../public/icon.svg'
 import Image from 'next/image';
 import { useLang } from '@/contexts/langContext';
 

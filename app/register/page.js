@@ -2,7 +2,7 @@
 import FormFieldProvider from '@/components/formFieldProvider';
 import { useLang } from '@/contexts/langContext';
 import { signupFields } from '@/utils/front/form/fieldsArrays';
-import { Form, useFormik, FormikProvider } from 'formik'
+import { useFormik, FormikProvider } from 'formik'
 import React from 'react'
 import AuthWrapper from '@/components/authWrapper';
 import Link from 'next/link';
@@ -11,6 +11,7 @@ import { SignupValidation } from '@/utils/front/form/fieldsValidations';
 import { withoutAuth } from '@/hocs/withoutAuth';
 import { registerUser } from '@/services/front/auth';
 import { errorAlert, successAlert } from '@/utils/front/others';
+import MyCustomFormikForm from '@/components/other';
 
 function Register() {
     const formik = useFormik({
@@ -35,11 +36,11 @@ function Register() {
     const { langData } = useLang();
 
     return (
-        <AuthWrapper title={'Inscription'} >
+        <AuthWrapper type={'register'} >
             <div className='registerOrLogin'>
                 <h2>{langData.auth.registerTitle}</h2>
                 <FormikProvider value={formik}>
-                    <Form>
+                    <MyCustomFormikForm>
                         {
                             signupFields().map((item, i) => <FormFieldProvider
                                 formLangs={langData.form.fields}
@@ -48,7 +49,7 @@ function Register() {
                         }
                         <FormButton text={isSubmitting ? '' : langData.buttons.register}
                             isValid={isSubmitting ? false : isValid} />
-                    </Form>
+                    </MyCustomFormikForm>
                 </FormikProvider>
                 <div className='registerOrLogin-othersOptions flex f-column'>
                     <b>{langData.others.orLabel}</b>

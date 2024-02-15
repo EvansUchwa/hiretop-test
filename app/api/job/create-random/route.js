@@ -1,19 +1,17 @@
 import { NextResponse } from "next/server";
-import { simpleMiddleware } from "../../simpleMiddleware";
 import Job from "@/models/Job";
 import dayjs from "dayjs";
 import { categorieEnum, countrysEnum, degreeEnum, expYearsEnum, jobTypeEnum, langEnum, remoteAcceptedEnum } from "@/utils/back/enums";
+import User from "@/models/User";
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// Fonction utilitaire pour choisir un élément aléatoire dans un tableau
 function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
 
-// Fonction pour générer une date aléatoire dans une fourchette donnée
 function getRandomDate(startDate, endDate) {
     return new Date(startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime()));
 }
@@ -41,7 +39,6 @@ const webJobs = [
     'Développeur d\'Applications Mobiles',
 ];
 
-// Générer des données aléatoires
 function generateRandomData(userConnectedId) {
     const data = {
         autor: userConnectedId,
@@ -67,28 +64,25 @@ function generateRandomData(userConnectedId) {
     return data;
 }
 
-export const POST = simpleMiddleware(async (req) => {
-    const { userConnectedId } = req;
+export const POST = async (req) => {
     try {
         const generatedJobs = [];
+        const allSociety = await User.find({ role: 'society' }).lean();
 
-        // Générer 10 offres d'emploi aléatoires
-        for (let i = 0; i < 10; i++) {
-            // Générer des données aléatoires pour un nouveau job
-            const randomJobData = generateRandomData(userConnectedId);
-
-            // Créer une nouvelle instance de Job avec les données aléatoires générées
-            const newJob = new Job(randomJobData);
-
-            // Ajouter le nouveau job à la liste des offres générées
-            generatedJobs.push(newJob);
-
-            // Enregistrer le nouveau job dans la base de données MongoDB
-            await newJob.save();
+        if (allSociety.length > 0) {
+            for (let j = 0; j < allSociety.length; j++) {
+                const societyId = allSociety[j]._id;
+                for (let i = 0; i < 5; i++) {
+                    const randomJobData = generateRandomData(societyId);
+                    const newJob = new Job(randomJobData);
+                    generatedJobs.push(newJob);
+                    await newJob.save();
+                }
+            }
         }
         return NextResponse.json(generatedJobs, { status: 200 })
     } catch (error) {
         console.log(error)
         return NextResponse.json({ type: 'operation', result: 'invalid' }, { status: 401 })
     }
-})
+}

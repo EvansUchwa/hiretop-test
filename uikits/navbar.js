@@ -1,17 +1,49 @@
 'use client';
 import React, { useState } from 'react'
-import { MaterialSymbolsLogout, MaterialSymbolsMenu, MaterialSymbolsSearch } from './icon'
+import { CircleFlagsFr, CircleFlagsUs, MaterialSymbolsLogout, MaterialSymbolsMenu, MaterialSymbolsSearch } from './icon'
 import Link from 'next/link'
-import { useNavbar } from '@/contexts/navContext'
-import { useAuth } from '@/contexts/authContext'
-import { checkUrl } from '@/utils/front/others'
-import { isMobile, isTablet } from 'react-device-detect'
-import { redirect, useRouter } from 'next/navigation'
+import { useNavbar } from '@/contexts/navContext';
+import { useAuth } from '@/contexts/authContext';
+import { checkUrl } from '@/utils/front/others';
+import { useRouter } from 'next/navigation';
 import { useLang } from '@/contexts/langContext';
-export function Navbar1() {
-    return (
-        <nav className='navbar1'>
+import Image from 'next/image';
 
+import SvgLogo from '../public/icon.svg'
+import SimpleButton from './button';
+
+export function NotConnectedNav() {
+    const [mobileNavVisible, setMNV] = useState(false);
+    return (
+        <nav className='notConnectedNav'>
+            <section className='ncn-logo'>
+                <Image src={SvgLogo}
+                    alt='nsimple nav logo'
+                    width={50}
+                    height={50} />
+                <span>HIRETOP</span>
+            </section>
+
+            <div className={"ncn-mobileMenuToggle " + (mobileNavVisible ? 'ncn-mobileMenuToggleActive' : '')}
+                onClick={() => setMNV(prev => !prev)}>
+                <MaterialSymbolsMenu />
+            </div>
+
+            <div className={'ncn-left ' + (mobileNavVisible ? 'ncn-left-mobile' : '')}>
+                <section className='ncn-links'>
+                    <Link href={''}>Home</Link>
+                    <Link href={''}>Les offres</Link>
+                    {/* <Link href={''}>Les Entreprises</Link> */}
+                    <Link href={''}>Les talents</Link>
+                </section>
+
+                <section className='ncn-actions'>
+                    <SimpleButton text="Se connecter" defaultBg="transparent" defaultColor="black"
+                        isLink={'/login'} />
+                    <SimpleButton text="S'inscrire"
+                        isLink={'/register'} />
+                </section>
+            </div>
         </nav>
     )
 }
@@ -63,7 +95,7 @@ export function ConnectedNavbar() {
                     <MaterialSymbolsLogout />
                 </span>
                 <span onClick={() => changeLang(lang == 'fr' ? 'en' : 'fr')}>
-                    {lang == 'fr' ? "EN" : "FR"}
+                    {lang == 'fr' ? <CircleFlagsUs /> : <CircleFlagsFr />}
                 </span>
             </div>
         </nav>

@@ -32,12 +32,12 @@ export function changePaswordFields() {
 
 export function societyFinaliseAccountFields() {
     return [
+        societyNameField,
+        workSectorField,
         phoneField,
         addressField,
-        societyNameField,
         countryField,
         profilPicField,
-        workSectorField,
         descriptionField
     ]
 }

@@ -7,14 +7,13 @@ import { useTalentDetails } from '@/hooks/useTalent'
 import { MaterialSymbolsCallSharp, MaterialSymbolsLocationOn, PhEnvelope, PhLinkedinLogo } from '@/uikits/icon';
 import { SectionSpinner } from '@/uikits/others';
 import { checkUrl } from '@/utils/front/others';
-import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import React from 'react'
 
 function TalentDetails() {
     const { talentId } = useParams();
     const { talent, talentLoading } = useTalentDetails(talentId);
-    const { langData } = useLang();
+    const { formsL } = useLang();
 
     if (talentLoading)
         return <SectionSpinner />;
@@ -23,7 +22,6 @@ function TalentDetails() {
         return <DataNotFoundBackToHome />
     return (
         <div className='talentProfil'>
-            {/* <h1>Detail d'un talent</h1> */}
             <div className="tpBanner">
 
             </div>
@@ -32,10 +30,10 @@ function TalentDetails() {
                     <img src={checkUrl(talent.profilPic.url)} alt={"user " + talent._id} />
                     <p>
                         <MaterialSymbolsLocationOn />
-                        <span>  {langData.form.fields.countryOptions[talent.country] + ',' + talent.address}</span>
+                        <span>  {formsL.fields.countryOptions[talent.country] + ',' + talent.address}</span>
                     </p>
                     <p>
-                        <span>  {langData.form.fields.genderOptions[talent.gender] + ',' + talent.age + ' ans'}</span>
+                        <span>  {formsL.fields.genderOptions[talent.gender] + ',' + talent.age + ' ans'}</span>
                     </p>
 
                 </section>

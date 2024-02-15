@@ -19,6 +19,8 @@ function PasswordFieldWithFormik({ label, placeholder, name, rqrd }) {
                         type == 'text' ? <MaterialSymbolsVisibilityRounded /> : <MaterialSymbolsVisibilityOffRounded />
                     }
                 </span>
+                {/* choose
+chooseFile */}
             </section>
         </div>
     )

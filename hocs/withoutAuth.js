@@ -1,11 +1,13 @@
 'use client';
 import { FullPageSpinner } from "@/uikits/others";
 import { useAuth } from "../contexts/authContext";
-import { redirect } from 'next/navigation'
+import { redirect, usePathname } from 'next/navigation'
+import { NotConnectedNav } from "@/uikits/navbar";
 
 export const withoutAuth = (WrappedComponent) => {
     return (props) => {
         const { user, userLoading } = useAuth();
+
         // const router = useRouter();
         // const { backUrl } = router.query;
 
@@ -16,6 +18,16 @@ export const withoutAuth = (WrappedComponent) => {
             return redirect('/dashboard');
         }
 
-        return <WrappedComponent {...props} />
+        return <WithoutAuthHocWrapper>
+            <WrappedComponent {...props} />
+        </WithoutAuthHocWrapper>
     };
 };
+
+export function WithoutAuthHocWrapper({ children }) {
+    const pathname = usePathname()
+    return <>
+        {!['/login', '/register'].includes(pathname) && <NotConnectedNav />}
+        {children}
+    </>
+}

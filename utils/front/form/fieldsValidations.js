@@ -159,3 +159,11 @@ export const applyRejectValidation = Yup.object().shape({
 export const changePasswordValidation = Yup.object().shape({
     currentPassword, newPassword, newPasswordConfirmation
 });
+
+export const resetPasswordStep1Validation = Yup.object().shape({
+    email
+});
+
+export const resetPasswordStep2Validation = Yup.object().shape({
+    newPassword, newPasswordConfirmation
+});

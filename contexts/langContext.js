@@ -35,7 +35,8 @@ export const LangProvider = ({ children }) => {
             cardsL: langData.cards,
             infosL: langData.infos,
             appAdvantagesL: langData.appAdvantages,
-            noDataFoundL: langData.noDataFound
+            noDataFoundL: langData.noDataFound,
+            alertsL: langData.alerts
         }}>
             {children}
         </LangContext.Provider>

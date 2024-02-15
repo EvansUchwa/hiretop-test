@@ -8,7 +8,8 @@ import {
 import { Form } from 'formik'
 import React, { useEffect, useState } from 'react'
 
-const sorterEnums = ["aToz", "zToa", "latestToldest", "oldestToLatest", "viewsHighToLow", "viewsLowToHigh"]
+const sorterEnums = ["aToz", "zToa", "latestToldest", "oldestToLatest", "viewsHighToLow", "viewsLowToHigh"];
+
 export function MyCustomFormikForm({ children }) {
     return (
         <Form onKeyDown={handleEnterKeyPress}>{children}</Form>
@@ -39,7 +40,8 @@ export function DataSorter({ dataToSort, setDataToSort }) {
         } else if (sorter == 'viewsLowToHigh') {
             filterJobsByLeastViews(copy, setDataToSort)
         }
-    }, [sorter])
+    }, [sorter]);
+
     return (<section>
         <select onChange={(e) => handleChange(e)}>
             {

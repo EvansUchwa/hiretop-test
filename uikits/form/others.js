@@ -66,8 +66,6 @@ export function MultipleTextWithFormik(props) {
                     <input type="text"
                         onChange={handleChange}
                     />
-                    <br />
-                    <br />
                     <SimpleButton
                         text="Ajouter"
                         onClick={() => {

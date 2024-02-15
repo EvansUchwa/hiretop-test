@@ -1,6 +1,7 @@
 import { useAuth } from "@/contexts/authContext";
 import { AuthedHocWrapper } from "./withAuth";
 import { FullPageSpinner } from "@/uikits/others";
+import { WithoutAuthHocWrapper } from "./withoutAuth";
 
 
 export const bothAuth = (WrappedComponent) => {
@@ -18,6 +19,8 @@ export const bothAuth = (WrappedComponent) => {
             </AuthedHocWrapper>
         }
 
-        return <WrappedComponent {...props} />
+        return <WithoutAuthHocWrapper>
+            <WrappedComponent {...props} />
+        </WithoutAuthHocWrapper>
     };
 };

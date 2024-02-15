@@ -49,7 +49,7 @@ export function SearchOrFilterTalent({ talents, setFT, setGender }) {
     }
 
     return (
-        <div className='searchOrFilterTalent'>
+        <div className='searchOrFilter'>
             {
                 (values.gender || values.lastDegree || values.searchTalentKeyword || values.expYears) && <SimpleButton text='Retirer les filtre'
                     onClick={handleDeleteAllSearchParam} />

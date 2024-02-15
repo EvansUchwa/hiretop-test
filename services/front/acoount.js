@@ -74,3 +74,39 @@ export async function updateUserPassword(formData, successCb = null, errCb = nul
         finallyCb && finallyCb()
     }
 }
+
+export async function resetPasswordCheckEmail(formData, successCb = null, errCb = null, finallyCb = null) {
+    try {
+        let res = await axiosInstance.post('/password-reset/check-email', formData);
+        successCb && successCb(res)
+    } catch (error) {
+        console.log(error);
+        errCb && errCb(error)
+    } finally {
+        finallyCb && finallyCb()
+    }
+}
+
+export async function resetPasswordCheckToken(formData, successCb = null, errCb = null, finallyCb = null) {
+    try {
+        let res = await axiosInstance.post('/password-reset/check-token', formData);
+        successCb && successCb(res)
+    } catch (error) {
+        console.log(error);
+        errCb && errCb(error)
+    } finally {
+        finallyCb && finallyCb()
+    }
+}
+
+export async function resetPasswordChangePassword(formData, successCb = null, errCb = null, finallyCb = null) {
+    try {
+        let res = await axiosInstance.post('/password-reset/change-password', formData);
+        successCb && successCb(res)
+    } catch (error) {
+        console.log(error);
+        errCb && errCb(error)
+    } finally {
+        finallyCb && finallyCb()
+    }
+}

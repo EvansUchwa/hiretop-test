@@ -1,12 +1,11 @@
 'use client';
-import { withAuth } from '@/hocs/withAuth';
+
 import { useTalents } from '@/hooks/useTalent'
 import React, { useState } from 'react'
 import TalentCard from '@/components/talent/card';
 import { SectionSpinner } from '@/uikits/others';
 import { SearchOrFilterTalent } from '@/components/talent/searchOrFilter';
-import { useQueryState } from 'nuqs';
-import { useMySearchParams } from '@/contexts/searchParamContext';
+import { bothAuth } from '@/hocs/bothAuth';
 
 function talentList() {
     const { talents, talentsLoading } = useTalents();
@@ -36,4 +35,4 @@ function SearchAndListLayout({ talents }) {
     </>
 }
 
-export default withAuth(talentList)
+export default bothAuth(talentList)

@@ -1,15 +1,23 @@
 import React from 'react'
+import LoginImage from '../public/login.png'
+import Image from 'next/image'
+import { useLang } from '@/contexts/langContext'
 
-function AuthWrapper({ children, title }) {
+// signupBannerText
+function AuthWrapper({ children, type }) {
+    const { authL } = useLang();
     return (
         <div className='authWrapper'>
             <section>
-                {/* <h1>{title}</h1> */}
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, iure,
-                    facilis nemo consectetur officia quod quaerat, accusamus perferendis magnam quibusdam hic! Dolor,
-                    natus autem? Exercitationem id quibusdam autem hic! Laboriosam.
-                </p>
+                <div>
+                    <Image src={LoginImage}
+                        alt={'Login image'}
+                        width={300}
+                        height={300} />
+                    <p>
+                        {type == 'login' ? authL.loginBannerText : authL.signupBannerText}
+                    </p>
+                </div>
             </section>
             <section>
                 {children}

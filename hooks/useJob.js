@@ -127,7 +127,7 @@ export function useJobs() {
 }
 
 export function useJobDetails(jobId) {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState();
     const [loading, setLoading] = useState(true);
     const [refetch, setRefetch] = useState(false);
     const [error, setError] = useState(false);

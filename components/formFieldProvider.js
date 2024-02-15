@@ -7,6 +7,7 @@ import { SelectWithFormik } from '@/uikits/form/select';
 import { SearchFieldWithFormik, TextFieldWithFormik } from '@/uikits/form/text';
 import React from 'react'
 
+
 function dispatchCheckboxOptionsL(name, formLangs) {
     let key;
     if (['workSector', 'talentWorkSector'].includes(name)) {
@@ -41,8 +42,6 @@ function FormFieldProvider(props) {
     const textFields = ['email', 'text', 'date', 'number', 'hour', 'time'];
     const formLangs = useLang().langData.form.fields;
     const btnsLang = useLang().langData.buttons;
-
-
 
     if (fieldType == 'password') {
         return <PasswordFieldWithFormik {...rest}

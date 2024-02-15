@@ -1,12 +1,18 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 // import { CarbonClose, Sp } from './icons'
 import { MaterialSymbolsCancelRounded, SvgSpinners90RingWithBg } from './icon';
 import { useModal } from '@/contexts/modalContext';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 function Modal() {
     const { modalVisible, modalContent, showModal, hideModal } = useModal();
+    const pathname = usePathname();
+
+    useEffect(() => {
+        hideModal();
+    }, [pathname]);
 
     if (!modalVisible)
         return null

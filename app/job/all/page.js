@@ -1,19 +1,19 @@
 'use client'
 import { JobListSorterLayout, JobSearchLayout } from '@/components/job/layout'
-import { DataNotFoundBackToHome, DataSorter } from '@/components/other'
+import { DataNotFoundBackToHome, DataSorter, NoDataFoundMakeAnotherActions } from '@/components/other'
 import { useAuth } from '@/contexts/authContext'
 import { useLang } from '@/contexts/langContext'
 import { bothAuth } from '@/hocs/bothAuth'
 import { useJobs } from '@/hooks/useJob'
 import SimpleButton from '@/uikits/button'
 import { SectionSpinner } from '@/uikits/others'
-import React, { use, useState } from 'react'
+
 
 function JobList() {
     const { user } = useAuth();
 
     const { jobs, jobsRefetch, jobsLoading } = useJobs();
-    const { langData } = useLang();
+    const { langData, noDataFoundL, buttonsL } = useLang();
     const formL = langData.form.fields;
     if (jobsLoading) {
         return <SectionSpinner />
@@ -22,13 +22,23 @@ function JobList() {
     if (jobs.length == 0) {
         let content = null;
         if (user && user.role == 'society') {
-            content = <div className='dontHaveDataCreateOne'>
-                <h2>Aucune offre correspondante</h2>
-                <SimpleButton text="Ajouter une offre"
-                    isLink="/job/create" />
-            </div>
+            content = <NoDataFoundMakeAnotherActions
+                message={noDataFoundL.noJobFound}
+                btnLabel={buttonsL.addJob}
+                btnLink={'/job/create'}
+            />
+        } else if (user && user == 'talent') {
+            content = <NoDataFoundMakeAnotherActions
+                message={noDataFoundL.noJobFound}
+                btnLabel={buttonsL.backToHome}
+                btnLink={'/dashboard'}
+            />
         } else {
-            content = <DataNotFoundBackToHome />
+            content = <NoDataFoundMakeAnotherActions
+                message={noDataFoundL.noJobFound}
+                btnLabel={buttonsL.addJob}
+                btnLink={'/register'}
+            />
         }
         return <JobSearchLayout>
             {content}
