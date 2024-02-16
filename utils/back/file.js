@@ -27,20 +27,30 @@ export async function fileUploadManager(file, origin, folderPath) {
     const originName = file.name.replaceAll(" ", "_");
     const fileExtension = path.extname(originName);
 
-    const filename = Math.floor(Date.now() / 1000) + uniqid('hiretop-ast-') + fileExtension;
+    let filename = Math.floor(Date.now() / 1000) + uniqid('hiretop-ast-') + fileExtension;;
 
-    let profilPicObj = {
-        filename,
-        url: origin + "/" + folderPath + filename
-    };
-    // await writeFile(
-    //     path.join(process.cwd(), folderPath + filename),
-    //     buffer
-    // );
-    await writeFile(
-        path.join('/tmp', filename),
-        buffer
-    );
+    let profilPicObj = {};
+    if (process.env.NODE_ENV == 'development') {
+        profilPicObj = {
+            filename,
+            url: origin + "/" + folderPath + filename
+        };
+        await writeFile(
+            path.join(process.cwd(), folderPath + filename),
+            buffer
+        );
+    } else {
+        profilPicObj = {
+            filename,
+            url: origin + "/tmp/" + filename
+        };
+        await writeFile(
+            path.join('/tmp', filename),
+            buffer
+        );
+    }
+
+
     return profilPicObj;
 }
 
