@@ -39,4 +39,4 @@ export function getJobFinalQuery(req) {
     return query;
 }
 
-export const autorPopulate = { path: 'autor', model: '_user_' }
+export const autorPopulate = { path: 'autor', model: 'user' }
