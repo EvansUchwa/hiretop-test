@@ -38,3 +38,5 @@ export function getJobFinalQuery(req) {
     }
     return query;
 }
+
+export const autorPopulate = { path: 'autor', model: '_user_' }
