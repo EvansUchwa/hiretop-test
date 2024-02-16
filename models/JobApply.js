@@ -1,9 +1,10 @@
 import { interviewTypesEnums, jobApplyStatusEnums } from "@/utils/back/enums";
 import mongoose, { Schema } from "mongoose";
+import User from "./User";
 
 const theschema = new Schema({
     talent: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'user', required: true
+        type: mongoose.Schema.Types.ObjectId, ref: User, required: true
     },
     job: {
         type: mongoose.Schema.Types.ObjectId, ref: 'job', required: true

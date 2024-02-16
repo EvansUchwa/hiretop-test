@@ -1,7 +1,9 @@
 import { degreeEnum, expYearsEnum, jobTypeEnum, langEnum } from "@/utils/back/enums";
 import { requiredExpYearField } from "@/utils/front/form/fields";
 import mongoose, { Schema } from "mongoose";
+import User from "./User";
 const Joi = require('joi');
+
 
 
 const jobJoiSchema = Joi.object({
@@ -27,7 +29,7 @@ const jobJoiSchema = Joi.object({
 
 const theschema = new Schema({
     autor: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'user',
+        type: mongoose.Schema.Types.ObjectId, ref: User,
     },
 
     jobTitle: { type: String, required: null },

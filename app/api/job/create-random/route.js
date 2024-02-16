@@ -3,6 +3,7 @@ import Job from "@/models/Job";
 import dayjs from "dayjs";
 import { categorieEnum, countrysEnum, degreeEnum, expYearsEnum, jobTypeEnum, langEnum, remoteAcceptedEnum } from "@/utils/back/enums";
 import User from "@/models/User";
+import DB_CONNEXION from "@/utils/back/database";
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -65,6 +66,7 @@ function generateRandomData(userConnectedId) {
 }
 
 export const POST = async (req) => {
+    await DB_CONNEXION();
     try {
         const generatedJobs = [];
         const allSociety = await User.find({ role: 'society' }).lean();
