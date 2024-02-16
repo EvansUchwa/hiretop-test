@@ -33,8 +33,12 @@ export async function fileUploadManager(file, origin, folderPath) {
         filename,
         url: origin + "/" + folderPath + filename
     };
+    // await writeFile(
+    //     path.join(process.cwd(), folderPath + filename),
+    //     buffer
+    // );
     await writeFile(
-        path.join(process.cwd(), folderPath + filename),
+        path.join('/tmp'),
         buffer
     );
     return profilPicObj;
