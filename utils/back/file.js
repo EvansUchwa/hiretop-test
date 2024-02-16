@@ -1,7 +1,26 @@
 import path from "path";
 import { writeFile } from "fs/promises";
 import uniqid from 'uniqid';
+import S3 from "aws-sdk/clients/s3";
+
 const fs = require('fs');
+
+const accessKeyId = "jvwmfir3mj2yuhgysuncfrzzdoga";
+const secretAccessKey = "jyeqihhl6br6cyhxtjhlpcvoyxzubbzzmv4jp3zu3hde7gmij6joo";
+const endpoint = "https://gateway.storjshare.io";
+
+const s3 = new S3({
+    accessKeyId,
+    secretAccessKey,
+    endpoint,
+    s3ForcePathStyle: true,
+    signatureVersion: "v4",
+    connectTimeout: 0,
+    httpOptions: { timeout: 0 }
+});
+
+// any ankle crystal anxiety family vessel vintage say access web orchard traffic
+
 
 function createSubdirectoryInPublic(subdirectoryName) {
     const publicPath = path.join(process.cwd(), 'public', subdirectoryName);
@@ -9,9 +28,6 @@ function createSubdirectoryInPublic(subdirectoryName) {
     try {
         if (!fs.existsSync(publicPath)) {
             fs.mkdirSync(publicPath);
-            console.log(`Subdirectory '${subdirectoryName}' created in the 'public' directory.`);
-        } else {
-            console.log(`Subdirectory '${subdirectoryName}' already exists in the 'public' directory.`);
         }
     } catch (error) {
         console.error('Error creating subdirectory:', error);
@@ -29,28 +45,40 @@ export async function fileUploadManager(file, origin, folderPath) {
 
     let filename = Math.floor(Date.now() / 1000) + uniqid('hiretop-ast-') + fileExtension;;
 
-    let profilPicObj = {};
+
     if (process.env.NODE_ENV == 'development') {
-        profilPicObj = {
-            filename,
-            url: origin + "/" + folderPath + filename
-        };
         await writeFile(
             path.join(process.cwd(), folderPath + filename),
             buffer
         );
     } else {
-        profilPicObj = {
-            filename,
-            url: origin + "/tmp/" + filename
-        };
         await writeFile(
             path.join('/tmp', filename),
             buffer
         );
     }
 
+    const bucketAndKeyOptions = {
+        Bucket: "hiretop-test",
+        Key: filename
+    }
+    const params = {
+        ...bucketAndKeyOptions,
+        Body: fs.createReadStream(process.env.NODE_ENV == 'development' ? folderPath + filename : '/tmp' + filename)
+    };
+
+    await s3.upload(params, (err, data) => {
+        if (err) {
+            console.log('Error uploading file:', err);
+        }
+    });
+
+    const url = s3.getSignedUrl("getObject", bucketAndKeyOptions);
+    let profilPicObj = {
+        filename,
+        url
+    };
+
 
     return profilPicObj;
 }
-
