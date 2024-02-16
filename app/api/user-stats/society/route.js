@@ -3,7 +3,7 @@ import JobApply from "@/models/JobApply";
 import { simpleMiddleware } from "../../simpleMiddleware";
 import Job from "@/models/Job";
 
-export const GET = simpleMiddleware(async (req) => {
+export const GET = await simpleMiddleware(async (req) => {
     const { userConnectedId } = req;
     console.log(userConnectedId);
     try {

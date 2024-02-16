@@ -3,7 +3,7 @@ import { simpleMiddleware } from "../../../simpleMiddleware";
 import Job from "@/models/Job";
 import { getJobFinalQuery } from "@/utils/back/others";
 
-export const GET = simpleMiddleware(async (req) => {
+export const GET = await simpleMiddleware(async (req) => {
     const { userConnectedId } = req;
     const limit = req.nextUrl.searchParams.get('limit');
 

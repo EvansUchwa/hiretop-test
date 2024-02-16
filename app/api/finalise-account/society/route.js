@@ -6,7 +6,7 @@ import { getJwtSecret } from "@/utils/back/jwt";
 import absoluteUrl from 'next-absolute-url'
 import { fileUploadManager } from "@/utils/back/file";
 
-export const PUT = simpleMiddleware(async (req) => {
+export const PUT = await simpleMiddleware(async (req) => {
     const { userConnectedId } = req;
     const { origin } = absoluteUrl(req);
 

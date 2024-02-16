@@ -8,7 +8,7 @@ import Job from "@/models/Job";
 import absoluteUrl from 'next-absolute-url'
 
 
-export const POST = simpleMiddleware(async (req) => {
+export const POST = await simpleMiddleware(async (req) => {
     const { origin } = absoluteUrl(req);
     const { userConnectedId } = req;
     let body = await req.json();

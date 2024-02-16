@@ -6,7 +6,7 @@ import { mailSetter } from "@/utils/back/email";
 import Job from "@/models/Job";
 import User from "@/models/User";
 
-export const PUT = simpleMiddleware(async (req) => {
+export const PUT = await simpleMiddleware(async (req) => {
     const applyId = req.nextUrl.searchParams.get('applyId');;
     const body = await req.json();
     const origin = '';

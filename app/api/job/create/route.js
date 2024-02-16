@@ -3,7 +3,7 @@ import { simpleMiddleware } from "../../simpleMiddleware";
 import Job from "@/models/Job";
 import dayjs from "dayjs";
 
-export const POST = simpleMiddleware(async (req) => {
+export const POST = await simpleMiddleware(async (req) => {
     const { userConnectedId } = req;
     const body = await req.json();
 

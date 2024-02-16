@@ -4,7 +4,7 @@ import User from "@/models/User";
 const bcrypt = require("bcrypt");
 
 
-export const PUT = simpleMiddleware(async (req) => {
+export const PUT = await simpleMiddleware(async (req) => {
     const { userConnectedId } = req;
 
     const body = await req.json();

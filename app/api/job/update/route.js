@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { simpleMiddleware } from "../../simpleMiddleware";
 import Job from "@/models/Job";
 
-export const PUT = simpleMiddleware(async (req) => {
+export const PUT = await simpleMiddleware(async (req) => {
     const { userConnectedId } = req;
     const body = await req.json();
     const jobId = req.nextUrl.searchParams.get('jobId');

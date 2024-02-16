@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import JobApply from "@/models/JobApply";
 import { simpleMiddleware } from "@/app/api/simpleMiddleware";
 
-export const GET = simpleMiddleware(async (req) => {
+export const GET = await simpleMiddleware(async (req) => {
     // let userId = req.nextUrl.searchParams.get('userId');
     const { userConnectedId } = req;
     let limit = req.nextUrl.searchParams.get('limit');

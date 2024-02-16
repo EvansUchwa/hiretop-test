@@ -3,11 +3,10 @@ const jwt = require('jsonwebtoken');
 import { getJwtSecret } from '../../utils/back/jwt';
 import DB_CONNEXION from '@/utils/back/database';
 
+export async function simpleMiddleware(handler, role = null) {
+    await DB_CONNEXION();
+    return (request) => {
 
-// This function can be marked `async` if using `await` inside
-export function simpleMiddleware(handler, role = null) {
-    return async (request) => {
-        await DB_CONNEXION();
         let authAuthHeader = request.headers.has('authorization');
         if (authAuthHeader) {
 

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import JobApply from "@/models/JobApply";
 import { simpleMiddleware } from "../../simpleMiddleware";
 
-export const GET = simpleMiddleware(async (req) => {
+export const GET = await simpleMiddleware(async (req) => {
     const { userConnectedId } = req;
     try {
         const applysCount = await JobApply.find({ talent: userConnectedId });

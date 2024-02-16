@@ -3,7 +3,7 @@ import { simpleMiddleware } from "../../simpleMiddleware";
 import User from "@/models/User";
 import absoluteUrl from 'next-absolute-url'
 
-export const PUT = simpleMiddleware(async (req) => {
+export const PUT = await simpleMiddleware(async (req) => {
     const { userConnectedId } = req;
     const { origin } = absoluteUrl(req);
     const body = await req.json();

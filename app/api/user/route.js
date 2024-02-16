@@ -2,7 +2,7 @@ import User from "../../../models/User";
 import { NextResponse } from "next/server";
 import { simpleMiddleware } from "../simpleMiddleware";
 
-export const GET = simpleMiddleware(async (req) => {
+export const GET = await simpleMiddleware(async (req) => {
     const { userConnectedId } = req;
     try {
         const user = await User.findById(userConnectedId);

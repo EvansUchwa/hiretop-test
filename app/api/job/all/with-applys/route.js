@@ -4,7 +4,7 @@ import JobApply from "@/models/JobApply";
 import Job from "@/models/Job";
 
 
-export const GET = simpleMiddleware(async (req) => {
+export const GET = await simpleMiddleware(async (req) => {
     try {
         const { userConnectedId } = req;
         const jobIds = await JobApply.distinct('job');
