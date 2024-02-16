@@ -42,6 +42,5 @@ export async function fileUploadManager(file, origin, folderPath) {
         buffer
     );
     return profilPicObj;
-    // return { url: 'http://localhost:3000/public/storage/profilPics/1708036088hiretop-ast-f0wlsnsl4u8.jpg' };
 }
 
