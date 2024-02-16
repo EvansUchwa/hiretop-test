@@ -5,8 +5,8 @@ import S3 from "aws-sdk/clients/s3";
 
 const fs = require('fs');
 
-const accessKeyId = "jvwmfir3mj2yuhgysuncfrzzdoga";
-const secretAccessKey = "jyeqihhl6br6cyhxtjhlpcvoyxzubbzzmv4jp3zu3hde7gmij6joo";
+const accessKeyId = "jwk3vrmtt5iokqlvvggg3mcd5wiq";
+const secretAccessKey = "jzrelurbc65i3yihp46d62zx5gd3lsgk5qtjp4ruyznidlzwqszqc";
 const endpoint = "https://gateway.storjshare.io";
 
 const s3 = new S3({
@@ -43,7 +43,7 @@ export async function fileUploadManager(file, origin, folderPath) {
     const originName = file.name.replaceAll(" ", "_");
     const fileExtension = path.extname(originName);
 
-    let filename = Math.floor(Date.now() / 1000) + uniqid('hiretop-ast-') + fileExtension;;
+    let filename = Math.floor(Date.now() / 1000) + uniqid('ht') + fileExtension;;
 
 
     if (process.env.NODE_ENV == 'development') {
@@ -59,7 +59,7 @@ export async function fileUploadManager(file, origin, folderPath) {
     }
 
     const bucketAndKeyOptions = {
-        Bucket: "hiretop-test",
+        Bucket: "hiretop",
         Key: filename
     }
     const params = {
