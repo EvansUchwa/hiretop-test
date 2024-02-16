@@ -1,3 +1,4 @@
+'use client';
 import FormFieldProvider from '@/components/formFieldProvider';
 import MyCustomFormikForm from '@/components/other';
 import { updateSocietyFiles, updateTalentFiles } from '@/utils/front/form/fieldsArrays';
@@ -7,14 +8,14 @@ import { useLang } from '@/contexts/langContext';
 import { FormButton } from '@/uikits/button';
 import { updateSocietyOrTalentFilesData } from '@/services/front/acoount';
 import { errorAlert, successAlert } from '@/utils/front/others';
+import { redirect } from 'next/navigation';
 
 
 export function UpdateTalentFiles({ user, refetchUserLoggedData }) {
     const { buttonsL } = useLang();
     const formik = useFormik({
         initialValues: {
-            profilPic: '',
-            resume: '',
+            profilPic: '', resume: ''
         },
         validateOnMount: true,
         onSubmit: handleSubmit
@@ -24,6 +25,7 @@ export function UpdateTalentFiles({ user, refetchUserLoggedData }) {
         updateSocietyOrTalentFilesData(formData, (res) => {
             successAlert('account', 'updated')
             refetchUserLoggedData()
+            window.location = '/dashboard'
         }, (error) => {
             errorAlert(error)
         }, () => {
@@ -65,6 +67,7 @@ export function UpdateSocietyFiles({ user, refetchUserLoggedData }) {
         updateSocietyOrTalentFilesData(formData, (res) => {
             successAlert('account', 'updated')
             refetchUserLoggedData()
+            window.location = '/dashboard'
         }, (error) => {
             errorAlert(error)
         }, () => {

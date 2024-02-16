@@ -13,8 +13,7 @@ export function UpdatePassword({ user }) {
     const { buttonsL } = useLang();
     const formik = useFormik({
         initialValues: {
-            currentPassword: '',
-            newPassword: '',
+            currentPassword: '', newPassword: '',
             newPasswordConfirmation: '',
         },
         validationSchema: changePasswordValidation,

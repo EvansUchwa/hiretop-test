@@ -43,14 +43,16 @@ export function UpdateTalentGeneralInformations({ user, refetchUserLoggedData })
         updateSocietyOrTalentGeneralData(formData, (res) => {
             successAlert('account', 'updated')
             refetchUserLoggedData()
+            window.location = '/dashboard'
         }, (error) => {
             errorAlert(error)
         }, () => {
+            resetForm();
             setSubmitting(false)
         })
     }
 
-    const { isValid, isSubmitting, setSubmitting } = formik;
+    const { isValid, isSubmitting, setSubmitting, resetForm } = formik;
     return (
         <div className=''>
             <FormikProvider value={formik}>
@@ -88,6 +90,7 @@ export function UpdateSocietyGeneralInformationsForm({ user, refetchUserLoggedDa
         updateSocietyOrTalentGeneralData(formData, (res) => {
             successAlert('account', 'updated')
             refetchUserLoggedData()
+            window.location = '/dashboard'
         }, (error) => {
             errorAlert(error)
         }, () => {

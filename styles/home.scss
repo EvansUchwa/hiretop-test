@@ -26,6 +26,7 @@
             display: flex;
             flex-direction: column;
             gap: 10px 0;
+            max-width: 80%;
             b{
                 font-size: 80px;
                 color: $primary-color;

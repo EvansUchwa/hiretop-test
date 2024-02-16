@@ -64,7 +64,7 @@ export async function fileUploadManager(file, origin, folderPath) {
     }
     const params = {
         ...bucketAndKeyOptions,
-        Body: fs.createReadStream(process.env.NODE_ENV == 'development' ? folderPath + filename : '/tmp' + filename)
+        Body: fs.createReadStream(process.env.NODE_ENV == 'development' ? folderPath + filename : '/tmp/' + filename)
     };
 
     await s3.upload(params, (err, data) => {

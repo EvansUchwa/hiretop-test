@@ -1,14 +1,18 @@
+'use client';
 import React from 'react'
 import LoginImage from '../public/login.png'
 import Image from 'next/image'
 import { useLang } from '@/contexts/langContext'
+import { useRouter } from 'next/navigation';
+import { MaterialSymbolsArrowCircleLeft } from '@/uikits/icon';
 
-// signupBannerText
 function AuthWrapper({ children, type }) {
-    const { authL } = useLang();
+    const { authL, buttonsL } = useLang();
+    const router = useRouter();
     return (
         <div className='authWrapper'>
             <section>
+                <span onClick={() => router.push('/')}> <MaterialSymbolsArrowCircleLeft /> {buttonsL.backToHome}</span>
                 <div>
                     <Image src={LoginImage}
                         alt={'Login image'}

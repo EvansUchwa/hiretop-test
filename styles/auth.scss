@@ -10,6 +10,15 @@
             justify-content: center;
             padding: 0 30px;
             width: 55%;
+            &>span{
+                color: white;
+                display: flex;
+                align-items: center;
+                gap: 0 10px;
+                margin-bottom: 10px;
+            font-size: 30px;
+            cursor: pointer;
+            }
             div{
                 width: 70%;
                 border-radius: 10px;
