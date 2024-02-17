@@ -11,8 +11,13 @@ export function SearchJobForm() {
     const {
         searchJobKeywordSearchParam, jobSectorSearchParam, jobTypeSearchParam,
         requiredDegreeSearchParam, requiredExpYearSearchParam, remoteAcceptedSearchParam,
-        setSJKSP, setJSSP, setJTSP, setRDSP, setREYSP, setRASP
+        locationSearchParam, salarySearchParam,
+
+        setSJKSP, setJSSP, setJTSP, setRDSP, setREYSP, setRASP, setLSP, setSSP
     } = useMySearchParams();
+
+
+
     const { langData } = useLang();
     const formik = useFormik({
         initialValues: {
@@ -20,9 +25,13 @@ export function SearchJobForm() {
             jobSector: jobSectorSearchParam ?? '', jobType: jobTypeSearchParam ?? '',
             requiredDegree: requiredDegreeSearchParam ?? '',
             requiredExpYear: requiredExpYearSearchParam ?? '',
-            remoteAccepted: remoteAcceptedSearchParam ?? ''
+            remoteAccepted: remoteAcceptedSearchParam ?? '',
+            location: locationSearchParam ?? '',
+            salary: salarySearchParam ?? '',
         }
     });
+
+
     const { values, resetForm } = formik;
 
     useEffect(() => {
@@ -46,6 +55,12 @@ export function SearchJobForm() {
         if (values.remoteAccepted) {
             setRASP(values.remoteAccepted)
         }
+        if (values.location) {
+            setLSP(values.location)
+        }
+        if (values.salary) {
+            setSSP(values.salary)
+        }
     }, [values]);
 
     function resetSearch() {
@@ -56,6 +71,8 @@ export function SearchJobForm() {
         setRDSP(null)
         setREYSP(null)
         setRASP(null)
+        setLSP(null)
+        setSSP(null)
     }
     return (
         <SearchAndFilterSectionWrapper>

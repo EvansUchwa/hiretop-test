@@ -2,6 +2,8 @@
 import { useQueryState } from "nuqs";
 import { useContext, createContext } from "react";
 export const SearchParamContext = createContext();
+// location
+// salary
 export function SearchParamsProvider({ children }) {
     const [jobSectorSearchParam, setJSSP] = useQueryState('jobSector');
     const [jobTypeSearchParam, setJTSP] = useQueryState('jobType');
@@ -17,17 +19,23 @@ export function SearchParamsProvider({ children }) {
     const [expYearsSearchParam, setEYSP] = useQueryState('expYears');
     const [genderSearchParam, setGSP] = useQueryState('gender');
 
+    const [locationSearchParam, setLSP] = useQueryState('location');
+    const [salarySearchParam, setSSP] = useQueryState('salary');
+
+
     return <SearchParamContext.Provider
         value={{
             jobSectorSearchParam, jobTypeSearchParam, requiredDegreeSearchParam, requiredExpYearSearchParam, remoteAcceptedSearchParam,
             genderSearchParam, lastDegreeSearchParam, expYearsSearchParam,
+            locationSearchParam, salarySearchParam,
 
             searchJobKeywordSearchParam, searchTalentKeywordSearchParam,
             setSJKSP, setJSSP,
 
             setJTSP, setRDSP, setREYSP, setRASP,
             setSTKSP, setLDSP, setEYSP,
-            setGSP
+            setGSP,
+            setLSP, setSSP
         }}>
         {children}
     </SearchParamContext.Provider>

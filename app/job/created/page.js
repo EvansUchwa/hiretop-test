@@ -3,7 +3,7 @@ import { JobListSorterLayout, JobSearchLayout } from '@/components/job/layout'
 import { useAuth } from '@/contexts/authContext'
 import { useLang } from '@/contexts/langContext'
 import { withAuth } from '@/hocs/withAuth'
-import { useJobsCreatedByConnectedSociety } from '@/hooks/useJob'
+import { useJobs } from '@/hooks/useJob'
 import SimpleButton from '@/uikits/button'
 import { SectionSpinner } from '@/uikits/others'
 import React, { use } from 'react'
@@ -11,7 +11,7 @@ import React, { use } from 'react'
 
 function JobList() {
     const { user } = useAuth();
-    const { jobs, jobsLoading } = useJobsCreatedByConnectedSociety();
+    const { jobs, jobsLoading } = useJobs(true, null);
     const { langData } = useLang();
     const formL = langData.form.fields;
     if (jobsLoading) {

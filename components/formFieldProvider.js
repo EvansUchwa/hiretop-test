@@ -4,7 +4,7 @@ import { DocFileInputWithFormik } from '@/uikits/form/file';
 import { MultipleTextBlockWithFormik, MultipleTextWithFormik, TextAreaWithFormik } from '@/uikits/form/others';
 import PasswordFieldWithFormik from '@/uikits/form/password';
 import { SelectWithFormik } from '@/uikits/form/select';
-import { SearchFieldWithFormik, TextFieldWithFormik } from '@/uikits/form/text';
+import { SearchFieldWithFormik, TextFieldWithFormik, TextFieldWithOkWithFormik } from '@/uikits/form/text';
 import React from 'react'
 
 
@@ -38,7 +38,7 @@ function dispatchSelectOptionsL(name, formLangs) {
     return formLangs[key];
 }
 function FormFieldProvider(props) {
-    const { fieldType, name, options, chooseLabel, rqrd, ...rest } = props;
+    const { fieldType, subType, name, options, chooseLabel, rqrd, ...rest } = props;
     const textFields = ['email', 'text', 'date', 'number', 'hour', 'time'];
     const formLangs = useLang().langData.form.fields;
     const btnsLang = useLang().langData.buttons;
@@ -124,9 +124,15 @@ function FormFieldProvider(props) {
             chooseLabel={formLangs.selectLabels[name]}
             rqrd={rqrd}
         />
+    } else if (fieldType == 'withOk') {
+        return <TextFieldWithOkWithFormik {...rest}
+            name={name}
+            type={subType}
+            label={formLangs[name] && formLangs[name].label}
+            placeholder={formLangs[name] && formLangs[name].ph}
+            rqrd={rqrd}
+        />
     }
-
-
 }
 
 

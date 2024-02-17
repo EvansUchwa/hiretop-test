@@ -56,7 +56,14 @@ export const remoteAcceptedField = { name: 'remoteAccepted', fieldType: 'radio',
 export const jobDescriptionField = { name: 'jobDescription', fieldType: 'textarea', rqrd: true }
 export const locationField = { name: 'location', fieldType: 'text', rqrd: true }
 
+export const locationSearchParamField = { name: 'location', fieldType: 'withOk', subType: 'text', }
+
+
+
 export const salaryField = { name: 'salary', fieldType: 'number' }
+
+export const salarySearchParamField = { name: 'salary', fieldType: 'withOk', subType: 'number' }
+
 export const applyLimitDateField = { name: 'applyLimitDate', fieldType: 'date', rqrd: true }
 
 export const desiredSalaryField = { name: 'desiredSalary', fieldType: 'number', rqrd: true }

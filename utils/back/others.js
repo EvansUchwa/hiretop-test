@@ -14,6 +14,9 @@ export function getJobFinalQuery(req) {
     const requiredExpYear = req.nextUrl.searchParams.get('requiredExpYear');
     const remoteAccepted = req.nextUrl.searchParams.get('remoteAccepted');
     const searchJobKeyword = req.nextUrl.searchParams.get('searchJobKeyword');
+    const salary = req.nextUrl.searchParams.get('salary');
+    const location = req.nextUrl.searchParams.get('location');
+
 
 
     let query = {};
@@ -35,6 +38,12 @@ export function getJobFinalQuery(req) {
     }
     if (searchJobKeyword) {
         query.jobTitle = { '$regex': searchJobKeyword, "$options": "i" };
+    }
+    if (salary) {
+        query.salary = salary;
+    }
+    if (location) {
+        query.location = location;
     }
     return query;
 }

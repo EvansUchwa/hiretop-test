@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 
 function getJobSearchParamsUrl(query, jobSectorSearchParam, jobTypeSearchParam,
     requiredDegreeSearchParam, requiredExpYearSearchParam, remoteAcceptedSearchParam,
-    searchJobKeywordSearchParam) {
+    searchJobKeywordSearchParam, salarySearchParam, locationSearchParam) {
     if (jobSectorSearchParam) {
         query += '&jobSector=' + jobSectorSearchParam;
     }
@@ -24,6 +24,12 @@ function getJobSearchParamsUrl(query, jobSectorSearchParam, jobTypeSearchParam,
     }
     if (searchJobKeywordSearchParam) {
         query += '&searchJobKeyword=' + searchJobKeywordSearchParam;
+    }
+    if (salarySearchParam) {
+        query += '&salary=' + salarySearchParam;
+    }
+    if (locationSearchParam) {
+        query += '&location=' + locationSearchParam;
     }
     return query;
 }
@@ -55,48 +61,19 @@ export function useJobsCreatedBySociety(societyId, limit = null) {
     }
 }
 
-export function useJobsCreatedByConnectedSociety(limit = null) {
+export function useJobs(byConnectedSociety = false, limit = null) {
+    // '/job/all/by-connected-society?searchPossible=true'
+    let baseUrl = byConnectedSociety ? '/job/all/by-connected-society' : '/job/all';
+    baseUrl += '?searchPossible=true';
+    if (limit) {
+        baseUrl += '&limit=' + limit;
+    }
+
     const {
         jobSectorSearchParam, jobTypeSearchParam,
         requiredDegreeSearchParam, requiredExpYearSearchParam, remoteAcceptedSearchParam,
-        searchJobKeywordSearchParam } = useMySearchParams();
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [refetch, setRefetch] = useState(false);
-    const [error, setError] = useState(false);
-
-    useEffect(() => {
-        setLoading(true)
-        let query = getJobSearchParamsUrl('/job/all/by-connected-society?searchPossible=true', jobSectorSearchParam, jobTypeSearchParam,
-            requiredDegreeSearchParam, requiredExpYearSearchParam, remoteAcceptedSearchParam,
-            searchJobKeywordSearchParam);
-        if (limit) {
-            query += '&limit=' + limit;
-        }
-        axiosInstance.get(query)
-            .then(res => setData(res.data))
-            .catch(err => setError(true))
-            .finally(() => setLoading(false))
-    }, [refetch, jobSectorSearchParam, jobTypeSearchParam,
-        requiredDegreeSearchParam, requiredExpYearSearchParam, remoteAcceptedSearchParam,
-        searchJobKeywordSearchParam]);
-
-
-    function makeRefetch() {
-        setRefetch(prev => !prev)
-    }
-    return {
-        jobs: data,
-        jobsLoading: loading,
-        jobsRefetch: makeRefetch
-    }
-}
-
-export function useJobs() {
-    const {
-        jobSectorSearchParam, jobTypeSearchParam,
-        requiredDegreeSearchParam, requiredExpYearSearchParam, remoteAcceptedSearchParam,
-        searchJobKeywordSearchParam } = useMySearchParams();
+        searchJobKeywordSearchParam, salarySearchParam, locationSearchParam
+    } = useMySearchParams();
 
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -105,16 +82,17 @@ export function useJobs() {
 
     useEffect(() => {
         setLoading(true)
-        let query = getJobSearchParamsUrl('/job/all?searchPossible=true', jobSectorSearchParam, jobTypeSearchParam,
+        let query = getJobSearchParamsUrl(baseUrl, jobSectorSearchParam, jobTypeSearchParam,
             requiredDegreeSearchParam, requiredExpYearSearchParam, remoteAcceptedSearchParam,
-            searchJobKeywordSearchParam);
+            searchJobKeywordSearchParam, salarySearchParam, locationSearchParam);
         axiosInstance.get(query)
             .then(res => setData(res.data))
             .catch(err => setError(true))
             .finally(() => setLoading(false))
 
     }, [refetch, jobSectorSearchParam, jobTypeSearchParam,
-        requiredDegreeSearchParam, requiredExpYearSearchParam, remoteAcceptedSearchParam, searchJobKeywordSearchParam]);
+        requiredDegreeSearchParam, requiredExpYearSearchParam, remoteAcceptedSearchParam, searchJobKeywordSearchParam,
+        salarySearchParam, locationSearchParam]);
 
     function makeRefetch() {
         setRefetch(prev => !prev)

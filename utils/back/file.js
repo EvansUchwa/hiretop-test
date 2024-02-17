@@ -3,6 +3,9 @@ import { writeFile } from "fs/promises";
 import uniqid from 'uniqid';
 import S3 from "aws-sdk/clients/s3";
 
+import { put } from '@vercel/blob';
+import { NextResponse } from 'next/server';
+
 const fs = require('fs');
 
 const accessKeyId = "jwk3vrmtt5iokqlvvggg3mcd5wiq";
@@ -35,9 +38,9 @@ function createSubdirectoryInPublic(subdirectoryName) {
 }
 
 export async function fileUploadManager(file, origin, folderPath) {
-    createSubdirectoryInPublic('storage')
-    createSubdirectoryInPublic('storage/resumes')
-    createSubdirectoryInPublic('storage/profilPics')
+    // createSubdirectoryInPublic('storage')
+    // createSubdirectoryInPublic('storage/resumes')
+    // createSubdirectoryInPublic('storage/profilPics')
 
     const buffer = Buffer.from(await file.arrayBuffer());
     const originName = file.name.replaceAll(" ", "_");
@@ -45,38 +48,14 @@ export async function fileUploadManager(file, origin, folderPath) {
 
     let filename = Math.floor(Date.now() / 1000) + uniqid('ht') + fileExtension;;
 
-
-    if (process.env.NODE_ENV == 'development') {
-        await writeFile(
-            path.join(process.cwd(), folderPath + filename),
-            buffer
-        );
-    } else {
-        await writeFile(
-            path.join('/tmp', filename),
-            buffer
-        );
-    }
-
-    const bucketAndKeyOptions = {
-        Bucket: "hiretop",
-        Key: filename
-    }
-    const params = {
-        ...bucketAndKeyOptions,
-        Body: fs.createReadStream(process.env.NODE_ENV == 'development' ? folderPath + filename : '/tmp/' + filename)
-    };
-
-    await s3.upload(params, (err, data) => {
-        if (err) {
-            console.log('Error uploading file:', err);
-        }
+    const blob = await put(filename, buffer, {
+        access: 'public',
     });
+    console.log(blob);
 
-    const url = s3.getSignedUrl("getObject", bucketAndKeyOptions);
     let profilPicObj = {
         filename,
-        url
+        url: blob.url
     };
 
 

@@ -19,6 +19,31 @@ export function TextFieldWithFormik({ label, type, placeholder, name, rqrd }) {
     )
 }
 
+export function TextFieldWithOkWithFormik({ label, type, placeholder, name, rqrd }) {
+    const [field, meta, helpers] = useField(name);
+    const [tempValue, setTV] = useState();
+    const { value } = meta;
+    function handleChange(e) {
+        setTV(e.target.value)
+    }
+    return (
+        <div className='formField fieldWithOk'>
+            <label htmlFor="">
+                {label}
+                {rqrd && <sup>*</sup>}
+            </label>
+            <section className='flex'>
+                <input type={type} name={name}
+                    placeholder={placeholder}
+                    value={tempValue ? tempValue : value}
+                    onChange={handleChange} />
+                <span onClick={() => helpers.setValue(tempValue)}>Ok</span>
+            </section>
+            <ErrorMessage name={name} component="div" className="input-error-msg" />
+        </div>
+    )
+}
+
 export function SearchFieldWithFormik({ label, type, placeholder, name, rqrd }) {
     const [field, meta, helpers] = useField(name);
     const [tempValue, setTV] = useState();

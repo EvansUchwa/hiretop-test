@@ -243,7 +243,8 @@ form{
             section{
                 span{
                     cursor: pointer;
-                    background-color: $grey-primary;
+                    background-color: $secondary-color;
+                    color: white;
                     position: absolute;
                     right: 2px;
                     top: 50%;
@@ -251,6 +252,23 @@ form{
                     padding: 8px 12px;
                     border-radius: 8px;
                     font-size: 20px;
+                }
+            }
+        }
+        &.fieldWithOk{
+            section{
+                align-items: center;
+                position: relative;
+             
+                span{
+                    position: absolute;
+                    top: 50%;
+                    right: 2px;
+                    transform: translateY(-50%);
+                    background-color: $secondary-color;
+                    color: white;
+                    border-radius: 8px;
+                    padding: 10px;
                 }
             }
         }

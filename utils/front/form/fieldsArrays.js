@@ -5,7 +5,7 @@ import {
     jobTitleField,
     jobTypeField,
     locationField,
-    passwordConfirmationField, passwordField, phoneField, profilPicField, remoteAcceptedField, requiredDegreeField, requiredExpYearField, requiredLangField, salaryField, societyNameField, workSectorField, tasksField, firstnameField, lastnameField, ageField, formationsField, experiencesField, skillsField, resumeField, desiredSalaryField, preferredLocationsField, linkedinUrlField, lastDegreeField, titleField, professionField, expYearsField, langagesField, applyerMessageField, recrutorMessageField, interviewDateField, interviewHourField, interviewTypeField, currentPasswordField, newPasswordField, searchKeyField, searchTalentKeyWordField, searchJobKeywordField, newPasswordConfirmationField
+    passwordConfirmationField, passwordField, phoneField, profilPicField, remoteAcceptedField, requiredDegreeField, requiredExpYearField, requiredLangField, salaryField, societyNameField, workSectorField, tasksField, firstnameField, lastnameField, ageField, formationsField, experiencesField, skillsField, resumeField, desiredSalaryField, preferredLocationsField, linkedinUrlField, lastDegreeField, titleField, professionField, expYearsField, langagesField, applyerMessageField, recrutorMessageField, interviewDateField, interviewHourField, interviewTypeField, currentPasswordField, newPasswordField, searchKeyField, searchTalentKeyWordField, searchJobKeywordField, newPasswordConfirmationField, salarySearchParamField, locationSearchParamField
 } from "./fields"
 
 
@@ -123,6 +123,8 @@ export function jobSearchFields() {
         requiredDegreeField,
         requiredExpYearField,
         remoteAcceptedField,
+        salarySearchParamField,
+        locationSearchParamField
         // salaryField,
         // locationField,
     ]

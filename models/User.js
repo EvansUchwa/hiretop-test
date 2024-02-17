@@ -32,7 +32,7 @@ const UserSchema = new Schema({
 
     email: { type: String, required: true },
     phone: { type: String, default: null },
-    country: { type: String, default: true },
+    country: { type: String, default: null },
     address: { type: String, default: null },
     password: { type: String, required: true },
 
