@@ -32,11 +32,11 @@ export const PUT = await simpleMiddleware(async (req) => {
         const talent = await User.findById(jobUp.talent)
 
         if (body.status == 'accepted') {
-            mailSetter('Invitation à un entretien',
+            const sendmail = await mailSetter('Invitation à un entretien',
                 applyAcceptedEmail(origin + '/dashboard', finalObj.recrutorMessage, finalObj.interviewType, finalObj.interviewDate, finalObj.interviewHour, job.jobTitle, job.autor.societyName, talent.firstname),
                 talent.email)
         } else {
-            mailSetter('Notification de rejet de candidature',
+            const sendmail = await mailSetter('Notification de rejet de candidature',
                 applyAcceptedEmail(origin + '/dashboard', job.jobTitle, job.autor.societyName, talent.firstname),
                 talent.email)
         }

@@ -19,7 +19,7 @@ export const POST = await simpleMiddleware(async (req) => {
         let user = await User.findById(userConnectedId);
         let job = await Job.findById(body.job).populate('autor');
 
-        mailSetter('Nouvelle candidature',
+        const sendmail = await mailSetter('Nouvelle candidature',
             newApplyAlert(origin + '/dashboard', job.autor.societyName, job.jobTitle, user.firstname + ' ' + user.lastname),
             job.autor.email)
         return NextResponse.json(jobs, { status: 200 })

@@ -26,7 +26,7 @@ export const POST = async (req) => {
         user.resetPasswordToken = emailToken;
         await user.save();
 
-        mailSetter('Reinitialisation de mot de passe',
+        const sendmail = await mailSetter('Reinitialisation de mot de passe',
             changePasswordEmail(origin + '/reset-password/new-password?token=' + emailToken),
             email)
         return NextResponse.json('ok', { status: 200 })

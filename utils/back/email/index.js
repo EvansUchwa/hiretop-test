@@ -16,28 +16,30 @@ function mailTemplateContainer(mailBody) {
 }
 
 export async function mailSetter(subject, template, receiverEmail) {
-  try {
-    let transporter = nodemailer.createTransport({
-      host: "smtp-relay.brevo.com",
-      port: 587,
-      auth: {
-        user: process.env.smtpEmail,
-        pass: process.env.smtpPassword
-      },
-    });
+  return new Promise(async (resolve, reject) => {
+    try {
+      let transporter = nodemailer.createTransport({
+        host: "smtp-relay.brevo.com",
+        port: 587,
+        auth: {
+          user: process.env.smtpEmail,
+          pass: process.env.smtpPassword
+        },
+      });
 
-    let info = await transporter.sendMail({
-      from: 'HireTop <' + process.env.smtpEmail + '>', // sender address
-      to: receiverEmail, // list of receivers
-      subject, // Subject line
-      html: mailTemplateContainer(template), // html body
-    });
-    return info;
+      let info = await transporter.sendMail({
+        from: 'HireTop <' + process.env.smtpEmail + '>', // sender address
+        to: receiverEmail, // list of receivers
+        subject, // Subject line
+        html: mailTemplateContainer(template), // html body
+      });
+      resolve(info);
+      // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+    } catch (error) {
+      console.log(error);
+      reject(error)
+    }
+  });
 
-    console.log("Message sent to and %s", receiverEmail + info.messageId);
-    // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-  } catch (error) {
-    console.log(error);
-  }
 }
 

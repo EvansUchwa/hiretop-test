@@ -28,7 +28,7 @@ export async function POST(req) {
             email, emailToken, password: hashPass,
             identifier: uniqid('ht-')
         });
-        mailSetter('Validation de votre adresse email', welcomeEmail(origin + '/mail-validation?token=' + emailToken), email)
+        let sendMail = await mailSetter('Validation de votre adresse email', welcomeEmail(origin + '/mail-validation?token=' + emailToken), email)
         return NextResponse.json('ok', { status: 200 })
     } catch (error) {
         console.log(error)
