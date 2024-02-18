@@ -70,6 +70,11 @@ export function applyRejectedEmail(origin, nomPoste, nomEntreprise, talentFirsta
 export function changePasswordEmail(origin) {
 
     return `
-        Url de reinitialisation: ${origin},
+    Vous avez demandé la réinitialisation de votre mot de passe sur Hiretop. Cliquez sur le lien ci-dessous pour créer un nouveau mot de passe :
+    <br />
+    [Insérez ici le lien de réinitialisation]
+    <p><a href="${origin}">Liens de réinitialisation</a></p>
+    <br />
+    Si vous n'êtes pas à l'origine de cette demande, veuillez ignorer cet e-mail.
     `;
 }

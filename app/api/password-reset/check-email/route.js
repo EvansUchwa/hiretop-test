@@ -2,15 +2,14 @@ import { NextResponse } from "next/server";
 import User from "@/models/User";
 import { mailSetter } from "@/utils/back/email";
 import { changePasswordEmail } from "@/utils/back/email/templates";
-import absoluteUrl from 'next-absolute-url';
 import DB_CONNEXION from "@/utils/back/database";
+import { getAppOriginUrl } from "@/utils/back/others";
 const bcrypt = require("bcrypt");
 
 
 export const POST = async (req) => {
     const body = await req.json();
     const { email } = body;
-    const { origin } = absoluteUrl(req);
 
     await DB_CONNEXION();
     try {
@@ -27,7 +26,7 @@ export const POST = async (req) => {
         await user.save();
 
         const sendmail = await mailSetter('Reinitialisation de mot de passe',
-            changePasswordEmail(origin + '/reset-password/new-password?token=' + emailToken),
+            changePasswordEmail(getAppOriginUrl() + '/reset-password/new-password?token=' + emailToken),
             email)
         return NextResponse.json('ok', { status: 200 })
     } catch (error) {
