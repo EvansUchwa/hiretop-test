@@ -2,7 +2,7 @@ export function welcomeEmail(validationLink) {
     return `<div>
         <p>Cher utilisateur,</p>
     
-        <p>Bienvenue sur <strong>Hiretope</strong> ! Nous sommes ravis de vous compter parmi nos membres.</p>
+        <p>Bienvenue sur <strong>Hiretop</strong> ! Nous sommes ravis de vous compter parmi nos membres.</p>
     
         <p>Pour profiter pleinement de toutes les fonctionnalités de notre plateforme, veuillez valider votre adresse e-mail en cliquant sur le lien ci-dessous :</p>
     

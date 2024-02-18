@@ -14,7 +14,9 @@ const nextConfig = {
         jwtSecret: "dev-this-app-for-talent-virtuel-test",
         profilPicFolderPath: "public/storage/profilPics/",
         resumeFolderPath: "public/storage/resumes/",
-        BLOB_READ_WRITE_TOKEN: "vercel_blob_rw_jAq5wIq5b2DhDvtn_gLe5hwp2ZQyYDwPOA3HYIBscCWHpmi"
+        BLOB_READ_WRITE_TOKEN: "vercel_blob_rw_jAq5wIq5b2DhDvtn_gLe5hwp2ZQyYDwPOA3HYIBscCWHpmi",
+        devAppUrl: 'http://localhost:3000',
+        prodAppUrl: 'https://hiretoptest.vercel.app'
     },
 };
 

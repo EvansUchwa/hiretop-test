@@ -6,13 +6,12 @@ const bcrypt = require("bcrypt");
 import uniqid from 'uniqid';
 import { mailSetter } from "@/utils/back/email";
 import { welcomeEmail } from "@/utils/back/email/templates";
-import absoluteUrl from 'next-absolute-url'
+import { getAppOriginUrl } from "@/utils/back/others";
 
 
 export async function POST(req) {
     const body = await req.json()
     const { email, password } = body;
-    const { origin } = absoluteUrl(req);
     await DB_CONNEXION();
     try {
         const hashPass = await bcrypt.hash(password, 12);
@@ -28,7 +27,8 @@ export async function POST(req) {
             email, emailToken, password: hashPass,
             identifier: uniqid('ht-')
         });
-        let sendMail = await mailSetter('Validation de votre adresse email', welcomeEmail(origin + '/mail-validation?token=' + emailToken), email)
+        let sendMail = await mailSetter('Validation de votre adresse email',
+            welcomeEmail(getAppOriginUrl() + '/mail-validation?token=' + emailToken), email)
         return NextResponse.json('ok', { status: 200 })
     } catch (error) {
         console.log(error)

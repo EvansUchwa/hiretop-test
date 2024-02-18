@@ -49,3 +49,7 @@ export function getJobFinalQuery(req) {
 }
 
 export const autorPopulate = { path: 'autor', model: 'user' }
+
+export function getAppOriginUrl() {
+    return process.env.NODE_ENV == 'development' ? process.env.devAppUrl : process.env.prodAppUrl
+}
