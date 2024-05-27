@@ -1,54 +1,94 @@
-.account{
-    width: 95%;
-    margin: auto;
+.account {
+  width: 95%;
+  margin: auto;
 
-    &>section{
-        background-color: white;
-        border-radius: 8px;
-        padding: 20px 0;
+  & > section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px 0;
+  }
+  .previewProfile {
+    text-align: center;
+    p {
+      margin-bottom: 10px;
     }
-    .previewProfile{
-        text-align: center;
-        p{
-            margin-bottom: 10px;
-        }
-    }
+  }
 }
-.viewTabs{
-    width: 100%;
+.viewTabs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px 0;
+  .vt-labels {
     display: flex;
-    flex-direction: column;
-    gap: 25px 0;
-    .vt-labels{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        justify-content: space-evenly;
-        article{
-            background-color: $grey-primary;
-            padding: 10px 15px;
-            border-radius: 10px;
-            cursor: pointer;
-            &.activeTab{
-                background-color: $primary-color;
-                color: white;
-            }
-        }
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-evenly;
+    article {
+      background-color: $grey-primary;
+      padding: 10px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      &.activeTab {
+        background-color: $primary-color;
+        color: white;
+      }
     }
-    .vt-view{
-        width: 100%;
-    }
+  }
+  .vt-view {
+    width: 100%;
+  }
 }
 
+footer {
+  width: 100%;
+  .footer-head {
+    padding: 50px 0;
+    width: 100%;
+    justify-content: space-evenly;
+    h2 {
+      color: $primary-color;
+      margin-bottom: 20px;
+    }
+    div {
+      width: 30%;
+      text-align: justify;
+      div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px 0;
+      }
+    }
+  }
+  .footer-foot {
+    text-align: center;
+    padding: 25px 0;
+    background-color: $primary-color;
+    color: white;
+  }
+}
 
 @media screen and (max-width: 758px) {
-    .viewTabs{
-        .vt-labels{
-            article{
-               font-size: 10px;
-            }
-        }
-        .vt-view{
-        }
+  .viewTabs {
+    .vt-labels {
+      article {
+        font-size: 10px;
+      }
     }
+    .vt-view {
+    }
+  }
+
+  footer {
+    width: 100%;
+    .footer-head {
+      gap: 25px 0;
+      div {
+        width: 90%;
+      }
+    }
+    .footer-foot {
+    }
+  }
 }

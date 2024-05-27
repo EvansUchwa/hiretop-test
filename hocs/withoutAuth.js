@@ -1,33 +1,38 @@
-'use client';
+"use client";
 import { FullPageSpinner } from "@/uikits/others";
 import { useAuth } from "../contexts/authContext";
-import { redirect, usePathname } from 'next/navigation'
+import { redirect, usePathname } from "next/navigation";
 import { NotConnectedNav } from "@/uikits/navbar";
+import Footer from "@/uikits/footer";
 
 export const withoutAuth = (WrappedComponent) => {
-    return (props) => {
-        const { user, userLoading } = useAuth();
+  return (props) => {
+    const { user, userLoading } = useAuth();
 
-        // const router = useRouter();
-        // const { backUrl } = router.query;
+    // const router = useRouter();
+    // const { backUrl } = router.query;
 
-        if (userLoading)
-            return <FullPageSpinner />;
+    if (userLoading) return <FullPageSpinner />;
 
-        if (user) {
-            return redirect('/dashboard');
-        }
+    if (user) {
+      return redirect("/dashboard");
+    }
 
-        return <WithoutAuthHocWrapper>
-            <WrappedComponent {...props} />
-        </WithoutAuthHocWrapper>
-    };
+    return (
+      <WithoutAuthHocWrapper>
+        <WrappedComponent {...props} />
+      </WithoutAuthHocWrapper>
+    );
+  };
 };
 
 export function WithoutAuthHocWrapper({ children }) {
-    const pathname = usePathname()
-    return <>
-        {!['/login', '/register'].includes(pathname) && <NotConnectedNav />}
-        {children}
+  const pathname = usePathname();
+  return (
+    <>
+      {!["/login", "/register"].includes(pathname) && <NotConnectedNav />}
+      {children}
+      {!["/login", "/register"].includes(pathname) && <Footer />}
     </>
+  );
 }

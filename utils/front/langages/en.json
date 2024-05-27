@@ -13,7 +13,18 @@
   },
   "home": {
     "weAreStartText": "We are",
-    "weAreEndText": "Your gateway to exceptional professional opportunities. Here, we believe in the power of the connection between talents and opportunities, shaping the future of successful careers."
+    "weAreEndText": "Your gateway to exceptional professional opportunities. Here, we believe in the power of the connection between talents and opportunities, shaping the future of successful careers.",
+    "stats": {
+      "perCategory": {
+        "title": "Job by category"
+      },
+      "perEntity": {
+        "jobCount": "Available offers",
+        "societyCount": "Partner companies",
+        "talentCount": "Talent Profiles",
+        "jobApplyCount": "Applications for offers"
+      }
+    }
   },
   "appAdvantages": {
     "forSociety": [
@@ -35,7 +46,7 @@
     "loginTitle": "Login",
     "resetPasswordStep1": "Forgot Password (Step 1)",
     "resetPasswordStep2": "Forgot Password (Step 2)",
-  
+
     "alreadyHaveAccount": "Already have an account?",
     "passwordForgot": "Forgot Password",
     "dontHaveAccount": "Don't have an account? Create one",
@@ -84,19 +95,19 @@
       "viewApplyerMessage": "Candidate's Message",
       "viewYourMessage": "Your Message"
     }
-  },  
+  },
   "buttons": {
     "register": "Register",
     "login": "Login",
     "logout": "Logout",
     "searchAndFilter": "Search and Filter",
-  
+
     "backToHome": "Back to Home",
     "addJob": "Add a Job",
-  
+
     "previousStep": "Previous",
     "nextStep": "Next",
-  
+
     "saveAndContinue": "Save and Continue",
     "publish": "Publish",
     "save": "Save",
@@ -114,7 +125,7 @@
     "exploreTalents": "Explore Profiles Now! 🚀",
     "exploreJobs": "Explore Opportunities Now! 🚀",
     "browseTalents": "Explore Profiles",
-"browseJobs": "Explore Opportunities",
+    "browseJobs": "Explore Opportunities",
 
     "multipleTextBtns": {
       "preferredLocations": "Add New Preference",
@@ -141,9 +152,9 @@
     },
     "account": {
       "createdButNeedEmailValidation": "Account created, but check your emails to validate your address",
-  
+
       "readYourEmailForPassReset": "An email has been sent to you for password reset",
-  
+
       "updated": "Account information updated!"
     },
     "email": {
@@ -170,7 +181,7 @@
       "accepted": "Application accepted",
       "rejected": "Application rejected"
     }
-  },   
+  },
   "navLinks": {
     "home": "Home",
     "dashboard": "Dashboard",
@@ -188,73 +199,118 @@
     "noJobFound": "No matching job found",
     "noApplyFound": "No application found",
     "noProfileFound": "No matching profile found"
-  },  
+  },
   "form": {
     "fields": {
-      "email": {"label": "Your email", "ph": "Your email"},
-      "password": {"label": "Your password", "ph": "Your password"},
-      "currentPassword": {"label": "Current password", "ph": "Current password"},
-      "newPassword": {"label": "New password", "ph": "New password"},
-      
-      "passwordConfirmation": {"label": "Confirm your password", "ph": "Confirm your password"},
-      "newPasswordConfirmation": {"label": "Confirm your password", "ph": "Confirm your password"},
+      "email": { "label": "Your email", "ph": "Your email" },
+      "password": { "label": "Your password", "ph": "Your password" },
+      "currentPassword": {
+        "label": "Current password",
+        "ph": "Current password"
+      },
+      "newPassword": { "label": "New password", "ph": "New password" },
 
-      "lastname": {"label": "Your last name", "ph": "Your last name"},
-      "firstname": {"label": "Your first name", "ph": "Your first name"},
-      "age": {"label": "Your age", "ph": "Your age"},
-      "lastDegree": {"label": "Degree", "ph": "Your last degree"},
-      
-      "formations": {"label": "Your education", "ph": ""},
-      "skills": {"label": "Your skills", "ph": ""},
-      "experiences": {"label": "Your work experience", "ph": ""},
-      "expYears": {"label": "Experience level", "ph": ""},
-      "languages": {"label": "Languages you speak", "ph": ""},
-      "desiredSalary": {"label": "Desired approximate salary", "ph": "Salary in $"},
-      "preferredLocations": {"label": "Preferred location", "ph": ""},
-      "linkedinUrl": {"label": "Your Linkedin profile link", "ph": "Your Linkedin profile link"},
-      
-      "gender": {"label": "Gender", "ph": "Your gender"},
-      "address": {"label": "Your address", "ph": "Your address"},
-      "phone": {"label": "Your phone number", "ph": "Your phone number"},
-      "country": {"label": "Your country", "ph": "Your country"},
-      "societyName": {"label": "Your company name", "ph": "Your company name"},
-      
-      "profilPic": {"label": "Profile picture", "ph": "Your company logo"},
-      "resume": {"label": "Your CV", "ph": ""},
-      
-      "workSector": {"label": "Field in which you operate"},
-      "description": {"label": "A description of yourself", "ph": "Describe yourself here"},
-      
-      "jobTitle": {"label": "Job title", "ph": "Job title"},
-      
-      "profession": {"label": "Your profession title", "ph": "Your profession title"},
-      
-      "jobSector": {"label": "Business sector", "ph": "Business sector"},
-      "jobType": {"label": "Contract type", "ph": "Contract type"},
-      "requiredDegree": {"label": "Required degree", "ph": "Required degree"},
-      "requiredExpYear": {"label": "Required years of experience", "ph": "Required years of experience"},
-      "requiredLang": {"label": "Required languages", "ph": "Required languages"},
-      
-      "remoteAccepted": {"label": "Remote work", "ph": "Remote work"},
-      
-      "jobDescription": {"label": "Description", "ph": "Description"},
-      "tasks": {"label": "Tasks to be performed", "ph": "Tasks to be performed"},
-      "advantages": {"label": "Advantages", "ph": "Advantages"},
-      
-      "location": {"label": "Location", "ph": "Location"},
-      "salary": {"label": "Approximate salary", "ph": "Approximate salary"},
-      "applyLimitDate": {"label": "Application deadline", "ph": "Application deadline"},
-      
-      "applicantMessage": {"label": "Message", "ph": "A short message you would like to leave for the recruiter regarding your profile..."},
-      
-      "recruiterMessage": {"label": "Recruiter's message", "ph": "A short message you would like to leave for the candidate..."},
-      "interviewDate": {"label": "Interview date", "ph": "Interview date"},
-      "interviewHour": {"label": "Interview time", "ph": "Interview time"},
-      "interviewType": {"label": "Interview type", "ph": "Interview type"},
-      
-      "searchTalentKeyword": {"label": "", "ph": "Search for a talent by name, first name, email"},
-      "searchJobKeyword": {"label": "", "ph": "Search for a job offer"},
-      
+      "passwordConfirmation": {
+        "label": "Confirm your password",
+        "ph": "Confirm your password"
+      },
+      "newPasswordConfirmation": {
+        "label": "Confirm your password",
+        "ph": "Confirm your password"
+      },
+
+      "lastname": { "label": "Your last name", "ph": "Your last name" },
+      "firstname": { "label": "Your first name", "ph": "Your first name" },
+      "age": { "label": "Your age", "ph": "Your age" },
+      "lastDegree": { "label": "Degree", "ph": "Your last degree" },
+
+      "formations": { "label": "Your education", "ph": "" },
+      "skills": { "label": "Your skills", "ph": "" },
+      "experiences": { "label": "Your work experience", "ph": "" },
+      "expYears": { "label": "Experience level", "ph": "" },
+      "languages": { "label": "Languages you speak", "ph": "" },
+      "desiredSalary": {
+        "label": "Desired approximate salary",
+        "ph": "Salary in $"
+      },
+      "preferredLocations": { "label": "Preferred location", "ph": "" },
+      "linkedinUrl": {
+        "label": "Your Linkedin profile link",
+        "ph": "Your Linkedin profile link"
+      },
+
+      "gender": { "label": "Gender", "ph": "Your gender" },
+      "address": { "label": "Your address", "ph": "Your address" },
+      "phone": { "label": "Your phone number", "ph": "Your phone number" },
+      "country": { "label": "Your country", "ph": "Your country" },
+      "societyName": {
+        "label": "Your company name",
+        "ph": "Your company name"
+      },
+
+      "profilPic": { "label": "Profile picture", "ph": "Your company logo" },
+      "resume": { "label": "Your CV", "ph": "" },
+
+      "workSector": { "label": "Field in which you operate" },
+      "description": {
+        "label": "A description of yourself",
+        "ph": "Describe yourself here"
+      },
+
+      "jobTitle": { "label": "Job title", "ph": "Job title" },
+
+      "profession": {
+        "label": "Your profession title",
+        "ph": "Your profession title"
+      },
+
+      "jobSector": { "label": "Business sector", "ph": "Business sector" },
+      "jobType": { "label": "Contract type", "ph": "Contract type" },
+      "requiredDegree": { "label": "Required degree", "ph": "Required degree" },
+      "requiredExpYear": {
+        "label": "Required years of experience",
+        "ph": "Required years of experience"
+      },
+      "requiredLang": {
+        "label": "Required languages",
+        "ph": "Required languages"
+      },
+
+      "remoteAccepted": { "label": "Remote work", "ph": "Remote work" },
+
+      "jobDescription": { "label": "Description", "ph": "Description" },
+      "tasks": {
+        "label": "Tasks to be performed",
+        "ph": "Tasks to be performed"
+      },
+      "advantages": { "label": "Advantages", "ph": "Advantages" },
+
+      "location": { "label": "Location", "ph": "Location" },
+      "salary": { "label": "Approximate salary", "ph": "Approximate salary" },
+      "applyLimitDate": {
+        "label": "Application deadline",
+        "ph": "Application deadline"
+      },
+
+      "applicantMessage": {
+        "label": "Message",
+        "ph": "A short message you would like to leave for the recruiter regarding your profile..."
+      },
+
+      "recruiterMessage": {
+        "label": "Recruiter's message",
+        "ph": "A short message you would like to leave for the candidate..."
+      },
+      "interviewDate": { "label": "Interview date", "ph": "Interview date" },
+      "interviewHour": { "label": "Interview time", "ph": "Interview time" },
+      "interviewType": { "label": "Interview type", "ph": "Interview type" },
+
+      "searchTalentKeyword": {
+        "label": "",
+        "ph": "Search for a talent by name, first name, email"
+      },
+      "searchJobKeyword": { "label": "", "ph": "Search for a job offer" },
+
       "selectLabels": {
         "choose": "Choose...",
         "country": "Country",
@@ -291,45 +347,44 @@
         "female": "Female"
       },
       "remoteAcceptedOptions": {
-        "yes": "Oui",
-        "no": "Non"
+        "yes": "Yes",
+        "no": "No"
       },
       "roleOptions": {
-        "society": "Une Entreprise",
-        "talent": "Un talent"
+        "society": "A Company",
+        "talent": "A Talent"
       },
-
       "workSectorOptions": {
         "automobile": "Automobile",
-        "recruitment": "Recrutement et placement",
-        "consultancy": "Conseil / Études",
-        "digital": "Numérique",
-        "industry": "Industrie",
-        "agriculture": "Agriculture / Pêche / Espaces verts",
-        "hospitality": "Hôtellerie / Restauration",
-        "informationTechnology": "Informatique / Réseaux",
-        "foodIndustry": "Agroalimentaire",
+        "recruitment": "Recruitment and Placement",
+        "consultancy": "Consulting / Studies",
+        "digital": "Digital",
+        "industry": "Industry",
+        "agriculture": "Agriculture / Fishing / Green Spaces",
+        "hospitality": "Hospitality / Catering",
+        "informationTechnology": "Information Technology / Networks",
+        "foodIndustry": "Food Industry",
         "construction": "Construction",
-        "finance": "Finance / Assurance",
-        "education": "Éducation / Formation",
-        "energy": "Énergie",
-        "publicServices": "Services publics",
-        "chemistry": "Chimie / Parachimie",
-        "health": "Santé",
+        "finance": "Finance / Insurance",
+        "education": "Education / Training",
+        "energy": "Energy",
+        "publicServices": "Public Services",
+        "chemistry": "Chemistry / Petrochemistry",
+        "health": "Health",
         "startups": "Startups",
         "services": "Services",
-        "telecommunications": "Télécommunications",
-        "woodPaperPrinting": "Bois / Papier / Imprimerie",
-        "retail": "Commerce",
-        "automotive": "Automobile",
-        "engineering": "Ingénierie",
-        "textile": "Textile / Habillement",
-        "transportation": "Transport / Logistique",
-        "environment": "Environnement",
-        "media": "Médias",
-        "law": "Droit",
+        "telecommunications": "Telecommunications",
+        "woodPaperPrinting": "Wood / Paper / Printing",
+        "retail": "Retail",
+        "automotive": "Automotive",
+        "engineering": "Engineering",
+        "textile": "Textile / Clothing",
+        "transportation": "Transport / Logistics",
+        "environment": "Environment",
+        "media": "Media",
+        "law": "Law",
         "artsCulture": "Arts / Culture",
-        "telecom": "Télécommunications"
+        "telecom": "Telecommunications"
       },
       "requiredDegreeOptions": {
         "High School Diploma": "High School Diploma",
@@ -559,5 +614,5 @@
         "Zimbabwe": "Zimbabwe"
       }
     }
-  }  
+  }
 }

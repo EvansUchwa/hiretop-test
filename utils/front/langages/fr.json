@@ -1,567 +1,642 @@
 {
-    "account": {
-      "title": "Gestion de votre compte",
-      "previewProfileText": "Vous pouvez visualiser le rendu de votre profil tel que les autres utilisateurs le voient",
-      "tabs": {
-        "labels": {
-          "myProfile": "Aperçu de mon compte",
-          "updateYourInformations": "Modifier vos informations",
-          "updateYourFiles": "Modifier vos fichiers",
-          "updateYourPassword": "Modifier votre mot de passe"
-        }
+  "account": {
+    "title": "Gestion de votre compte",
+    "previewProfileText": "Vous pouvez visualiser le rendu de votre profil tel que les autres utilisateurs le voient",
+    "tabs": {
+      "labels": {
+        "myProfile": "Aperçu de mon compte",
+        "updateYourInformations": "Modifier vos informations",
+        "updateYourFiles": "Modifier vos fichiers",
+        "updateYourPassword": "Modifier votre mot de passe"
+      }
+    }
+  },
+  "home": {
+    "weAreStartText": "Nous sommes",
+    "weAreEndText": "Votre passerelle vers des opportunités professionnelles exceptionnelles. Ici, nous croyons en la puissance de la rencontre entre les talents et les opportunités, façonnant ainsi le futur de carrières réussies.",
+    "stats": {
+      "perCategory": {
+        "title": "Job par categorie"
+      },
+      "perEntity": {
+        "jobCount": "Offres disponibles",
+        "societyCount": "Entreprises partenaires",
+        "talentCount": "Profils de talent",
+        "jobApplyCount": "Candidatures sur les offres"
+      }
+    }
+  },
+  "appAdvantages": {
+    "forSociety": [
+      "Développez votre équipe avec les meilleurs talents du secteur ! Notre réseau vous connecte avec des professionnels hautement qualifiés et motivés, prêts à contribuer au succès de votre entreprise.",
+      "Trouvez les talents tech dont vous avez besoin pour réussir ! Notre plateforme vous offre un accès privilégié à une large pool de candidats qualifiés, prêts à relever les défis de votre entreprise."
+    ],
+    "forTalent": [
+      "Explorez un monde d'opportunités ! Notre plateforme vous permet de découvrir les dernières offres d'emploi dans le domaine de la technologie, adaptées à vos compétences et aspirations professionnelles.",
+      "Gagnez du temps dans votre recherche d'emploi ! Notre interface conviviale et nos fonctionnalités intuitives vous permettent de postuler en quelques clics seulement, sans tracas ni perte de temps."
+    ]
+  },
+  "finaliseAccount": {
+    "title": "Finaliser votre inscription",
+    "subTitle": "...",
+    "youAre": "Vous êtes ?"
+  },
+  "auth": {
+    "registerTitle": "Inscription",
+    "loginTitle": "Connexion",
+    "resetPasswordStep1": "Mot de passe oublie(Etape 1)",
+    "resetPasswordStep2": "Mot de passe oublie(Etape 2)",
+
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "passwordForgot": "Mot de passe oublie",
+    "dontHaveAccount": "Vous n'avez pas de compte ? Créez-en un",
+    "loginBannerText": "Connectez-vous à votre compte pour explorer des opportunités professionnelles passionnantes.",
+    "signupBannerText": "Si vous n'avez pas encore de compte, rejoignez-nous et découvrez un monde de possibilités."
+  },
+  "dashboardHome": {
+    "welcome": {
+      "title": "Bienvenue",
+      "talent": {
+        "callToAction": "Découvrez dès maintenant les nouveaux talents inscrits sur notre plateforme. Trouvez votre prochain collaborateur parmi une communauté de professionnels qualifiés dans le domaine de la technologie."
+      },
+      "society": {
+        "callToAction": "Découvrez les dernières opportunités de carrière passionnantes dans le domaine de la technologie. Parcourez les offres d'emploi et postulez dès aujourd'hui pour un nouveau défi professionnel."
       }
     },
-    "home":{
-      "weAreStartText":"Nous sommes",
-      "weAreEndText": "Votre passerelle vers des opportunités professionnelles exceptionnelles. Ici, nous croyons en la puissance de la rencontre entre les talents et les opportunités, façonnant ainsi le futur de carrières réussies."
+    "statsLabels": {
+      "jobCount": "Offres publiées",
+      "applyCount": "Total Candidatures",
+      "applyAcceptedCount": "Candidatures acceptées",
+      "applyRejectedCount": "Candidatures rejetées",
+      "applyOnPendingCount": "Candidatures en attente"
     },
-    "appAdvantages": {
-      "forSociety": [
-        "Développez votre équipe avec les meilleurs talents du secteur ! Notre réseau vous connecte avec des professionnels hautement qualifiés et motivés, prêts à contribuer au succès de votre entreprise.",
-        "Trouvez les talents tech dont vous avez besoin pour réussir ! Notre plateforme vous offre un accès privilégié à une large pool de candidats qualifiés, prêts à relever les défis de votre entreprise."
-      ],
-      "forTalent": [
-        "Explorez un monde d'opportunités ! Notre plateforme vous permet de découvrir les dernières offres d'emploi dans le domaine de la technologie, adaptées à vos compétences et aspirations professionnelles.",
-        "Gagnez du temps dans votre recherche d'emploi ! Notre interface conviviale et nos fonctionnalités intuitives vous permettent de postuler en quelques clics seulement, sans tracas ni perte de temps."
-      ]
-    },
-    "finaliseAccount": {
-      "title": "Finaliser votre inscription",
-      "subTitle": "...",
-      "youAre": "Vous êtes ?"
-    },
-    "auth": {
-      "registerTitle": "Inscription",
-      "loginTitle": "Connexion",
-      "resetPasswordStep1": "Mot de passe oublie(Etape 1)",
-      "resetPasswordStep2": "Mot de passe oublie(Etape 2)",
+    "lastJobsTitle": "Vos dix dernières offres publiées",
+    "lastApplysTitle": "Vos dix dernières candidatures"
+  },
+  "job": {
+    "addJobTitle": "Créer une nouvelle offre",
+    "jobsPostedBySocietyProfileTitle": "Les offres postées par ce profil",
+    "otherInformationsTitle": "Autres Informations"
+  },
+  "apply": {
+    "allApplysTitle": "Liste des candidatures"
+  },
+  "cards": {
+    "job": {},
+    "talent": {},
+    "apply": {
+      "jobTitleBold": "Pour l'offre",
+      "societyNameBold": "De l'entreprise",
+      "statusBold": "Statut",
+      "interviewTypeBold": "Type d'entretien",
+      "interviewDateBold": "Date de l'entretien",
+      "interviewHourBold": "Heure de l'entretien",
+      "viewRecrutorMessage": "Message du recruteur",
+      "viewApplyerMessage": "Message du candidat",
+      "viewYourMessage": "Votre message"
+    }
+  },
+  "buttons": {
+    "register": "S'inscrire",
+    "login": "Se connecter",
+    "logout": "Se déconnecter",
+    "searchAndFilter": "Recherche et Filtre",
 
-      "alreadyHaveAccount": "Vous avez déjà un compte ?",
-      "passwordForgot": "Mot de passe oublie",
-      "dontHaveAccount": "Vous n'avez pas de compte ? Créez-en un",
-      "loginBannerText": "Connectez-vous à votre compte pour explorer des opportunités professionnelles passionnantes.",
-      "signupBannerText": "Si vous n'avez pas encore de compte, rejoignez-nous et découvrez un monde de possibilités."
+    "backToHome": "Revenir a l'accueil",
+    "addJob": "Ajouter une offre",
+
+    "previousStep": "Precedent",
+    "nextStep": "Suivant",
+
+    "saveAndContinue": "Enregistrer et Continuer",
+    "publish": "Publier",
+    "save": "Enregistrer",
+    "sendApply": "Envoyer ma candidature",
+    "youAlreadySendApply": "Vous avez déjà postulé à cette offre",
+    "confirm": "Je confirme",
+    "cancel": "Annuler",
+    "viewJob": "Voir l'offre",
+    "viewTalentProfile": "Profil du talent",
+    "clickHere": "Cliquez ici",
+    "seeMore": "Voir plus",
+    "updateJob": "Modifier l'offre",
+    "seeApplies": "Voir les candidatures",
+    "previewProfile": "Visualiser votre profil",
+    "exploreTalents": "Explorez les profils dès maintenant ! 🚀",
+    "exploreJobs": "Explorez les opportunités dès maintenant ! 🚀",
+    "browseTalents": "Explorez les profils",
+    "browseJobs": "Explorez les opportunités",
+    "multipleTextBtns": {
+      "preferredLocations": "Ajouter nouvelle préférence",
+      "skills": "Ajouter nouvelle compétence",
+      "formations": "Ajouter nouvelle formation",
+      "experiences": "Ajouter nouvelle expérience",
+      "advantages": "Ajouter nouvel avantage",
+      "tasks": "Ajouter nouvelle tâche"
     },
-    "dashboardHome": {
-      "welcome": {
-        "title": "Bienvenue",
-        "talent": {
-          "callToAction": "Découvrez dès maintenant les nouveaux talents inscrits sur notre plateforme. Trouvez votre prochain collaborateur parmi une communauté de professionnels qualifiés dans le domaine de la technologie."
-        },
-        "society": {
-          "callToAction": "Découvrez les dernières opportunités de carrière passionnantes dans le domaine de la technologie. Parcourez les offres d'emploi et postulez dès aujourd'hui pour un nouveau défi professionnel."
-        }
-      },
-      "statsLabels": {
-        "jobCount": "Offres publiées",
-        "applyCount": "Total Candidatures",
-        "applyAcceptedCount": "Candidatures acceptées",
-        "applyRejectedCount": "Candidatures rejetées",
-        "applyOnPendingCount": "Candidatures en attente"
-      },
-      "lastJobsTitle": "Vos dix dernières offres publiées",
-      "lastApplysTitle": "Vos dix dernières candidatures"
+    "acceptApply": "Valider cette candidature",
+    "rejectApply": "Rejeter cette candidature"
+  },
+  "others": {
+    "orLabel": "Ou"
+  },
+  "infos": {
+    "reallyWantToLogout": "Voulez vous vraiment vous deconnecté?",
+    "newApplyResumeInfosTitle": "Par rapport à votre candidature",
+    "newApplyResumeInfos": "Nous vous informons que votre CV actuellement enregistré dans votre compte sera consulté par le recruteur lors de l'examen de votre candidature pour ce poste. Si vous souhaitez apporter des modifications à votre CV ou le mettre à jour avant de soumettre votre candidature, nous vous encourageons à le faire dès maintenant."
+  },
+  "alerts": {
+    "data": {
+      "updated": "Informations bien mises à jour !"
+    },
+    "account": {
+      "createdButNeedEmailValidation": "Compte créé, mais vérifiez vos mails pour valider votre adresse",
+
+      "readYourEmailForPassReset": "Un email vous a été envoyé pour la réinitialisation du mot de passe",
+
+      "updated": "Informations du compte mises à jour !"
+    },
+    "email": {
+      "verified": "Email vérifié",
+      "notVerified": "Email non vérifié",
+      "notFound": "Email non répertorié",
+      "alreadyExist": "Email déjà utilisé"
+    },
+    "password": {
+      "mismatch": "",
+      "incorrect": "Mot de passe incorrect",
+      "updated": "Mot de passe mis a jour"
+    },
+    "operation": {
+      "invalid": "Une erreur est survenue"
     },
     "job": {
-      "addJobTitle": "Créer une nouvelle offre",
-      "jobsPostedBySocietyProfileTitle": "Les offres postées par ce profil",
-      "otherInformationsTitle": "Autres Informations"
+      "created": "Offre postée avec succès",
+      "updated": "Offre mise à jour avec succès",
+      "deleted": "Offre supprimée avec succès"
     },
     "apply": {
-      "allApplysTitle": "Liste des candidatures"
-    },
-    "cards": {
-      "job": {},
-      "talent": {},
-      "apply": {
-        "jobTitleBold": "Pour l'offre",
-        "societyNameBold": "De l'entreprise",
-        "statusBold": "Statut",
-        "interviewTypeBold": "Type d'entretien",
-        "interviewDateBold": "Date de l'entretien",
-        "interviewHourBold": "Heure de l'entretien",
-        "viewRecrutorMessage": "Message du recruteur",
-        "viewApplyerMessage": "Message du candidat",
-        "viewYourMessage": "Votre message"
+      "created": "Candidature envoyée",
+      "accepted": "Candidature validée",
+      "rejected": "Candidature rejetée"
+    }
+  },
+  "navLinks": {
+    "home": "Accueil",
+    "dashboard": "Tableau de bord",
+    "addJob": "Ajouter une offre",
+    "yourCreatedJobs": "Vos offres publiées",
+    "allJobList": "Toutes les offres",
+    "societyList": "Liste des entreprises",
+    "searchJob": "Chercher une offre",
+    "account": "Mon compte",
+    "talentList": "Liste des talents",
+    "yourApplies": "Vos candidatures",
+    "yourCreatedJobsWithApplies": "Candidatures sur vos offres"
+  },
+  "noDataFound": {
+    "noJobFound": "Aucun job correspondant",
+    "noApplyFound": "Aucune candidature trouvée",
+    "noProfileFound": "Aucun profil correspondant"
+  },
+  "form": {
+    "choose": "Choisir",
+    "chooseFile": "Choisir fichier",
+
+    "fields": {
+      "email": { "label": "Votre email", "ph": "Votre email" },
+      "password": { "label": "Votre mot de passe", "ph": "Votre mot de passe" },
+      "currentPassword": {
+        "label": "Mot de passe actuel",
+        "ph": "Mot de passe actuel"
+      },
+      "newPassword": {
+        "label": "Nouveau mot de passe",
+        "ph": "Nouveau mot de passe"
+      },
+
+      "passwordConfirmation": {
+        "label": "Confirmer votre mot de passe",
+        "ph": "Confirmer votre mot de passe"
+      },
+      "newPasswordConfirmation": {
+        "label": "Confirmer votre mot de passe",
+        "ph": "Confirmer votre mot de passe"
+      },
+
+      "lastname": { "label": "Votre nom", "ph": "Votre nom" },
+      "firstname": { "label": "Votre prénom", "ph": "Votre prénom" },
+      "age": { "label": "Votre âge", "ph": "Votre âge" },
+      "lastDegree": { "label": "Diplôme", "ph": "Votre dernier diplôme" },
+
+      "formations": { "label": "Vos formations", "ph": "" },
+      "skills": { "label": "Vos compétences", "ph": "" },
+      "experiences": { "label": "Vos expériences pro", "ph": "" },
+      "expYears": { "label": "Niveau d'expérience", "ph": "" },
+      "langages": { "label": "Langues parlez", "ph": "" },
+      "desiredSalary": {
+        "label": "Salaire approximatif souhaité",
+        "ph": "Salaire en $"
+      },
+      "preferredLocations": { "label": "Localisation préférée", "ph": "" },
+      "linkedinUrl": {
+        "label": "Lien de votre profil Linkedin",
+        "ph": "Lien de votre profil Linkedin"
+      },
+
+      "gender": { "label": "Sexe", "ph": "Votre sexe" },
+      "address": { "label": "Votre adresse", "ph": "Votre adresse" },
+      "phone": {
+        "label": "Votre numéro de téléphone",
+        "ph": "Votre numéro de téléphone"
+      },
+      "country": { "label": "Votre pays", "ph": "Votre pays" },
+      "societyName": {
+        "label": "Le nom de votre entreprise",
+        "ph": "Le nom de votre entreprise"
+      },
+
+      "profilPic": {
+        "label": "Photo de profil",
+        "ph": "Logo de votre entreprise"
+      },
+      "resume": { "label": "Votre CV", "ph": "" },
+
+      "workSector": { "label": "Domaine dans lequel vous intervenez" },
+      "description": {
+        "label": "Une description de vous",
+        "ph": "Décrivez-vous ici"
+      },
+
+      "jobTitle": { "label": "Titre du poste", "ph": "Titre du poste" },
+
+      "profession": {
+        "label": "Titre de votre profession",
+        "ph": "Titre de votre profession"
+      },
+
+      "jobSector": {
+        "label": "Secteur d'activité",
+        "ph": "Secteur d'activité"
+      },
+      "jobType": { "label": "Type de contrat", "ph": "Type de contrat" },
+      "requiredDegree": { "label": "Diplôme requis", "ph": "Diplôme requis" },
+      "requiredExpYear": {
+        "label": "Année d'expérience requis",
+        "ph": "Année d'expérience requis"
+      },
+      "requiredLang": { "label": "Langues requises", "ph": "Langues requises" },
+
+      "remoteAccepted": {
+        "label": "Travail en remote",
+        "ph": "Travail en remote"
+      },
+
+      "jobDescription": { "label": "Description", "ph": "Description" },
+      "tasks": { "label": "Tâche à effectuer", "ph": "Tâche à effectuer" },
+      "advantages": { "label": "Avantages", "ph": "Avantages" },
+
+      "location": { "label": "Localisation", "ph": "Localisation" },
+      "salary": {
+        "label": "Salaire approximatif",
+        "ph": "Salaire approximatif"
+      },
+      "applyLimitDate": {
+        "label": "Date limite de candidature",
+        "ph": "Date limite de candidature"
+      },
+
+      "applicantMessage": {
+        "label": "Message",
+        "ph": "Un petit message que vous voudriez laisser au recruteur par rapport à votre profil..."
+      },
+
+      "recruiterMessage": {
+        "label": "Message du recruteur",
+        "ph": "Un petit message que vous voudriez laisser au candidat..."
+      },
+      "interviewDate": {
+        "label": "Date de l'entretien",
+        "ph": "Date de l'entretien"
+      },
+      "interviewHour": {
+        "label": "Heure de l'entretien",
+        "ph": "Heure de l'entretien"
+      },
+      "interviewType": {
+        "label": "Type d'entretien",
+        "ph": "Type d'entretien"
+      },
+
+      "searchTalentKeyword": {
+        "label": "",
+        "ph": "Chercher un talent avec son nom, prénom, email"
+      },
+      "searchJobKeyword": { "label": "", "ph": "Chercher une offre" },
+
+      "selectLabels": {
+        "choose": "Choisir...",
+        "country": "Pays",
+        "requiredDegree": "Niveau d'étude requis",
+        "requiredExpYear": "Niveau d'expérience",
+        "jobType": "Type de contrat",
+        "jobSector": "Catégorie",
+        "lastDegree": "Diplôme",
+        "expYears": "Niveau d'expérience",
+        "interviewType": "Type d'interview"
+      },
+      "statusOptions": {
+        "pending": "En cours de traitement",
+        "accepted": "Accepté",
+        "rejected": "Rejeté"
+      },
+      "interviewTypeOptions": {
+        "In-Person Interview": "Entretien en personne",
+        "Remote Interview": "Entretien à distance",
+        "In-Person Technical Interview": "Entretien technique en personne",
+        "Remote Technical Interview": "Entretien technique à distance",
+        "Phone Interview": "Entretien téléphonique"
+      },
+      "sorterOptions": {
+        "aToz": "A à Z",
+        "zToa": "Z à A",
+        "latestToOldest": "Plus récent au moins récent",
+        "oldestToLatest": "Moins récent au plus récent",
+        "viewsHighToLow": "Plus visible au moins visible",
+        "viewsLowToHigh": "Moins visible au plus visible"
+      },
+      "genderOptions": {
+        "male": "Homme",
+        "female": "Femme"
+      },
+      "remoteAcceptedOptions": {
+        "yes": "Oui",
+        "no": "Non"
+      },
+      "roleOptions": {
+        "society": "Une Entreprise",
+        "talent": "Un talent"
+      },
+
+      "workSectorOptions": {
+        "automobile": "Automobile",
+        "recruitment": "Recrutement et Placement",
+        "consultancy": "Conseil / Études",
+        "digital": "Numérique",
+        "industry": "Industrie",
+        "agriculture": "Agriculture / Pêche / Espaces Verts",
+        "hospitality": "Hôtellerie / Restauration",
+        "informationTechnology": "Informatique / Réseaux",
+        "foodIndustry": "Agroalimentaire",
+        "construction": "Construction",
+        "finance": "Finance / Assurance",
+        "education": "Éducation / Formation",
+        "energy": "Énergie",
+        "publicServices": "Services Publics",
+        "chemistry": "Chimie / Parachimie",
+        "health": "Santé",
+        "startups": "Startups",
+        "services": "Services",
+        "telecommunications": "Télécommunications",
+        "woodPaperPrinting": "Bois / Papier / Imprimerie",
+        "retail": "Commerce",
+        "automotive": "Automobile",
+        "engineering": "Ingénierie",
+        "textile": "Textile / Habillement",
+        "transportation": "Transport / Logistique",
+        "environment": "Environnement",
+        "media": "Médias",
+        "law": "Droit",
+        "artsCulture": "Arts / Culture",
+        "telecom": "Télécommunications"
+      },
+      "requiredDegreeOptions": {
+        "High School Diploma": "Diplôme d'Études Secondaires",
+        "Associate Degree": "Diplôme d'Études Collégiales",
+        "Bachelor's Degree": "Baccalauréat",
+        "Master's Degree": "Master",
+        "Doctorate (Ph.D.)": "Doctorat",
+        "GED (General Educational Development)": "Diplôme d'Études Générales",
+        "Vocational Certificate": "Certificat Professionnel",
+        "Professional Certification": "Certification Professionnelle"
+      },
+      "requiredExpYearOptions": {
+        "Entry Level (0-2 years)": "Débutant (0-2 ans)",
+        "Early Career (3-5 years)": "Début de carrière (3-5 ans)",
+        "Mid Career (6-10 years)": "Milieu de carrière (6-10 ans)",
+        "Experienced (11-15 years)": "Expérimenté (11-15 ans)",
+        "Senior Level (16+ years)": "Niveau Senior (16 ans et plus)"
+      },
+      "requiredLangOptions": {
+        "french": "Français",
+        "english": "Anglais"
+      },
+      "jobTypeOptions": {
+        "Full-time": "Temps plein",
+        "Part-time": "Temps partiel",
+        "Contract": "Contrat",
+        "Temporary": "Temporaire",
+        "Internship": "Stage",
+        "Freelance": "Freelance",
+        "Remote": "À distance"
+      },
+      "countryOptions": {
+        "Afghanistan": "Afghanistan",
+        "Albania": "Albanie",
+        "Algeria": "Algérie",
+        "Andorra": "Andorre",
+        "Angola": "Angola",
+        "Antigua and Barbuda": "Antigua-et-Barbuda",
+        "Argentina": "Argentine",
+        "Armenia": "Arménie",
+        "Australia": "Australie",
+        "Austria": "Autriche",
+        "Azerbaijan": "Azerbaïdjan",
+        "Bahamas": "Bahamas",
+        "Bahrain": "Bahreïn",
+        "Bangladesh": "Bangladesh",
+        "Barbados": "Barbade",
+        "Belarus": "Biélorussie",
+        "Belgium": "Belgique",
+        "Belize": "Belize",
+        "Benin": "Bénin",
+        "Bhutan": "Bhoutan",
+        "Bolivia": "Bolivie",
+        "Bosnia and Herzegovina": "Bosnie-Herzégovine",
+        "Botswana": "Botswana",
+        "Brazil": "Brésil",
+        "Brunei": "Brunei",
+        "Bulgaria": "Bulgarie",
+        "Burkina Faso": "Burkina Faso",
+        "Burundi": "Burundi",
+        "Cabo Verde": "Cap-Vert",
+        "Cambodia": "Cambodge",
+        "Cameroon": "Cameroun",
+        "Canada": "Canada",
+        "Central African Republic": "République centrafricaine",
+        "Chad": "Tchad",
+        "Chile": "Chili",
+        "China": "Chine",
+        "Colombia": "Colombie",
+        "Comoros": "Comores",
+        "Congo": "Congo",
+        "Costa Rica": "Costa Rica",
+        "Cote d'Ivoire": "Côte d'Ivoire",
+        "Croatia": "Croatie",
+        "Cuba": "Cuba",
+        "Cyprus": "Chypre",
+        "Czechia": "Tchéquie",
+        "Denmark": "Danemark",
+        "Djibouti": "Djibouti",
+        "Dominica": "Dominique",
+        "Dominican Republic": "République dominicaine",
+        "Ecuador": "Équateur",
+        "Egypt": "Égypte",
+        "El Salvador": "Salvador",
+        "Equatorial Guinea": "Guinée équatoriale",
+        "Eritrea": "Érythrée",
+        "Estonia": "Estonie",
+        "Eswatini": "Eswatini",
+        "Ethiopia": "Éthiopie",
+        "Fiji": "Fidji",
+        "Finland": "Finlande",
+        "France": "France",
+        "Gabon": "Gabon",
+        "Gambia": "Gambie",
+        "Georgia": "Géorgie",
+        "Germany": "Allemagne",
+        "Ghana": "Ghana",
+        "Greece": "Grèce",
+        "Grenada": "Grenade",
+        "Guatemala": "Guatemala",
+        "Guinea": "Guinée",
+        "Guinea-Bissau": "Guinée-Bissau",
+        "Guyana": "Guyana",
+        "Haiti": "Haïti",
+        "Honduras": "Honduras",
+        "Hungary": "Hongrie",
+        "Iceland": "Islande",
+        "India": "Inde",
+        "Indonesia": "Indonésie",
+        "Iran": "Iran",
+        "Iraq": "Irak",
+        "Ireland": "Irlande",
+        "Israel": "Israël",
+        "Italy": "Italie",
+        "Jamaica": "Jamaïque",
+        "Japan": "Japon",
+        "Jordan": "Jordanie",
+        "Kazakhstan": "Kazakhstan",
+        "Kenya": "Kenya",
+        "Kiribati": "Kiribati",
+        "Korea, North": "Corée du Nord",
+        "Korea, South": "Corée du Sud",
+        "Kosovo": "Kosovo",
+        "Kuwait": "Koweït",
+        "Kyrgyzstan": "Kirghizistan",
+        "Laos": "Laos",
+        "Latvia": "Lettonie",
+        "Lebanon": "Liban",
+        "Lesotho": "Lesotho",
+        "Liberia": "Libéria",
+        "Libya": "Libye",
+        "Liechtenstein": "Liechtenstein",
+        "Lithuania": "Lituanie",
+        "Luxembourg": "Luxembourg",
+        "Madagascar": "Madagascar",
+        "Malawi": "Malawi",
+        "Malaysia": "Malaisie",
+        "Maldives": "Maldives",
+        "Mali": "Mali",
+        "Malta": "Malte",
+        "Marshall Islands": "Îles Marshall",
+        "Mauritania": "Mauritanie",
+        "Mauritius": "Maurice",
+        "Mexico": "Mexique",
+        "Micronesia": "Micronésie",
+        "Moldova": "Moldavie",
+        "Monaco": "Monaco",
+        "Mongolia": "Mongolie",
+        "Montenegro": "Monténégro",
+        "Morocco": "Maroc",
+        "Mozambique": "Mozambique",
+        "Myanmar": "Myanmar",
+        "Namibia": "Namibie",
+        "Nauru": "Nauru",
+        "Nepal": "Népal",
+        "Netherlands": "Pays-Bas",
+        "New Zealand": "Nouvelle-Zélande",
+        "Nicaragua": "Nicaragua",
+        "Niger": "Niger",
+        "Nigeria": "Nigeria",
+        "North Macedonia": "Macédoine du Nord",
+        "Norway": "Norvège",
+        "Oman": "Oman",
+        "Pakistan": "Pakistan",
+        "Palau": "Palaos",
+        "Panama": "Panama",
+        "Papua New Guinea": "Papouasie-Nouvelle-Guinée",
+        "Paraguay": "Paraguay",
+        "Peru": "Pérou",
+        "Philippines": "Philippines",
+        "Poland": "Pologne",
+        "Portugal": "Portugal",
+        "Qatar": "Qatar",
+        "Romania": "Roumanie",
+        "Russia": "Russie",
+        "Rwanda": "Rwanda",
+        "Saint Kitts and Nevis": "Saint-Kitts-et-Nevis",
+        "Saint Lucia": "Sainte-Lucie",
+        "Saint Vincent and the Grenadines": "Saint-Vincent-et-les-Grenadines",
+        "Samoa": "Samoa",
+        "San Marino": "Saint-Marin",
+        "Sao Tome and Principe": "Sao Tomé-et-Principe",
+        "Saudi Arabia": "Arabie saoudite",
+        "Senegal": "Sénégal",
+        "Serbia": "Serbie",
+        "Seychelles": "Seychelles",
+        "Sierra Leone": "Sierra Leone",
+        "Singapore": "Singapour",
+        "Slovakia": "Slovaquie",
+        "Slovenia": "Slovénie",
+        "Solomon Islands": "Îles Salomon",
+        "Somalia": "Somalie",
+        "South Africa": "Afrique du Sud",
+        "South Sudan": "Soudan du Sud",
+        "Spain": "Espagne",
+        "Sri Lanka": "Sri Lanka",
+        "Sudan": "Soudan",
+        "Suriname": "Suriname",
+        "Sweden": "Suède",
+        "Switzerland": "Suisse",
+        "Syria": "Syrie",
+        "Taiwan": "Taïwan",
+        "Tajikistan": "Tadjikistan",
+        "Tanzania": "Tanzanie",
+        "Thailand": "Thaïlande",
+        "Timor-Leste": "Timor oriental",
+        "Togo": "Togo",
+        "Tonga": "Tonga",
+        "Trinidad and Tobago": "Trinité-et-Tobago",
+        "Tunisia": "Tunisie",
+        "Turkey": "Turquie",
+        "Turkmenistan": "Turkménistan",
+        "Tuvalu": "Tuvalu",
+        "Uganda": "Ouganda",
+        "Ukraine": "Ukraine",
+        "United Arab Emirates": "Émirats arabes unis",
+        "United Kingdom": "Royaume-Uni",
+        "United States": "États-Unis",
+        "Uruguay": "Uruguay",
+        "Uzbekistan": "Ouzbékistan",
+        "Vanuatu": "Vanuatu",
+        "Vatican City": "Cité du Vatican",
+        "Venezuela": "Venezuela",
+        "Vietnam": "Vietnam",
+        "Yemen": "Yémen",
+        "Zambia": "Zambie",
+        "Zimbabwe": "Zimbabwe"
       }
-    },
-    "buttons": {
-      "register": "S'inscrire",
-      "login": "Se connecter",
-      "logout": "Se déconnecter",
-      "searchAndFilter": "Recherche et Filtre",
-
-      "backToHome": "Revenir a l'accueil",
-      "addJob": "Ajouter une offre",
-
-      "previousStep": "Precedent",
-      "nextStep": "Suivant",
-
-
-      "saveAndContinue": "Enregistrer et Continuer",
-      "publish": "Publier",
-      "save": "Enregistrer",
-      "sendApply": "Envoyer ma candidature",
-      "youAlreadySendApply": "Vous avez déjà postulé à cette offre",
-      "confirm": "Je confirme",
-      "cancel": "Annuler",
-      "viewJob": "Voir l'offre",
-      "viewTalentProfile": "Profil du talent",
-      "clickHere": "Cliquez ici",
-      "seeMore": "Voir plus",
-      "updateJob": "Modifier l'offre",
-      "seeApplies": "Voir les candidatures",
-      "previewProfile": "Visualiser votre profil",
-      "exploreTalents": "Explorez les profils dès maintenant ! 🚀",
-      "exploreJobs": "Explorez les opportunités dès maintenant ! 🚀",
-      "browseTalents": "Explorez les profils",
-      "browseJobs": "Explorez les opportunités",
-      "multipleTextBtns": {
-        "preferredLocations": "Ajouter nouvelle préférence",
-        "skills": "Ajouter nouvelle compétence",
-        "formations": "Ajouter nouvelle formation",
-        "experiences": "Ajouter nouvelle expérience",
-        "advantages": "Ajouter nouvel avantage",
-        "tasks": "Ajouter nouvelle tâche"
-      },
-      "acceptApply": "Valider cette candidature",
-      "rejectApply": "Rejeter cette candidature"
-    },
-    "others": {
-      "orLabel": "Ou"
-    },
-    "infos": {
-      "reallyWantToLogout": "Voulez vous vraiment vous deconnecté?",
-      "newApplyResumeInfosTitle": "Par rapport à votre candidature",
-      "newApplyResumeInfos": "Nous vous informons que votre CV actuellement enregistré dans votre compte sera consulté par le recruteur lors de l'examen de votre candidature pour ce poste. Si vous souhaitez apporter des modifications à votre CV ou le mettre à jour avant de soumettre votre candidature, nous vous encourageons à le faire dès maintenant."
-    },
-    "alerts": {
-      "data": {
-        "updated": "Informations bien mises à jour !"
-      },
-      "account": {
-        "createdButNeedEmailValidation": "Compte créé, mais vérifiez vos mails pour valider votre adresse",
-
-        "readYourEmailForPassReset": "Un email vous a été envoyé pour la réinitialisation du mot de passe",
-
-        "updated": "Informations du compte mises à jour !"
-      },
-      "email": {
-        "verified": "Email vérifié",
-        "notVerified": "Email non vérifié",
-        "notFound": "Email non répertorié",
-        "alreadyExist": "Email déjà utilisé"
-      },
-      "password": {
-        "mismatch": "",
-        "incorrect": "Mot de passe incorrect",
-        "updated": "Mot de passe mis a jour"
-      },
-      "operation": {
-        "invalid": "Une erreur est survenue"
-      },
-      "job": {
-        "created": "Offre postée avec succès",
-        "updated": "Offre mise à jour avec succès",
-        "deleted": "Offre supprimée avec succès"
-      },
-      "apply": {
-        "created": "Candidature envoyée",
-        "accepted": "Candidature validée",
-        "rejected": "Candidature rejetée"
-      }
-    },
-    "navLinks": {
-      "home": "Accueil",
-      "dashboard": "Tableau de bord",
-      "addJob": "Ajouter une offre",
-      "yourCreatedJobs": "Vos offres publiées",
-      "allJobList": "Toutes les offres",
-      "societyList": "Liste des entreprises",
-      "searchJob": "Chercher une offre",
-      "account": "Mon compte",
-      "talentList": "Liste des talents",
-      "yourApplies": "Vos candidatures",
-      "yourCreatedJobsWithApplies": "Candidatures sur vos offres"
-    },
-    "noDataFound": {
-      "noJobFound": "Aucun job correspondant",
-      "noApplyFound": "Aucune candidature trouvée",
-      "noProfileFound": "Aucun profil correspondant"
-    },
-    "form": {
-      "choose": "Choisir",
-      "chooseFile": "Choisir fichier",
-
-      "fields": {
-        "email": {"label": "Votre email", "ph": "Votre email"},
-        "password": {"label": "Votre mot de passe", "ph": "Votre mot de passe"},
-        "currentPassword": {"label": "Mot de passe actuel", "ph": "Mot de passe actuel"},
-        "newPassword": {"label": "Nouveau mot de passe", "ph": "Nouveau mot de passe"},
-    
-        "passwordConfirmation": {"label": "Confirmer votre mot de passe", "ph": "Confirmer votre mot de passe"},
-        "newPasswordConfirmation": {"label": "Confirmer votre mot de passe", "ph": "Confirmer votre mot de passe"},
-        
-        "lastname": {"label": "Votre nom", "ph": "Votre nom"},
-        "firstname": {"label": "Votre prénom", "ph": "Votre prénom"},
-        "age": {"label": "Votre âge", "ph": "Votre âge"},
-        "lastDegree": {"label": "Diplôme", "ph": "Votre dernier diplôme"},
-    
-        "formations": {"label": "Vos formations", "ph": ""},
-        "skills": {"label": "Vos compétences", "ph": ""},
-        "experiences": {"label": "Vos expériences pro", "ph": ""},
-        "expYears": {"label": "Niveau d'expérience", "ph": ""},
-        "langages": {"label": "Langues parlez", "ph": ""},
-        "desiredSalary": {"label": "Salaire approximatif souhaité", "ph": "Salaire en $"},
-        "preferredLocations": {"label": "Localisation préférée", "ph": ""},
-        "linkedinUrl": {"label": "Lien de votre profil Linkedin", "ph": "Lien de votre profil Linkedin"},
-    
-        "gender": {"label": "Sexe", "ph": "Votre sexe"},
-        "address": {"label": "Votre adresse", "ph": "Votre adresse"},
-        "phone": {"label": "Votre numéro de téléphone", "ph": "Votre numéro de téléphone"},
-        "country": {"label": "Votre pays", "ph": "Votre pays"},
-        "societyName": {"label": "Le nom de votre entreprise", "ph": "Le nom de votre entreprise"},
-    
-        "profilPic": {"label": "Photo de profil", "ph": "Logo de votre entreprise"},
-        "resume": {"label": "Votre CV", "ph": ""},
-    
-        "workSector": {"label": "Domaine dans lequel vous intervenez"},
-        "description": {"label": "Une description de vous", "ph": "Décrivez-vous ici"},
-    
-        "jobTitle": {"label": "Titre du poste", "ph": "Titre du poste"},
-    
-        "profession": {"label": "Titre de votre profession", "ph": "Titre de votre profession"},
-    
-        "jobSector": {"label": "Secteur d'activité", "ph": "Secteur d'activité"},
-        "jobType": {"label": "Type de contrat", "ph": "Type de contrat"},
-        "requiredDegree": {"label": "Diplôme requis", "ph": "Diplôme requis"},
-        "requiredExpYear": {"label": "Année d'expérience requis", "ph": "Année d'expérience requis"},
-        "requiredLang": {"label": "Langues requises", "ph": "Langues requises"},
-    
-        "remoteAccepted": {"label": "Travail en remote", "ph": "Travail en remote"},
-    
-        "jobDescription": {"label": "Description", "ph": "Description"},
-        "tasks": {"label": "Tâche à effectuer", "ph": "Tâche à effectuer"},
-        "advantages": {"label": "Avantages", "ph": "Avantages"},
-    
-        "location": {"label": "Localisation", "ph": "Localisation"},
-        "salary": {"label": "Salaire approximatif", "ph": "Salaire approximatif"},
-        "applyLimitDate": {"label": "Date limite de candidature", "ph": "Date limite de candidature"},
-    
-        "applicantMessage": {"label": "Message", "ph": "Un petit message que vous voudriez laisser au recruteur par rapport à votre profil..."},
-    
-        "recruiterMessage": {"label": "Message du recruteur", "ph": "Un petit message que vous voudriez laisser au candidat..."},
-        "interviewDate": {"label": "Date de l'entretien", "ph": "Date de l'entretien"},
-        "interviewHour": {"label": "Heure de l'entretien", "ph": "Heure de l'entretien"},
-        "interviewType": {"label": "Type d'entretien", "ph": "Type d'entretien"},
-    
-        "searchTalentKeyword": {"label": "", "ph": "Chercher un talent avec son nom, prénom, email"},
-        "searchJobKeyword": {"label": "", "ph": "Chercher une offre"},
-    
-        "selectLabels": {
-          "choose": "Choisir...",
-          "country": "Pays",
-          "requiredDegree": "Niveau d'étude requis",
-          "requiredExpYear": "Niveau d'expérience",
-          "jobType": "Type de contrat",
-          "jobSector": "Catégorie",
-          "lastDegree": "Diplôme",
-          "expYears": "Niveau d'expérience",
-          "interviewType": "Type d'interview"
-        },
-        "statusOptions": {
-          "pending": "En cours de traitement",
-          "accepted": "Accepté",
-          "rejected": "Rejeté"
-        },
-        "interviewTypeOptions": {
-          "In-Person Interview": "Entretien en personne",
-          "Remote Interview": "Entretien à distance",
-          "In-Person Technical Interview": "Entretien technique en personne",
-          "Remote Technical Interview": "Entretien technique à distance",
-          "Phone Interview": "Entretien téléphonique"
-        },
-        "sorterOptions": {
-          "aToz": "A à Z",
-          "zToa": "Z à A",
-          "latestToOldest": "Plus récent au moins récent",
-          "oldestToLatest": "Moins récent au plus récent",
-          "viewsHighToLow": "Plus visible au moins visible",
-          "viewsLowToHigh": "Moins visible au plus visible"
-        },
-        "genderOptions": {
-          "male": "Homme",
-          "female": "Femme"
-        },
-        "remoteAcceptedOptions": {
-          "yes": "Oui",
-          "no": "Non"
-        },
-        "roleOptions": {
-          "society": "Une Entreprise",
-          "talent": "Un talent"
-        },
-    
-        "workSectorOptions": {
-          "automobile":  "Automobile",
-          "recruitment": "Recrutement et Placement",
-          "consultancy": "Conseil / Études",
-          "digital": "Numérique",
-          "industry": "Industrie",
-          "agriculture": "Agriculture / Pêche / Espaces Verts",
-          "hospitality": "Hôtellerie / Restauration",
-          "informationTechnology": "Informatique / Réseaux",
-          "foodIndustry": "Agroalimentaire",
-          "construction": "Construction",
-          "finance": "Finance / Assurance",
-          "education": "Éducation / Formation",
-          "energy": "Énergie",
-          "publicServices": "Services Publics",
-          "chemistry": "Chimie / Parachimie",
-          "health": "Santé",
-          "startups": "Startups",
-          "services": "Services",
-          "telecommunications": "Télécommunications",
-          "woodPaperPrinting": "Bois / Papier / Imprimerie",
-          "retail": "Commerce",
-          "automotive": "Automobile",
-          "engineering": "Ingénierie",
-          "textile": "Textile / Habillement",
-          "transportation": "Transport / Logistique",
-          "environment": "Environnement",
-          "media": "Médias",
-          "law": "Droit",
-          "artsCulture": "Arts / Culture",
-          "telecom": "Télécommunications"
-        },
-        "requiredDegreeOptions": {
-          "High School Diploma": "Diplôme d'Études Secondaires",
-          "Associate Degree": "Diplôme d'Études Collégiales",
-          "Bachelor's Degree": "Baccalauréat",
-          "Master's Degree": "Master",
-          "Doctorate (Ph.D.)": "Doctorat",
-          "GED (General Educational Development)": "Diplôme d'Études Générales",
-          "Vocational Certificate": "Certificat Professionnel",
-          "Professional Certification": "Certification Professionnelle"
-        },
-        "requiredExpYearOptions": {
-          "Entry Level (0-2 years)": "Débutant (0-2 ans)",
-          "Early Career (3-5 years)": "Début de carrière (3-5 ans)",
-          "Mid Career (6-10 years)": "Milieu de carrière (6-10 ans)",
-          "Experienced (11-15 years)": "Expérimenté (11-15 ans)",
-          "Senior Level (16+ years)": "Niveau Senior (16 ans et plus)"
-        },
-        "requiredLangOptions": {
-          "french": "Français",
-          "english": "Anglais"
-        },
-        "jobTypeOptions": {
-          "Full-time": "Temps plein",
-          "Part-time": "Temps partiel",
-          "Contract": "Contrat",
-          "Temporary": "Temporaire",
-          "Internship": "Stage",
-          "Freelance": "Freelance",
-          "Remote": "À distance"
-        },
-        "countryOptions": {
-            "Afghanistan": "Afghanistan",
-            "Albania": "Albanie",
-            "Algeria": "Algérie",
-            "Andorra": "Andorre",
-            "Angola": "Angola",
-            "Antigua and Barbuda": "Antigua-et-Barbuda",
-            "Argentina": "Argentine",
-            "Armenia": "Arménie",
-            "Australia": "Australie",
-            "Austria": "Autriche",
-            "Azerbaijan": "Azerbaïdjan",
-            "Bahamas": "Bahamas",
-            "Bahrain": "Bahreïn",
-            "Bangladesh": "Bangladesh",
-            "Barbados": "Barbade",
-            "Belarus": "Biélorussie",
-            "Belgium": "Belgique",
-            "Belize": "Belize",
-            "Benin": "Bénin",
-            "Bhutan": "Bhoutan",
-            "Bolivia": "Bolivie",
-            "Bosnia and Herzegovina": "Bosnie-Herzégovine",
-            "Botswana": "Botswana",
-            "Brazil": "Brésil",
-            "Brunei": "Brunei",
-            "Bulgaria": "Bulgarie",
-            "Burkina Faso": "Burkina Faso",
-            "Burundi": "Burundi",
-            "Cabo Verde": "Cap-Vert",
-            "Cambodia": "Cambodge",
-            "Cameroon": "Cameroun",
-            "Canada": "Canada",
-            "Central African Republic": "République centrafricaine",
-            "Chad": "Tchad",
-            "Chile": "Chili",
-            "China": "Chine",
-            "Colombia": "Colombie",
-            "Comoros": "Comores",
-            "Congo": "Congo",
-            "Costa Rica": "Costa Rica",
-            "Cote d'Ivoire": "Côte d'Ivoire",
-            "Croatia": "Croatie",
-            "Cuba": "Cuba",
-            "Cyprus": "Chypre",
-            "Czechia": "Tchéquie",
-            "Denmark": "Danemark",
-            "Djibouti": "Djibouti",
-            "Dominica": "Dominique",
-            "Dominican Republic": "République dominicaine",
-            "Ecuador": "Équateur",
-            "Egypt": "Égypte",
-            "El Salvador": "Salvador",
-            "Equatorial Guinea": "Guinée équatoriale",
-            "Eritrea": "Érythrée",
-            "Estonia": "Estonie",
-            "Eswatini": "Eswatini",
-            "Ethiopia": "Éthiopie",
-            "Fiji": "Fidji",
-            "Finland": "Finlande",
-            "France": "France",
-            "Gabon": "Gabon",
-            "Gambia": "Gambie",
-            "Georgia": "Géorgie",
-            "Germany": "Allemagne",
-            "Ghana": "Ghana",
-            "Greece": "Grèce",
-            "Grenada": "Grenade",
-            "Guatemala": "Guatemala",
-            "Guinea": "Guinée",
-            "Guinea-Bissau": "Guinée-Bissau",
-            "Guyana": "Guyana",
-            "Haiti": "Haïti",
-            "Honduras": "Honduras",
-            "Hungary": "Hongrie",
-            "Iceland": "Islande",
-            "India": "Inde",
-            "Indonesia": "Indonésie",
-            "Iran": "Iran",
-            "Iraq": "Irak",
-            "Ireland": "Irlande",
-            "Israel": "Israël",
-            "Italy": "Italie",
-            "Jamaica": "Jamaïque",
-            "Japan": "Japon",
-            "Jordan": "Jordanie",
-            "Kazakhstan": "Kazakhstan",
-            "Kenya": "Kenya",
-            "Kiribati": "Kiribati",
-            "Korea, North": "Corée du Nord",
-            "Korea, South": "Corée du Sud",
-            "Kosovo": "Kosovo",
-            "Kuwait": "Koweït",
-            "Kyrgyzstan": "Kirghizistan",
-            "Laos": "Laos",
-            "Latvia": "Lettonie",
-            "Lebanon": "Liban",
-            "Lesotho": "Lesotho",
-            "Liberia": "Libéria",
-            "Libya": "Libye",
-            "Liechtenstein": "Liechtenstein",
-            "Lithuania": "Lituanie",
-            "Luxembourg": "Luxembourg",
-            "Madagascar": "Madagascar",
-            "Malawi": "Malawi",
-            "Malaysia": "Malaisie",
-            "Maldives": "Maldives",
-            "Mali": "Mali",
-            "Malta": "Malte",
-            "Marshall Islands": "Îles Marshall",
-            "Mauritania": "Mauritanie",
-            "Mauritius": "Maurice",
-            "Mexico": "Mexique",
-            "Micronesia": "Micronésie",
-            "Moldova": "Moldavie",
-            "Monaco": "Monaco",
-            "Mongolia": "Mongolie",
-            "Montenegro": "Monténégro",
-            "Morocco": "Maroc",
-            "Mozambique": "Mozambique",
-            "Myanmar": "Myanmar",
-            "Namibia": "Namibie",
-            "Nauru": "Nauru",
-            "Nepal": "Népal",
-            "Netherlands": "Pays-Bas",
-            "New Zealand": "Nouvelle-Zélande",
-            "Nicaragua": "Nicaragua",
-            "Niger": "Niger",
-            "Nigeria": "Nigeria",
-            "North Macedonia": "Macédoine du Nord",
-            "Norway": "Norvège",
-            "Oman": "Oman",
-            "Pakistan": "Pakistan",
-            "Palau": "Palaos",
-            "Panama": "Panama",
-            "Papua New Guinea": "Papouasie-Nouvelle-Guinée",
-            "Paraguay": "Paraguay",
-            "Peru": "Pérou",
-            "Philippines": "Philippines",
-            "Poland": "Pologne",
-            "Portugal": "Portugal",
-            "Qatar": "Qatar",
-            "Romania": "Roumanie",
-            "Russia": "Russie",
-            "Rwanda": "Rwanda",
-            "Saint Kitts and Nevis": "Saint-Kitts-et-Nevis",
-            "Saint Lucia": "Sainte-Lucie",
-            "Saint Vincent and the Grenadines": "Saint-Vincent-et-les-Grenadines",
-            "Samoa": "Samoa",
-            "San Marino": "Saint-Marin",
-            "Sao Tome and Principe": "Sao Tomé-et-Principe",
-            "Saudi Arabia": "Arabie saoudite",
-            "Senegal": "Sénégal",
-            "Serbia": "Serbie",
-            "Seychelles": "Seychelles",
-            "Sierra Leone": "Sierra Leone",
-            "Singapore": "Singapour",
-            "Slovakia": "Slovaquie",
-            "Slovenia": "Slovénie",
-            "Solomon Islands": "Îles Salomon",
-            "Somalia": "Somalie",
-            "South Africa": "Afrique du Sud",
-            "South Sudan": "Soudan du Sud",
-            "Spain": "Espagne",
-            "Sri Lanka": "Sri Lanka",
-            "Sudan": "Soudan",
-            "Suriname": "Suriname",
-            "Sweden": "Suède",
-            "Switzerland": "Suisse",
-            "Syria": "Syrie",
-            "Taiwan": "Taïwan",
-            "Tajikistan": "Tadjikistan",
-            "Tanzania": "Tanzanie",
-            "Thailand": "Thaïlande",
-            "Timor-Leste": "Timor oriental",
-            "Togo": "Togo",
-            "Tonga": "Tonga",
-            "Trinidad and Tobago": "Trinité-et-Tobago",
-            "Tunisia": "Tunisie",
-            "Turkey": "Turquie",
-            "Turkmenistan": "Turkménistan",
-            "Tuvalu": "Tuvalu",
-            "Uganda": "Ouganda",
-            "Ukraine": "Ukraine",
-            "United Arab Emirates": "Émirats arabes unis",
-            "United Kingdom": "Royaume-Uni",
-            "United States": "États-Unis",
-            "Uruguay": "Uruguay",
-            "Uzbekistan": "Ouzbékistan",
-            "Vanuatu": "Vanuatu",
-            "Vatican City": "Cité du Vatican",
-            "Venezuela": "Venezuela",
-            "Vietnam": "Vietnam",
-            "Yemen": "Yémen",
-            "Zambia": "Zambie",
-            "Zimbabwe": "Zimbabwe"
-        }
-          }
     }
   }
-  
+}

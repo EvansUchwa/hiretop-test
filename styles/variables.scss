@@ -9,12 +9,18 @@ $tertiary-color: #f27121;
 $grey-primary: #f3f4f6;
 $grey-secondary: #bcbcbc;
 
-
-
-$gradient1:  linear-gradient(to right, $primary-color, $secondary-color, $tertiary-color);
-$gradient2:  linear-gradient(to left, $primary-color, $secondary-color, $tertiary-color);
-$gradient3:  linear-gradient(to bottom, $primary-color, $secondary-color);
-
-
+$gradient1: linear-gradient(
+  to right,
+  $primary-color,
+  $secondary-color,
+  $tertiary-color
+);
+$gradient2: linear-gradient(
+  to left,
+  $primary-color,
+  $secondary-color,
+  $tertiary-color
+);
+$gradient3: linear-gradient(to bottom, $primary-color, $secondary-color);
 
 $sidebarWidth: 300px;
